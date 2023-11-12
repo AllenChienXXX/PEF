@@ -1,0 +1,159 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp1118157dyf;
+        Fri, 2 Jun 2023 06:01:41 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ7i/wrp22hiGZjNIh4MJHc0BWmsrWDWcYAicbDFPch6uuROkcVtTlrLLr4l0xJZxIhX/XIZ
+X-Received: by 2002:a1f:2144:0:b0:45c:b73b:ed25 with SMTP id h65-20020a1f2144000000b0045cb73bed25mr2143005vkh.3.1685710901408;
+        Fri, 02 Jun 2023 06:01:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685710901; cv=none;
+        d=google.com; s=arc-20160816;
+        b=WMbPsIyw3jhaqNJ9c5awJimXMbM/lChdVKV65gckG1k0QZTOYMk2vyF51Qgws7Csrj
+         2yyPtWo2oTZD+lKmSqVOfArclPmSbaSLPk8hrqkLG3bwZmW4wfVbr7YV8uxEEYLDU2la
+         e/9XVhAtVag11x2S5/vQSYS/NvBv/VlWkRvNAIP1hQODUMvOQ+AViDGCgR2jcXMPGmAG
+         GqxdiskGrHXT87DGyX5Z5G3Gy45M6nDAlbfrpO8394sgdXxZNFtXIomAGncFauUppMPo
+         LVnD0cjryUDMn8faH7FPwGYiljTrJ+pEPGxYJsdIYAPhgBaQSVKDpFnLlKicyjeeYu3K
+         JYdQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:mime-version:content-id
+         :list-unsubscribe:subject:reply-to:to:from:dkim-signature;
+        bh=5VEtAcfkyOpWR8MvPXVTGPqLuZDbxn9dYWanaQjuRlA=;
+        b=owa2+72M+4qFnttBo/Wwia1gu7bXk8bgUBwvpLSCcmj/tlcugJWZyZYlFaetqchLQX
+         PXDByr0AIlUbPQmvB//jgdNajuj9k+u6J1EMNHTEbFuy6DOdm5oLXmpHwG5/k25B2Rqb
+         M504eUQFvF+4rjrvq1oDxKVLnZ0HJ6KXFT44NN4yk7xQz3+ccFXFoDm8RhCjirEaygpy
+         Bz9hwaYpuVYRKKp7W79TpmwA963Nlj076ETKuaLqaUGzie7MQ45aW3I96sw1eqf03BhV
+         0AGPttRa92yKV+O5xwElJsGFj7TnynAsgQ3D0yffjo+JqjAN+kNFcCr3h+wViCUKQEqF
+         WJ4A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=fRiC13jJ;
+       spf=pass (google.com: domain of 010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@amazonses.com designates 54.240.11.36 as permitted sender) smtp.mailfrom=010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@amazonses.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=honorsociety.org
+Return-Path: <010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@amazonses.com>
+Received: from a11-36.smtp-out.amazonses.com (a11-36.smtp-out.amazonses.com. [54.240.11.36])
+        by mx.google.com with ESMTPS id d199-20020a1fb4d0000000b0045b0eb83376si104488vkf.197.2023.06.02.06.01.41
+        for <allen71090@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 02 Jun 2023 06:01:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@amazonses.com designates 54.240.11.36 as permitted sender) client-ip=54.240.11.36;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=fRiC13jJ;
+       spf=pass (google.com: domain of 010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@amazonses.com designates 54.240.11.36 as permitted sender) smtp.mailfrom=010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@amazonses.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=honorsociety.org
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1685710900;
+	h=From:To:Reply-To:Subject:List-Unsubscribe:Content-ID:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=UjBde+40ueJO94lL/LA0V3DcOYNhnpUenfj68TBaJK4=;
+	b=fRiC13jJsaQ72qfPM58pKDIZBexCQOdt8ZX4dDMazWo0g7xlmaulrUc8TJPm7iyw
+	l9V981GgvsRY0K6aLoPKGrlsrpB0iTCcLPq3XUhW9kbrpOuC2AwNcHJXRQaEZdk1X9S
+	2m3rABHR0nMrVidMrV7hrNIEIPaQlspryYhkkeX0=
+From: "Honor Society" <memberservices@honorsociety.org>
+To: allen71090@gmail.com
+Reply-To: memberservices@honorsociety.org
+Subject: Allen Chien: You're In.
+List-Unsubscribe: <http://track.arista.org/?xul=pw6kwi0ofifgg2o4lnh37u9zaytrki3fwzc10iymjyin74r1i7rkh9sfx23k7tge46rb65v6&amp;ei=allen71090@gmail.com>
+Content-ID: oJScoTyhMl4mYwWgMF51ZmMkAzLhqGAcMwp5YaS3qD==$!$
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="Alt_MIME_Boundary"
+Message-ID: <010001887c330dd6-a1821268-0350-4e6d-87d5-0f04ce02ad25-000000@email.amazonses.com>
+Date: Fri, 2 Jun 2023 13:01:40 +0000
+Feedback-ID: 1.us-east-1.VtciaooS7hm+wJyzru2NW5F3WjQyb1pv4PpDnMzHHEM=:AmazonSES
+X-SES-Outgoing: 2023.06.02-54.240.11.36
+
+--Alt_MIME_Boundary
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Dear Allen,
+
+ 
+
+ Congratulations! You are invited to join Honor Society. The deadline to activate membership and apply for scholarships is June 16, 2023.
+
+ 
+
+ Accepting this distinction connects you with like-minded high achievers from your region and across the nation, both in person and through our society's web portal. Our network helps connect you with leaders from high profile universities and employers across the nation.
+
+ 
+
+ Honor Society­ is the preeminent organization dedicated to recognition of academic and professional success. Our society empowers members to achieve through scholarship, recognition, exclusive privileges, job opportunities and much more. Honor Society recognizes your achievements to date, and builds a framework for future success.
+
+Allen Chien:
+
+Activate your Honor Society Membership
+https://flairsunglasses.com/zy7?em=allen71090@gmail.com&fn=Allen&ln=Chien&src=SOWL20236
+
+The deadline to activate membership is June 30, 2023 at 5 PM EST.
+
+Scholarship Listings
+
+Full Access to Career Insider Guide books and tools by Vault­.com (up to $1,000 value)
+
+Dental, Vision and Hearing Health Discount Plans valid at 200,000 access points nationwide
+
+Dining discounts at 18,000 restaurant nationwide
+
+ Allen Chien:
+
+ Activate your Honor Society Membership
+
+The deadline to activate membership is June 30, 2023 at 5 PM EST.
+
+We're here to help: 18663136311
+1025 Connecticut Avenue, NW • Suite 1000 • Washington, DC 20036
+
+id:2023-06-02-01:58:03:301t
+
+Honor Society - Strength and Honor
+This email is exclusively for: allen71090@gmail.com 
+
+In order to unsubscribe from this mailing list, please click here http://track.arista.org/?xul=qzo5hg6t69uoh8hw3o6iociw4awbwcy9echth5ofeeglutgffpp7zhpcujnmpms301mdmcgnh95o9hyw1gvjp7539&eih=kmxxrkqxto2rsg3lr99npfbx0aejzpmn
+
+--Alt_MIME_Boundary
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title></title><meta name="viewport" content="width=device-width,initial-scale=1"><!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><style>
+*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!important}#MessageViewBody a{color:inherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-height:0;overflow:hidden}.image_block img+div{display:none} @media (max-width:520px){.row-content{width:100%!important}.mobile_hide{display:none}.stack .column{width:100%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!important;max-height:none!important}}
+</style></head><body style="background-color:#fff;margin:0;padding:0;-webkit-text-size-adjust:none;text-size-adjust:none">
+<table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;background-color:#fff"><tbody><tr><td>
+<table class="row row-1" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;color:#000;width:500px" width="500"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad" style="width:100%;padding-right:0;padding-left:0"><div class="alignment" align="center" style="line-height:10px"><img src="http://image.arista.org/images/754582a53ffdb4c3.png" style="display:block;height:auto;border:0;width:134px;max-width:100%" width="134"></div></td></tr></table><table class="text_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:14px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:16.8px;color:#555;line-height:1.2">
+<p style="margin:0;mso-line-height-alt:16.8px"><strong>Dear Allen</strong><strong>,</strong></p>
+<p style="margin:0;mso-line-height-alt:16.8px"> </p>
+<p style="margin:0;mso-line-height-alt:16.8px">
+Congratulations! You are invited to join <em>Honor Society</em>. The deadline to activate membership and apply for scholarships is <strong>June 16, 2023</strong>.</p>
+<p style="margin:0;mso-line-height-alt:16.8px"> </p>
+<p style="margin:0;mso-line-height-alt:16.8px">
+Accepting this distinction connects you with like-minded high achievers from your region and across the nation, both in person and through our society's web portal. Our network helps connect you with leaders from high profile universities and employers across the nation.</p>
+<p style="margin:0;mso-line-height-alt:16.8px"> </p>
+<p style="margin:0;mso-line-height-alt:16.8px">
+Honor Society­ is the preeminent organization dedicated to recognition of academic and professional success. Our society empowers members to achieve through scholarship, recognition, exclusive privileges, job opportunities and much more. Honor Society recognizes your achievements to date, and builds a framework for future success.</p>
+</div></div></td></tr></table><table class="text_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:14px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:16.8px;color:#555;line-height:1.2"><p style="margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px"><strong>Allen Chien:</strong></p></div></div></td></tr></table><table class="button_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad"><div class="alignment" align="center">
+<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://flairsunglasses.com/zy7?em=allen71090@gmail.com&fn=Allen&ln=Chien&src=SOWL20236" style="height:37px;width:293px;v-text-anchor:middle;" arcsize="11%" stroke="false" fillcolor="#c5950b"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:14px"><![endif]-->
+<a href="http://track.arista.org/?xtl=zf4doxbapy980kpvd7eyhdugwdwh0ogs5f4c1t1qrop0edq1prcl6xm4cargqsq0eip0izff9psch7o9cn6ksf64v1aybb8ew4hi7ebkpv9rb1e44v33hkwnozppqinsg9dy56547jegx243le1hcl53ypxz40th9dkkvd9s4sds7hglx07vn876hor15rdvyjlspy2m95vueqwraya6uhl2adznk37z7s2sk7tv2&amp;eih=kmxxrkqxto2rsg3lr99npfbx0aejzpmn&amp;email=allen71090@gmail.com&amp;first_name=Allen&amp;last_name=Chien&amp;Source=SOWL20236&amp;YearAdded=" target="_blank" style="text-decoration:none;display:inline-block;color:#ffffff;background-color:#c5950b;border-radius:4px;width:auto;border-top:0px solid transparent;font-weight:400;border-right:0px solid transparent;border-bottom:0px solid transparent;border-left:0px solid transparent;padding-top:5px;padding-bottom:5px;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;font-size:14px;text-align:center;mso-border-alt:none;word-break:keep-all;" data-id="4483202403"><span style="padding-left:20px;padding-right:20px;font-size:14px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="word-break: break-word; line-height: 28px;">Activate your Honor Society Membership</span></span></a>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+</div></td></tr></table><table class="text_block block-5" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:14px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:16.8px;color:#555;line-height:1.2"><p style="margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px">The deadline to activate membership is June 30, 2023 at 5 PM EST.</p></div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></table><table class="row row-2" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;color:#000;width:500px" width="500"><tbody><tr><td class="column column-1" width="25%" style="mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad" style="width:100%;padding-right:0;padding-left:0"><div class="alignment" align="center" style="line-height:10px"><img src="https://app-rsrc.getbee.io/public/resources/defaultrows/1.png" style="display:block;height:auto;border:0;width:125px;max-width:100%" width="125" alt="I'm an image" title="I'm an image"></div></td></tr></table><table class="text_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p style="margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.399999999999999px">Scholarship Listings</p></div></div></td></tr></table></td>
+<td class="column column-2" width="25%" style="mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad" style="width:100%;padding-right:0;padding-left:0"><div class="alignment" align="center" style="line-height:10px"><img src="https://app-rsrc.getbee.io/public/resources/defaultrows/2.png" style="display:block;height:auto;border:0;width:125px;max-width:100%" width="125" alt="I'm an image" title="I'm an image"></div></td></tr></table><table class="text_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p style="margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.399999999999999px">Full Access to Career Insider Guide books and tools by Vault­.com (up to $1,000 value)</p></div></div></td></tr></table></td>
+<td class="column column-3" width="25%" style="mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad" style="width:100%;padding-right:0;padding-left:0"><div class="alignment" align="center" style="line-height:10px"><img src="https://app-rsrc.getbee.io/public/resources/defaultrows/3.png" style="display:block;height:auto;border:0;width:125px;max-width:100%" width="125" alt="I'm an image" title="I'm an image"></div></td></tr></table><table class="text_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p style="margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.399999999999999px">Dental, Vision and Hearing Health Discount Plans valid at 200,000 access points nationwide</p></div></div></td></tr></table></td>
+<td class="column column-4" width="25%" style="mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class="image_block block-1" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad" style="width:100%;padding-right:0;padding-left:0"><div class="alignment" align="center" style="line-height:10px"><img src="https://app-rsrc.getbee.io/public/resources/defaultrows/6.png" style="display:block;height:auto;border:0;width:125px;max-width:100%" width="125" alt="I'm an image" title="I'm an image"></div></td></tr></table><table class="text_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p style="margin:0;font-size:12px;text-align:center;mso-line-height-alt:14.399999999999999px">Dining discounts at 18,000 restaurant nationwide</p></div></div></td></tr></table></td>
+</tr></tbody></table></td></tr></tbody></table><table class="row row-3" align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class="row-content stack" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;color:#000;width:500px" width="500"><tbody><tr><td class="column column-1" width="100%" style="mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">
+<table class="text_block block-1" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:12px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:14.399999999999999px;color:#555;line-height:1.2"><p style="margin:0;font-size:16px;text-align:center;mso-line-height-alt:19.2px">
+<strong>Allen Chien:</strong></p></div></div></td></tr></table><table class="button_block block-2" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0"><tr><td class="pad"><div class="alignment" align="center">
+<!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="height:42px;width:329px;v-text-anchor:middle;" arcsize="10%" stroke="false" fillcolor="#c5950b"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:16px"><![endif]--><div style="text-decoration:none;display:inline-block;color:#fff;background-color:#c5950b;border-radius:4px;width:auto;border-top:0 solid transparent;font-weight:400;border-right:0 solid transparent;border-bottom:0 solid transparent;border-left:0 solid transparent;padding-top:5px;padding-bottom:5px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;font-size:16px;text-align:center;mso-border-alt:none;word-break:keep-all">
+<span style="padding-left:20px;padding-right:20px;font-size:16px;display:inline-block;letter-spacing:normal;"><span dir="ltr" style="margin: 0; word-break: break-word; line-height: 32px;">Activate your Honor Society Membership</span></span>
+</div>
+<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+</div></td></tr></table><table class="text_block block-3" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:14px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:16.8px;color:#555;line-height:1.2"><p style="margin:0;font-size:14px;text-align:center;mso-line-height-alt:16.8px">The deadline to activate membership is June 30, 2023 at 5 PM EST.</p></div></div></td></tr></table><table class="text_block block-4" width="100%" border="0" cellpadding="10" cellspacing="0" role="presentation" style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class="pad"><div style="font-family:sans-serif"><div class style="font-size:14px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;mso-line-height-alt:16.8px;color:#555;line-height:1.2">
+<p style="margin:0;text-align:center;mso-line-height-alt:16.8px">We're here to help: 18663136311<br>1025 Connecticut Avenue, NW • Suite 1000 • Washington, DC 20036</p>
+<p style="margin:0;text-align:center;mso-line-height-alt:16.8px">id:2023-06-02-01:58:03:301t</p>
+<p style="margin:0;text-align:center;mso-line-height-alt:16.8px"><br><em>Honor Society - Strength and Honor</em><br><strong>This email is exclusively for: allen71090@gmail.com</strong></p>
+</div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><!-- End -->
+<br>In order to unsubscribe from this mailing list, please click <a href="http://track.arista.org/?xul=qzo5hg6t69uoh8hw3o6iociw4awbwcy9echth5ofeeglutgffpp7zhpcujnmpms301mdmcgnh95o9hyw1gvjp7539&eih=kmxxrkqxto2rsg3lr99npfbx0aejzpmn">here</a>
+<img src="http://track.arista.org/?xol=3qwnefa4vli6sv3y0o06&eih=kmxxrkqxto2rsg3lr99npfbx0aejzpmn" alt="" width="1" height="1">
+</body></html>
+
+--Alt_MIME_Boundary--
+

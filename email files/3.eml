@@ -1,0 +1,1063 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp1444963dyf;
+        Mon, 20 Mar 2023 03:06:37 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AK7set/FAS6oc3XV/jrtgGF9gQVe570CvxhtjB8Fw7LhXaKpjeAa/vAqF5CqLuq3K822rUG/idZc
+X-Received: by 2002:a05:6a20:1e5d:b0:d9:49a9:fe6c with SMTP id
+ cy29-20020a056a201e5d00b000d949a9fe6cmr3565850pzb.11.1679306797186;
+        Mon, 20 Mar 2023 03:06:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1679306797; cv=none;
+        d=google.com; s=arc-20160816;
+        b=UBgqj1bd6BokpVITd50EtxJy9v7Zqmi/ZMfFs+hcnnetW4ZHPJw3qeRTXb5gnKv/is
+         smZMV+ATlHvPFPYTN64gtVMZdRtiq6Vrf/IIPmhgAAN+erebLB/qTdUk7YpJFOEivUwe
+         kOTdgoaN3Qa5VWTdH1yeEqFxsxEpIEUawUatUpI84kKHEuXjtA+XiouSMF19YAxS5XA3
+         cM9o/0NgYfveWpFgJgVeEaitBRNWIl8zEV9WYvliMiVNy6owJU86EabhyTLZs0x9oZw5
+         L8eyHzaJwzJl5arGO75JrhHwGOu3mZMCnUMJNeSDZYcDfTQ0PovTMI6hDMThai/gw/fE
+         fGYg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:list-unsubscribe:feedback-id:precedence:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=/HRp7BPkHsqak8yk4+czQ7w3XuflfLGQjOQF3WhLdPw=;
+        b=mORQIbws4F+eAzkNLTdkE5/JQ3rKC9aA6uwBQeUVPldvBSk+grVIsfZf3zFL3Lk2qr
+         WEiOyG5mWSulRgaj0C8eecess9XWiohELAfwyXhVssdaYuKX2aGihKA1kQXXXmSc8cNA
+         l3wgW29VH55P7/jYRy8KwhDpVQC/NbWEUuDoYGhDSigi8SxWUOPFI3TA+d82/k4uRrSS
+         mPzQLMtbTfMsMN2tWU+i4wfefZ6P3gYmlRONhbEmLiAB4E0zAQaDNiZU2HAfEi8dajOE
+         byWM+2k+84TzMc0byLYbriLItrieQq1UDStTh6f4247ezU3rzH00YwkdU7SyTLtI+lee
+         3IuQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@h.convertkit.com header.s=s1 header.b=CGv9bTYN;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=n4qjH6Gc;
+       spf=pass (google.com: domain of
+ bounces+8663613-5633-allen71090=gmail.com@mail.h.convertkit.com designates
+ 167.89.80.227 as permitted sender)
+ smtp.mailfrom="bounces+8663613-5633-allen71090=gmail.com@mail.h.convertkit.com"
+Return-Path: <bounces+8663613-5633-allen71090=gmail.com@mail.h.convertkit.com>
+Received: from o1.ck.h.convertkit.com (o1.ck.h.convertkit.com.
+ [167.89.80.227])
+        by mx.google.com with ESMTPS id
+ x6-20020a056a00188600b006265c3b7053si8660676pfh.200.2023.03.20.03.06.36
+        for <allen71090@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 20 Mar 2023 03:06:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+8663613-5633-allen71090=gmail.com@mail.h.convertkit.com designates
+ 167.89.80.227 as permitted sender) client-ip=167.89.80.227;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@h.convertkit.com header.s=s1 header.b=CGv9bTYN;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=n4qjH6Gc;
+       spf=pass (google.com: domain of
+ bounces+8663613-5633-allen71090=gmail.com@mail.h.convertkit.com designates
+ 167.89.80.227 as permitted sender)
+ smtp.mailfrom="bounces+8663613-5633-allen71090=gmail.com@mail.h.convertkit.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=h.convertkit.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=s1; bh=/HRp7BPkHsqak8yk4+czQ7w3XuflfLGQjOQF3WhLdPw=;
+	b=CGv9bTYN3g/JHC2ChcmPkxgAvSU2Yg9Z4s3RQqdFgub4QmQu/QPAJXwrI04Hq4I+W11n
+	wEIYpzdr1lbaoWGzogz+CG88izf8M1DCLShxaz2V/yavJptj4dvzZ+j4QQfubBSEOYrviY
+	uxXlFtBFkSs0FJiwzWqUHtL4tuoXcamGaF43uGU7zK6ksMemYJksFwollWME5x3kvB/LDs
+	exuuNUFnANrePw9V6YLeckmEWTdRMumIpqe4YVjccUbYhU9UMOMRnEL6SpHsXGb3Q/jnHr
+	YKnXWJYta4rT1mD+HBhxFwTF7H0o/nXZvjEqCl09Hn3Qz3JFENJwSLx1sP8RJ6VQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=/HRp7BPkHsqak8yk4+czQ7w3XuflfLGQjOQF3WhLdPw=;
+	b=n4qjH6GcFd05SaRNmf2cvCPog0EvvLMSNemY8l3tlcRsRLtPhhvCSXx83tJW5Prm31bx
+	Vew99B7cmKjCcMgzZohm+4lJgzdUxWq5+R41YD8RfGpA1NRwe9FjmCv4VyH21ZTLliSvFK
+	0YBEMuoRhrlAZ+val6M705M+k8PxpGkus=
+Received: by filterdrecv-67c97c7bd-trf7h with SMTP id
+ filterdrecv-67c97c7bd-trf7h-1-6418302A-5E
+        2023-03-20 10:06:34.813444975 +0000 UTC m=+2284346.984412015
+Received: from ODY2MzYxMw (unknown)
+	by geopod-ismtpd-13 (SG) with HTTP
+	id JnVBb_tPQWiDiZkB42sPmg
+	Mon, 20 Mar 2023 10:06:34.622 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=fa5f9e62fc964513a581230f88ad50491bf60b0db7647676e6bfba157238
+Date: Mon, 20 Mar 2023 10:06:35 +0000 (UTC)
+From: Arnold Schwarzenegger <updates@schwarzenegger.com>
+Mime-Version: 1.0
+Message-ID: <n4uvpd4z8kuvh8nggeni0@convertkit-mail4.com>
+Subject: Monday motivation from Arnold
+Precedence: bulk
+Feedback-ID: 10328551:83396:broadcast:CK
+List-Unsubscribe: 
+ <https://unsubscribe.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0>
+X-Report-Spam: <abuse@convertkit.com>
+X-Report-Abuse: <abuse@convertkit.com>
+X-Feedback-ID: 8663613:SG
+X-SG-EID: 
+ =?us-ascii?Q?Uv7FusBnX26LvxGpXtE4HZEI5GZBv=2FvW4mQ1oCQH0jZumUAZ+NfoaEbrLoWYA1?=
+ =?us-ascii?Q?b8qZj1iBnEXcS5KEw8+9Kdar0rmA0OVZzeRYOor?=
+ =?us-ascii?Q?aoaV3scRg=2F=2FF3FZlrCE=2F+Y1byJt9P8+mkooUAFo?=
+ =?us-ascii?Q?Qj+YQuDL9hhtVHzUX5pj7jcENypYBJWV3KeSJnS?=
+ =?us-ascii?Q?uxo2bJ6xlM=2F8DLeym6E4lU2=2F+AfP=2FZpEEIoSztN?=
+ =?us-ascii?Q?8357ogUDHYqTL=2FkZphnz+AN4XHNLj4F62exKmMd?=
+ =?us-ascii?Q?lfT2fYdR5lTJcY=2FroQtfQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FJHjDFAea1uZocvZojyqe?=
+ =?us-ascii?Q?ADSa9h1XyL60uEdaaN8g+3e2YOBvFgOV+V6SyJD?=
+ =?us-ascii?Q?SDvuiKUOPLqbPwTVWxbaZgnF9Vpj8jOzNIu0RHj?=
+ =?us-ascii?Q?KWtPhD32mb6t04AeZToPZVVm0OH9bQks+mfC0gc?=
+ =?us-ascii?Q?8MuGOBVVZ6Lj3p5rJmww1bWwO+p=2FkRZN3tzQbbx?=
+ =?us-ascii?Q?iOOSPI6KMr3rexN9zPtJCEUrl3qOuUgJXZySc06?=
+ =?us-ascii?Q?lZB+CvLcAW92Rm8zMFDJeIOB8xWlG0Wcz6OrK0d?=
+ =?us-ascii?Q?7w0GOzxSu2prSZwjNcf8c5gxIxBdzWUgQeAn1jp?=
+ =?us-ascii?Q?RqjjLeuq+YfA6ZJ2K5+XlOdlzIG5FotvrHqejo5?=
+ =?us-ascii?Q?aVIxx5+IEh?=
+To: allen71090@gmail.com
+X-Entity-ID: xwgR2UR13ASU2ke+fxcikg==
+
+--fa5f9e62fc964513a581230f88ad50491bf60b0db7647676e6bfba157238
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+=E2=80=8B
+
+=E2=80=8B
+=E2=80=8B
+
+=E2=80=8B
+
+Welcome to the positive corner of wellness. Here=E2=80=99s a daily digest
+designed to make you healthier in less than 5 minutes. If you
+were forwarded this message, you can get the free daily email
+here. (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/wnh2hghw9oxdrkt7/a=
+HR0cHM6Ly9zY2h3YXJ6ZW5lZ2dlci5jay5wYWdlLzA5NDNjYTVlMTM=3D
+)=E2=80=8B
+
+----------------------
+Today=E2=80=99s Health Upgrade
+----------------------
+
+* Arnold=E2=80=99s Monday motivation
+* The takeout diet
+* Workout of the week
+
+-----------------------------
+Monday Motivation With Arnold
+-----------------------------
+
+Years ago, before I was the Arnold you know now, I ran into Henry
+Kissinger (former Secretary of State, National Security Advisor,
+and Nobel Peace Prize winner). He was probably like I am for many
+of you =E2=80=94 someone I saw on TV all the time. I read whatever he
+wrote, and I was blown away by his intelligence. It was a big
+deal for me, so I had to use my opportunity to ask him a
+question.
+
+=E2=80=9CHow are you so calm and collected in all of your interviews?=E2=80=
+=9D
+
+He gave me advice I=E2=80=99d never forget. =E2=80=9CArnold, the trick is, =
+I
+start out by asking the interviewer questions. I show that I=E2=80=99m
+curious about them and want to know about their life. It throws
+them off wanting to interrogate me and it also puts my mind at
+ease since now it isn=E2=80=99t an interview where I=E2=80=99m waiting nerv=
+ously
+for the first question; it=E2=80=99s just a regular conversation.=E2=80=9D
+
+Last week I talked about listening to people because sometimes
+they need to be heard. This week, I want you to try to go a step
+further: be curious about people. You never know what you=E2=80=99ll
+learn.
+
+As a bonus, when you go on the offensive and start asking other
+people questions, you=E2=80=99ll find it eases any anxiety you might have
+about conversation or even a job interview. It=E2=80=99s a skill that
+will help you in all aspects of your life. I=E2=80=99ve been lucky to
+meet almost all of my heroes =E2=80=94 from Nelson Mandela to Mikhail
+Gorbachev =E2=80=94 and one thing they have in common is never-ending
+curiosity. They=E2=80=99re always hungry for more information.
+
+A few years after my conversation with Kissinger, I had a big
+interview: I was sitting down with Barbara Walters for the first
+time. While we were getting settled, I said, =E2=80=9CWho is one of your
+favorite interviews?=E2=80=9D
+
+Barbara lit up, and she told me that Henry Kissinger was a
+fantastic interview. She went on and on about how he always
+wanted to know everything about her, and we both relaxed more as
+we laughed about it. I couldn=E2=80=99t help but start the interview with
+a smile; the only reason we were talking about Kissinger was that
+I=E2=80=99d started out by using what I=E2=80=99d learned from him. I=E2=80=
+=99d become
+the questioner.
+
+Spend this week being as curious as you can, and tell me how it
+works out for you. Stay hungry.
+
+----------------
+The takeout diet
+----------------
+
+We don=E2=80=99t need to tell you that 2020 changed a lot of things. But
+a subtle shift in how we eat is impacting our health.
+
+People are ordering more takeout and drive-through meals than
+ever. Delivery is up more than 5 percent, and drive-through is up
+13 percent, according to the National Restaurant Association. And
+the data suggests these eating habits have a cost.
+
+Eating one meal away from home per week translates to adding
+roughly two extra pounds each year, according to USDA research.
+
+This doesn=E2=80=99t mean you have to avoid restaurants. But it does mean
+a little bit of strategy can make a big difference. One study
+found that participants who were given nutrition strategies lost
+4 pounds despite not eating takeout less often.
+
+The ability to take the stress out of eating (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/reh8hoh095wpq7s2/a=
+HR0cHM6Ly93d3cuYW1hem9uLmNvbS9Zb3UtQ2FudC1TY3Jldy1UaGlzLVVwL2RwLzAwNjMyMzA1=
+NzcvcmVmPXRtbV9ocmRfc3dhdGNoXzA_X2VuY29kaW5nPVVURjgmcWlkPSZzcj0=3D
+) =E2=80=94 and not avoid everything you love =E2=80=94 can be a life-chang=
+ing
+decision that makes it easier to stick to your plan.
+
+Here are a few things that can help:
+
+* Don=E2=80=99t skip meals when you have takeout. Some people try to
+=E2=80=9Csave room=E2=80=9D for delivery, but that just leaves you hungrier=
+ and
+more likely to eat more than you normally would.
+* Order all dressings and marinades on the side and only use
+half. (they are often where most hidden calories get inflated).
+* Ask for =C2=BC the oil (it's easy in today's apps, you won=E2=80=99t noti=
+ce
+a difference in taste, and it can save you hundreds of calories)
+* Eat protein first in the meal
+* Take your time enjoying your meal. Your body takes
+approximately 20 minutes to process the food you eat. Oftentimes,
+you keep eating not because you=E2=80=99re hungry but simply because you
+eat too fat.
+
+Add it all up, and you don=E2=80=99t have to lose your mind or feel
+guilty after every takeout order.
+
+-------------------
+Workout of the Week
+-------------------
+
+Your body does NOT need weights to change; it requires
+resistance. When machines, dumbbells, and barbells are not
+available (or unwanted), your body weight can be used to create
+an amazingly effective workout that builds muscle.
+
+As we previously shared, research suggests (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/8ghqhohle5q8gxik/a=
+HR0cHM6Ly9wdWJtZWQubmNiaS5ubG0ubmloLmdvdi8yNTg1MzkxNC8=3D
+) that intensity =E2=80=94 not the amount of weight you use =E2=80=94 drive=
+s
+muscle growth. In other words, you can use heavier or lighter
+weights as long as you push yourself near the point of failure.
+
+To find the sweet spot with bodyweight exercises, try supersets,
+giant sets, and circuits to add more volume and use
+=E2=80=9Cself-limiting=E2=80=9D exercises. Self-limiting movements =E2=80=
+=94 like
+push-ups and inverted rows =E2=80=94 reduce your injury risk because when
+you can no longer complete any reps, you simply stop moving
+(without the fear of a barbell crushing you).
+
+Here=E2=80=99s an example of a bodyweight, muscle-building workout that
+will prioritize intensity, focus on self-limiting exercises, and
+move at a pace where you will exhaust your muscle and force them
+to grow.
+
+How to do it: Perform this workout as a giant set, meaning you=E2=80=99ll
+do one exercise after another, resting as little as possible
+between exercises. After you complete all the movements, rest for
+3 minutes, and then repeat another 2 to 4 times.
+
+1A. Inverted row: AMAP (=E2=80=9Cas many reps as possible,=E2=80=9D until y=
+ou
+can=E2=80=99t do them correctly)
+
+1B. Inverted row hold: 10 seconds (on your last rep of inverted
+rows, pull your chest to the bar, and squeeze your shoulder
+blades together, holding as long as possible)
+
+1C. Pushups: AMAP
+
+1D. Plank: 10 seconds (on your last rep of pushups, hold your
+body in the plank position, pushing down through your palms,
+creating tension in your arms, chest, and abs)
+
+1E. Alternating reverse lunges: 10-20 reps
+
+1F. Bodyweight squats: AMAP
+
+1G. Squat hold: 10 seconds (on your last rep of squats, lower
+your body and hold the bottom of the squat for 10 seconds)
+
+1H. Glute-hamstring walkouts: (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/l2hehmh35k6poot6/a=
+HR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj0wQVdkLVVQTGFDZw=3D=3D
+) 60 seconds
+
+Give it a try, and let us know how it goes!
+
+=E2=80=94
+
+Lift your friends up, get a personalized, signed copy of my
+Encyclopedia of Bodybuilding
+
+Help me with my fitness crusade and recruit new members. Share
+your referral link and if 2 people sign up for The Pump Daily,
+you=E2=80=99ll be entered to win a personalized, signed copy of my
+Encyclopedia of Bodybuilding. Five winners will be selected.
+
+Text or email this link to your friends to enter.
+
+https://sparklp.co/b630d72a/ (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/e0hph7h09nqzkqt8/a=
+HR0cHM6Ly9zcGFya2xwLmNvL2I2MzBkNzJhLw=3D=3D
+)
+
+facebook (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/p8heh9hzk7ge9mtq/a=
+HR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3NoYXJlci5waHA_dT1odHRwczovL3NwYXJrbHAuY28v=
+YjYzMGQ3MmEvJTNGdXRtX3NvdXJjZSUzRGZhY2Vib29r
+)
+twitter (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/9qhzhnhpk2z8g8s9/a=
+HR0cHM6Ly90d2l0dGVyLmNvbS9pbnRlbnQvdHdlZXQ_dGV4dD1JJUUyJTgwJTk5bSUyMG1vdmlu=
+ZyUyMGNsb3NlciUyMHRvJTIwbXklMjBnb2FscyUyMGJ5JTIwc3Vic2NyaWJpbmclMjB0byUyMCU=
+0MFNjaHdhcnplbmVnZ2VyJ3MlMjBQdW1wJTIwRGFpbHklMjBuZXdzbGV0dGVyLiUyMEpvaW4lMj=
+BtZSUzQSUwQSUwQWh0dHBzOi8vc3BhcmtscC5jby9iNjMwZDcyYS8lM0Z1dG1fc291cmNlJTNEd=
+HdpdHRlcg=3D=3D
+)
+whatsapp (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/48hvhehrz263r5tx/a=
+HR0cHM6Ly9hcGkud2hhdHNhcHAuY29tL3NlbmQ_dGV4dD1JJUUyJTgwJTk5bSUyMG1vdmluZyUy=
+MGNsb3NlciUyMHRvJTIwbXklMjBnb2FscyUyMGJ5JTIwc3Vic2NyaWJpbmclMjB0byUyMEFybm9=
+sZCUyMFNjaHdhcnplbmVnZ2VyJ3MlMjBQdW1wJTIwRGFpbHklMjBuZXdzbGV0dGVyLiUyMEpvaW=
+4lMjBtZSUzQSUwQSUwQWh0dHBzOi8vc3BhcmtscC5jby9iNjMwZDcyYS8lM0Z1dG1fc291cmNlJ=
+TNEd2hhdHNhcHA=3D
+)
+
+PS: You have referred 0 people so far
+
+Publisher: Arnold Schwarzenegger (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/8ghqhohle5q8lxbk/a=
+HR0cHM6Ly9jbGljay5jb252ZXJ0a2l0LW1haWwuY29tL3psdW5lMnI1djJibmg0ODI3cmRzcC94=
+MGhwaDZobm1lN3Z3bGY1L2FIUjBjSE02THk5amJHbGpheTVqYjI1MlpYSjBhMmwwTFcxaGFXd3V=
+ZMjl0THpNNGRUaHliSHB2WjJ4aGEyaHZibnBrZWpKaWNpODFPR2gyYURkb05UUjNNekI2WjNRMk=
+wyRklVakJqU0UwMlRIazVNR1F5YkRCa1IxWjVURzFPZG1KVE9WUlpNbWd6V1ZoS05scFhOV3hhT=
+W1Sc1kyYzlQUT09
+)=E2=80=8B
+
+Editors-in-chief: Adam Bornstein (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/dpheh0h0z78x0ehm/a=
+HR0cHM6Ly9jbGljay5jb252ZXJ0a2l0LW1haWwuY29tL3psdW5lMnI1djJibmg0ODI3cmRzcC82=
+cWhlaDhocDRsMjg3MmhvL2FIUjBjSE02THk5amJHbGpheTVqYjI1MlpYSjBhMmwwTFcxaGFXd3V=
+ZMjl0THpNNGRUaHliSHB2WjJ4aGEyaHZibnBrZWpKaWNpOHlOV2d5YUc5b04zRjRiR2RsTkdFek=
+wyRklVakJqU0UwMlRIazVNR1F5YkRCa1IxWjVURzFPZG1KVE9VTmlNMHAxVW0xc01HSnRWbnBqZ=
+HowOQ=3D=3D
+) & Daniel Ketchell (
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/7qh7h8hov4weozbz/a=
+HR0cHM6Ly9jbGljay5jb252ZXJ0a2l0LW1haWwuY29tL3psdW5lMnI1djJibmg0ODI3cmRzcC9r=
+a2htaDZoOHBuOTBsOGhsL2FIUjBjSE02THk5amJHbGpheTVqYjI1MlpYSjBhMmwwTFcxaGFXd3V=
+ZMjl0THpNNGRUaHliSHB2WjJ4aGEyaHZibnBrZWpKaWNpOXhkbWc0YURkb09Hd3paWFl3Ym1oc0=
+wyRklVakJqU0UwMlRIazVNR1F5YkRCa1IxWjVURzFPZG1KVE9YSmFXRkpxWVVFOVBRPT0=3D
+)=E2=80=8B
+
+=E2=80=8B
+
+(
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/p8heh9hzk7gezmuq/a=
+HR0cHM6Ly93d3cuZmFjZWJvb2suY29tL2Fybm9sZA=3D=3D
+)=E2=80=8B
+(
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/6qheh8h7v2n47eio/a=
+HR0cHM6Ly93d3cucmVkZGl0LmNvbS91c2VyL2dvdnNjaHdhcnplbmVnZ2Vy
+)=E2=80=8B
+(
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/kkhmh6hlg96plqil/a=
+HR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9zY2h3YXJ6ZW5lZ2dlci8=3D
+)=E2=80=8B
+(
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/25h2hoh2ro4x2kb3/a=
+HR0cHM6Ly90d2l0dGVyLmNvbS9TY2h3YXJ6ZW5lZ2dlcg=3D=3D
+)=E2=80=8B
+=E2=80=8B
+
+=E2=80=8BUnsubscribe (
+https://unsubscribe.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0 )
+| Update your profile (
+https://preferences.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0 )
+| 113 Cherry St #92768, Seattle, WA 98104-2205
+
+=E2=80=8B
+
+=E2=80=8B
+--fa5f9e62fc964513a581230f88ad50491bf60b0db7647676e6bfba157238
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>@media (max-width:600px) { table.email-image { float: none; !importa=
+nt; } }
+@media (max-width:600px) { table.email-image { float: none; !important; } }
+@media (max-width:600px) { table.email-image { float: none; !important; } }
+@media (max-width:600px) { table.email-image { float: none; !important; } }
+@media only screen and (max-width:500px) {
+
+.spaced-contents {
+  padding: 0 30px !important;
+ }
+
+.email-header {
+  margin-top: 0 !important;
+ }
+
+.email-body {
+margin: auto 0px !important;
+padding: 0px !important;
+}
+td {
+  padding: 0px !important;
+}
+.email-container thin {
+    padding: 0px !important;
+}
+.email-body-footer {
+display: inline-flex !important;
+}
+.html-template .email-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+ }
+
+ .email-content {
+   padding: 0px !important;
+ }
+}</style>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<style>email-button:hover{background-color:#9d1313}</style>
+</head>
+<body style=3D"margin:0;padding:0;-webkit-font-smoothing:antialiased;-ms-te=
+xt-size-adjust:100%;-webkit-text-size-adjust:100%">
+<div id=3D"preview-text">
+          <span style=3D"display: none; max-height: 0; overflow: hidden;">
+            Welcome to the positive corner of wellness.
+          </span>
+
+          <span style=3D"display: none; max-height: 0; overflow: hidden;">
+            =C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=
+=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C
+          </span>
+        </div>
+<div style=3D"background-color:#ffffff"><table role=3D"presentation" cellpa=
+dding=3D"0" cellspacing=3D"0" class=3D"email" style=3D"border-collapse:sepa=
+rate;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#ffffff;wid=
+th:100%" bgcolor=3D"#ffffff"><tbody><tr>
+<td style=3D"vertical-align:top"><div class=3D"email-container full" style=
+=3D"margin:0 auto;padding:30px 0;padding-left:0;padding-right:0;max-width:1=
+00%;padding-top:30px;padding-left:0;padding-bottom:30px;padding-right:0;mar=
+gin:0 auto;max-width:100%">
+<div class=3D"email-header" style=3D"height:40px !important;margin-top:-50p=
+x !important">
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5;display:none !important;text-align:center">=E2=80=8B</p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;tab=
+le-layout:fixed" class=3D"email-image"><tbody><tr><td align=3D"center" styl=
+e=3D"vertical-align:top"><figure style=3D"margin:1em 0;display:block;margin=
+:12px 0;max-width:100%;width:450px"><div style=3D"display:block;max-width:4=
+50px"><img src=3D"https://embed.filekitcdn.com/e/3VFjqsbMRrzoeb4zD9fsDP/9V4=
+r3HrQvW5rs4XiQ4chCD?w=3D800&amp;fit=3Dmax" width=3D"450" style=3D"border:0 =
+none;display:block;height:auto;line-height:100%;outline:none;-webkit-text-d=
+ecoration:none;text-decoration:none;max-width:100%;width:450px;max-width:10=
+0%;border-radius:4px"></div>
+<figcaption style=3D"margin-top:0.4em;font-size:0.8em;text-align:center;dis=
+play:none">=E2=80=8B</figcaption></figure></td></tr></tbody></table>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5;display:none !important">=E2=80=8B</p>
+</div>
+<!--[if mso]><center><table cellpadding=3D"0" cellspacing=3D"0" align=3D"ce=
+nter" style=3D"" width=3D"600" bgcolor=3D"#ffffff"><tr><td><![endif]--><div=
+ style=3D"background-color:#ffffff;border-radius:4px;overflow:hidden;max-wi=
+dth:600;margin:0px auto"><table bgcolor=3D"#ffffff" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" style=3D"border-collapse:separate;mso-table-lsp=
+ace:0pt;mso-table-rspace:0pt;table-layout:fixed"><tbody><tr><td style=3D"ve=
+rtical-align:top;padding:20px">
+<div class=3D"email-body" style=3D"background-color:#ffffff">
+<div class=3D"email-content"><div class=3D"spaced-contents">
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">=E2=80=8B</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Welcome to the positive corner of wellness. Here=E2=80=99s a daily dige=
+st designed to make you healthier in less than 5 minutes. If you were forwa=
+rded this message, you can get <a href=3D"https://click.convertkit-mail4.co=
+m/n4uvpd4z8kuvh8nggeni0/wnh2hghw9oxdrkt7/aHR0cHM6Ly9zY2h3YXJ6ZW5lZ2dlci5jay=
+5wYWdlLzA5NDNjYTVlMTM=3D" target=3D"_blank" rel=3D"noopener noreferrer" sty=
+le=3D"color:#9d1313" url-id=3D"1530965546">the free daily email here.</a>=
+=E2=80=8B</p>
+<h2 style=3D"font-weight:bold;font-style:normal;font-size:1em;margin:0;font=
+-size:1.5em;margin:1em 0;font-family:Arial,-apple-system,BlinkMacSystemFont=
+,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif=
+;color:#000000;line-height:1"><strong>Today=E2=80=99s Health Upgrade</stron=
+g></h2>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;font-size:18px;line-height:1.5em;font-family:Georgia,Times,'Times New Rom=
+an',serif;color:#000000;font-size:16px;line-height:1.5;list-style-position:=
+outside !important;list-style-position:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Arnold=E2=80=99s Monday motivation</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>The takeout diet</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Workout of the week</span></li>
+</ul>
+<h2 style=3D"font-weight:bold;font-style:normal;font-size:1em;margin:0;font=
+-size:1.5em;margin:1em 0;font-family:Arial,-apple-system,BlinkMacSystemFont=
+,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif=
+;color:#000000;line-height:1">Monday Motivation With Arnold</h2>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Years ago, before I was the Arnold you know now, I ran into Henry Kissi=
+nger (former Secretary of State, National Security Advisor, and Nobel Peace=
+ Prize winner). He was probably like I am for many of you =E2=80=94 someone=
+ I saw on TV all the time. I read whatever he wrote, and I was blown away b=
+y his intelligence. It was a big deal for me, so I had to use my opportunit=
+y to ask him a question.</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">=E2=80=9CHow are you so calm and collected in all of your interviews?=
+=E2=80=9D</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">He gave me advice I=E2=80=99d never forget. =E2=80=9CArnold, the trick =
+is, I start out by asking the interviewer questions. I show that I=E2=80=99=
+m curious about them and want to know about their life. It throws them off =
+wanting to interrogate me and it also puts my mind at ease since now it isn=
+=E2=80=99t an interview where I=E2=80=99m waiting nervously for the first q=
+uestion; it=E2=80=99s just a regular conversation.=E2=80=9D</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5"><strong>Last week I talked about listening to people because sometimes =
+they need to be heard. This week, I want you to try to go a step further: b=
+e curious about people. You never know what you=E2=80=99ll learn. </strong>=
+</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">As a bonus, when you go on the offensive and start asking other people =
+questions, you=E2=80=99ll find it eases any anxiety you might have about co=
+nversation or even a job interview. It=E2=80=99s a skill that will help you=
+ in all aspects of your life. I=E2=80=99ve been lucky to meet almost all of=
+ my heroes =E2=80=94 from Nelson Mandela to Mikhail Gorbachev =E2=80=94 and=
+ one thing they have in common is never-ending curiosity. They=E2=80=99re a=
+lways hungry for more information. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">A few years after my conversation with Kissinger, I had a big interview=
+: I was sitting down with Barbara Walters for the first time. While we were=
+ getting settled, I said, =E2=80=9CWho is one of your favorite interviews?=
+=E2=80=9D</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Barbara lit up, and she told me that Henry Kissinger was a fantastic in=
+terview. She went on and on about how he always wanted to know everything a=
+bout her, and we both relaxed more as we laughed about it. I couldn=E2=80=
+=99t help but start the interview with a smile; the only reason we were tal=
+king about Kissinger was that I=E2=80=99d started out by using what I=E2=80=
+=99d learned from him. I=E2=80=99d become the questioner. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Spend this week being as curious as you can, and tell me how it works o=
+ut for you. Stay hungry.</p>
+<h2 style=3D"font-weight:bold;font-style:normal;font-size:1em;margin:0;font=
+-size:1.5em;margin:1em 0;font-family:Arial,-apple-system,BlinkMacSystemFont=
+,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif=
+;color:#000000;line-height:1">The takeout diet</h2>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">We don=E2=80=99t need to tell you that 2020 changed a lot of things. Bu=
+t a subtle shift in how we eat is impacting our health. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">People are ordering more takeout and drive-through meals than ever. Del=
+ivery is up more than 5 percent, and drive-through is up 13 percent, accord=
+ing to the National Restaurant Association. And the data suggests these eat=
+ing habits have a cost.</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5"><strong>Eating one meal away from home per week translates to adding ro=
+ughly two extra pounds each year, according to USDA research.</strong></p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">This <em>doesn=E2=80=99t</em> mean you have to avoid restaurants. But i=
+t does mean a little bit of strategy can make a big difference. <strong>One=
+ study found that participants who were given nutrition strategies lost 4 p=
+ounds despite </strong><em><strong>not</strong></em><strong> eating takeout=
+ less often. </strong></p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">The ability to <a href=3D"https://click.convertkit-mail4.com/n4uvpd4z8k=
+uvh8nggeni0/reh8hoh095wpq7s2/aHR0cHM6Ly93d3cuYW1hem9uLmNvbS9Zb3UtQ2FudC1TY3=
+Jldy1UaGlzLVVwL2RwLzAwNjMyMzA1NzcvcmVmPXRtbV9ocmRfc3dhdGNoXzA_X2VuY29kaW5nP=
+VVURjgmcWlkPSZzcj0=3D" target=3D"_blank" rel=3D"noopener noreferrer" style=
+=3D"color:#9d1313" url-id=3D"1530965547">take the stress out of eating</a> =
+=E2=80=94 and not avoid everything you love =E2=80=94 can be a life-changin=
+g decision that makes it easier to stick to your plan. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Here are a few things that can help: </p>
+<ul class=3D"unordered_list" style=3D"margin:1em 0;margin-left:1em;padding:=
+0;font-size:18px;line-height:1.5em;font-family:Georgia,Times,'Times New Rom=
+an',serif;color:#000000;font-size:16px;line-height:1.5;list-style-position:=
+outside !important;list-style-position:inside">
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Don=E2=80=99t skip meals when you have takeout. Some people try to =
+=E2=80=9Csave room=E2=80=9D for delivery, but that just leaves you hungrier=
+ and more likely to eat more than you normally would. </span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Order all dressings and marinades on the side and only use half. (t=
+hey are often where most hidden calories get inflated). </span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Ask for =C2=BC the oil (it's easy in today's apps, you won=E2=80=99=
+t notice a difference in taste, and it can save you hundreds of calories)</=
+span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Eat protein first in the meal</span></li>
+<li class=3D"list_item" style=3D"padding:0 0 0 1em;margin:0;margin-left:1em=
+"><span>Take your time enjoying your meal. Your body takes approximately 20=
+ minutes to process the food you eat. Oftentimes, you keep eating not becau=
+se you=E2=80=99re hungry but simply because you eat too fat. </span></li>
+</ul>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Add it all up, and you don=E2=80=99t have to lose your mind or feel gui=
+lty after every takeout order. </p>
+<h2 style=3D"font-weight:bold;font-style:normal;font-size:1em;margin:0;font=
+-size:1.5em;margin:1em 0;font-family:Arial,-apple-system,BlinkMacSystemFont=
+,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif=
+;color:#000000;line-height:1">Workout of the Week</h2>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5"><strong>Your body does NOT need weights to change; it requires resistan=
+ce.</strong> When machines, dumbbells, and barbells are not available (or u=
+nwanted), your body weight can be used to create an amazingly effective wor=
+kout that builds muscle. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">As we previously shared, <a href=3D"https://click.convertkit-mail4.com/=
+n4uvpd4z8kuvh8nggeni0/8ghqhohle5q8gxik/aHR0cHM6Ly9wdWJtZWQubmNiaS5ubG0ubmlo=
+Lmdvdi8yNTg1MzkxNC8=3D" target=3D"_blank" rel=3D"noopener noreferrer" style=
+=3D"color:#9d1313" url-id=3D"1530965549"><u>research suggests</u></a> that =
+intensity =E2=80=94 not the amount of weight you use =E2=80=94 drives muscl=
+e growth. In other words, you can use heavier or lighter weights as long as=
+ you push yourself near the point of failure. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">To find the sweet spot with bodyweight exercises, try supersets, giant =
+sets, and circuits to add more volume and use =E2=80=9Cself-limiting=E2=80=
+=9D exercises. Self-limiting movements =E2=80=94 like push-ups and inverted=
+ rows =E2=80=94 reduce your injury risk because when you can no longer comp=
+lete any reps, you simply stop moving (without the fear of a barbell crushi=
+ng you). </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Here=E2=80=99s an example of a bodyweight, muscle-building workout that=
+ will prioritize intensity, focus on self-limiting exercises, and move at a=
+ pace where you will exhaust your muscle and force them to grow. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5"><strong>How to do it:</strong> Perform this workout as a giant set, mea=
+ning you=E2=80=99ll do one exercise after another, resting as little as pos=
+sible between exercises. After you complete all the movements, rest for 3 m=
+inutes, and then repeat another 2 to 4 times. </p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1A. Inverted row: AMAP (=E2=80=9Cas many reps as possible,=E2=80=9D unt=
+il you can=E2=80=99t do them correctly)</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1B. Inverted row hold: 10 seconds (on your last rep of inverted rows, p=
+ull your chest to the bar, and squeeze your shoulder blades together, holdi=
+ng as long as possible)</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1C. Pushups: AMAP</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1D. Plank: 10 seconds (on your last rep of pushups, hold your body in t=
+he plank position, pushing down through your palms, creating tension in you=
+r arms, chest, and abs)</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1E. Alternating reverse lunges: 10-20 reps</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1F. Bodyweight squats: AMAP</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1G. Squat hold: 10 seconds (on your last rep of squats, lower your body=
+ and hold the bottom of the squat for 10 seconds)</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">1H. <a href=3D"https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0=
+/l2hehmh35k6poot6/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj0wQVdkLVVQTGFDZ=
+w=3D=3D" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"color:#9d13=
+13" url-id=3D"1530965551"><u>Glute-hamstring walkouts:</u></a> 60 seconds <=
+/p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Give it a try, and let us know how it goes!</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">=E2=80=94</p>
+<div><table style=3D"border-collapse:separate;mso-table-lspace:0pt;mso-tabl=
+e-rspace:0pt;width: 100%; margin-bottom: 10px;" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0"><tr><td align=3D"center" style=3D"ver=
+tical-align:top;word-break: break-word; vertical-align: top; padding: 5px 0=
+;"><table style=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table-=
+rspace:0pt;width: 100%; max-width: 550px; padding: 5px 0;" width=3D"550" ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr><td align=3D"center" style=3D"vertical-align:top"><img src=3D"https://d=
+ash.sparkloop.app/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVz=
+c2FnZSI6IkJBaHBBbmxBIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c83b25dd44004=
+db61ad15f15b963cac91ff648d8/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemF=
+YcGxTU0lPTmpBd1BuZzJNREErQmpvR1JWUT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbi=
+J9fQ=3D=3D--34db79a64dacf53e5c67131c1356ae91aef13871/image0.jpg" style=3D"b=
+order:0 none;display:block;height:auto;line-height:100%;outline:none;-webki=
+t-text-decoration:none;text-decoration:none;max-width:100%;text-decoration:=
+ none; height: auto; border: 0px; max-height: 250px; max-width: 100%;"></td=
+></tr>
+<tr><td align=3D"center" style=3D"vertical-align:top;padding: 25px 10px 10p=
+x;"><p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:G=
+eorgia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-heig=
+ht:1.5;padding: 0; margin: 0; font-size: 22px; color: #000000; line-height:=
+ 1.6; font-weight: bold;">Lift your friends up, get a personalized, signed =
+copy of my Encyclopedia of Bodybuilding</p></td></tr>
+<tr><td align=3D"center" style=3D"vertical-align:top;padding: 0px 10px 15px=
+;"><p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Ge=
+orgia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-heigh=
+t:1.5;padding: 0; margin:0; line-height: 1.2; font-size: 16px; color: #0000=
+00">Help me with my fitness crusade and recruit new members. Share your ref=
+erral link and if 2 people sign up for The Pump Daily, you=E2=80=99ll be en=
+tered to win a personalized, signed copy of my Encyclopedia of Bodybuilding=
+. Five winners will be selected.<br><br>Text or email this link to your fri=
+ends to enter.</p></td></tr>
+<tr><td align=3D"center" style=3D"vertical-align:top;padding: 10px;"><p sty=
+le=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georgia,Tim=
+es,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1.5;pad=
+ding: 0; margin: 0; font-size: 16px; color: #ff230a; line-height: 1.2"><a s=
+tyle=3D"color:#9d1313;color: #ff230a; text-decoration: underline;" href=3D"=
+https://click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/e0hph7h09nqzkqt8/a=
+HR0cHM6Ly9zcGFya2xwLmNvL2I2MzBkNzJhLw=3D=3D" url-id=3D"1530965554">https://=
+sparklp.co/b630d72a/</a></p></td></tr>
+<tr><td align=3D"center" style=3D"vertical-align:top;padding: 10px;"><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse:=
+separate;mso-table-lspace:0pt;mso-table-rspace:0pt"><tr>
+<td style=3D"vertical-align:top;padding: 0 10px 10px 0;"><a href=3D"https:/=
+/click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/p8heh9hzk7ge9mtq/aHR0cHM6=
+Ly93d3cuZmFjZWJvb2suY29tL3NoYXJlci5waHA_dT1odHRwczovL3NwYXJrbHAuY28vYjYzMGQ=
+3MmEvJTNGdXRtX3NvdXJjZSUzRGZhY2Vib29r" style=3D"color:#9d1313;display: bloc=
+k; padding: 0px; width: 40px; height: 40px; border-radius: 5px; text-decora=
+tion: none; background-color: #ff0f0f; background-image: url('https://spark=
+loop-static-images.s3-us-west-1.amazonaws.com/facebook.png'); background-re=
+peat: no-repeat; background-size: auto 19px; background-position: center ce=
+nter;line-height: 1; color: transparent; text-indent: -99999px;" title=3D"S=
+hare via facebook" url-id=3D"1530965558">facebook</a></td>
+<td style=3D"vertical-align:top;padding: 0 10px 10px 0;"><a href=3D"https:/=
+/click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/9qhzhnhpk2z8g8s9/aHR0cHM6=
+Ly90d2l0dGVyLmNvbS9pbnRlbnQvdHdlZXQ_dGV4dD1JJUUyJTgwJTk5bSUyMG1vdmluZyUyMGN=
+sb3NlciUyMHRvJTIwbXklMjBnb2FscyUyMGJ5JTIwc3Vic2NyaWJpbmclMjB0byUyMCU0MFNjaH=
+dhcnplbmVnZ2VyJ3MlMjBQdW1wJTIwRGFpbHklMjBuZXdzbGV0dGVyLiUyMEpvaW4lMjBtZSUzQ=
+SUwQSUwQWh0dHBzOi8vc3BhcmtscC5jby9iNjMwZDcyYS8lM0Z1dG1fc291cmNlJTNEdHdpdHRl=
+cg=3D=3D" style=3D"color:#9d1313;display: block; padding: 0px; width: 40px;=
+ height: 40px; border-radius: 5px; text-decoration: none; background-color:=
+ #ff0f0f; background-image: url('https://sparkloop-static-images.s3-us-west=
+-1.amazonaws.com/twitter.png'); background-repeat: no-repeat; background-si=
+ze: auto 19px; background-position: center center;line-height: 1; color: tr=
+ansparent; text-indent: -99999px;" title=3D"Share via twitter" url-id=3D"15=
+30965566">twitter</a></td>
+<td style=3D"vertical-align:top;padding: 0px 0px 10px;"><a href=3D"https://=
+click.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0/48hvhehrz263r5tx/aHR0cHM6L=
+y9hcGkud2hhdHNhcHAuY29tL3NlbmQ_dGV4dD1JJUUyJTgwJTk5bSUyMG1vdmluZyUyMGNsb3Nl=
+ciUyMHRvJTIwbXklMjBnb2FscyUyMGJ5JTIwc3Vic2NyaWJpbmclMjB0byUyMEFybm9sZCUyMFN=
+jaHdhcnplbmVnZ2VyJ3MlMjBQdW1wJTIwRGFpbHklMjBuZXdzbGV0dGVyLiUyMEpvaW4lMjBtZS=
+UzQSUwQSUwQWh0dHBzOi8vc3BhcmtscC5jby9iNjMwZDcyYS8lM0Z1dG1fc291cmNlJTNEd2hhd=
+HNhcHA=3D" style=3D"color:#9d1313;display: block; padding: 0px; width: 40px=
+; height: 40px; border-radius: 5px; text-decoration: none; background-color=
+: #ff0f0f; background-image: url('https://sparkloop-static-images.s3-us-wes=
+t-1.amazonaws.com/whatsapp.png'); background-repeat: no-repeat; background-=
+size: auto 19px; background-position: center center;line-height: 1; color: =
+transparent; text-indent: -99999px;" title=3D"Share via whatsapp" url-id=3D=
+"1530965569">whatsapp</a></td>
+</tr></table></td></tr>
+<tr><td align=3D"center" style=3D"vertical-align:top;padding: 10px;"><p sty=
+le=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georgia,Tim=
+es,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1.5;pad=
+ding: 0; margin: 0; line-height: 1.2; font-size: 16px; color: #000000">PS: =
+You have referred 0 people so far</p></td></tr>
+<tr></tr>
+<tr></tr>
+</table></td></tr></table></div>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Publisher: <a href=3D"https://click.convertkit-mail4.com/n4uvpd4z8kuvh8=
+nggeni0/8ghqhohle5q8lxbk/aHR0cHM6Ly9jbGljay5jb252ZXJ0a2l0LW1haWwuY29tL3psdW=
+5lMnI1djJibmg0ODI3cmRzcC94MGhwaDZobm1lN3Z3bGY1L2FIUjBjSE02THk5amJHbGpheTVqY=
+jI1MlpYSjBhMmwwTFcxaGFXd3VZMjl0THpNNGRUaHliSHB2WjJ4aGEyaHZibnBrZWpKaWNpODFP=
+R2gyYURkb05UUjNNekI2WjNRMkwyRklVakJqU0UwMlRIazVNR1F5YkRCa1IxWjVURzFPZG1KVE9=
+WUlpNbWd6V1ZoS05scFhOV3hhTW1Sc1kyYzlQUT09" target=3D"_blank" rel=3D"noopene=
+r noreferrer" style=3D"color:#9d1313" url-id=3D"1530965573"><u>Arnold Schwa=
+rzenegger</u></a>=E2=80=8B</p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">Editors-in-chief: <a href=3D"https://click.convertkit-mail4.com/n4uvpd4=
+z8kuvh8nggeni0/dpheh0h0z78x0ehm/aHR0cHM6Ly9jbGljay5jb252ZXJ0a2l0LW1haWwuY29=
+tL3psdW5lMnI1djJibmg0ODI3cmRzcC82cWhlaDhocDRsMjg3MmhvL2FIUjBjSE02THk5amJHbG=
+pheTVqYjI1MlpYSjBhMmwwTFcxaGFXd3VZMjl0THpNNGRUaHliSHB2WjJ4aGEyaHZibnBrZWpKa=
+WNpOHlOV2d5YUc5b04zRjRiR2RsTkdFekwyRklVakJqU0UwMlRIazVNR1F5YkRCa1IxWjVURzFP=
+ZG1KVE9VTmlNMHAxVW0xc01HSnRWbnBqZHowOQ=3D=3D" target=3D"_blank" rel=3D"noop=
+ener noreferrer" style=3D"color:#9d1313" url-id=3D"1530965577"><u>Adam Born=
+stein</u></a> &amp; <a href=3D"https://click.convertkit-mail4.com/n4uvpd4z8=
+kuvh8nggeni0/7qh7h8hov4weozbz/aHR0cHM6Ly9jbGljay5jb252ZXJ0a2l0LW1haWwuY29tL=
+3psdW5lMnI1djJibmg0ODI3cmRzcC9ra2htaDZoOHBuOTBsOGhsL2FIUjBjSE02THk5amJHbGph=
+eTVqYjI1MlpYSjBhMmwwTFcxaGFXd3VZMjl0THpNNGRUaHliSHB2WjJ4aGEyaHZibnBrZWpKaWN=
+pOXhkbWc0YURkb09Hd3paWFl3Ym1oc0wyRklVakJqU0UwMlRIazVNR1F5YkRCa1IxWjVURzFPZG=
+1KVE9YSmFXRkpxWVVFOVBRPT0=3D" target=3D"_blank" rel=3D"noopener noreferrer"=
+ style=3D"color:#9d1313" url-id=3D"1530965579"><u>Daniel Ketchell</u></a><e=
+m>=E2=80=8B</em></p>
+</div></div>
+<div class=3D"email-body-footer" style=3D"border-top:1px dotted #888;paddin=
+g:20px;font-family:Helvetica,Arial,sans-serif;color:#aaa;font-size:12px">
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5;text-align:center"><span style=3D"font-size:11px">=E2=80=8B</span></p>
+<table width=3D"47" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;tabl=
+e-layout:fixed" align=3D"left" class=3D"email-image"><tbody><tr><td align=
+=3D"left" style=3D"vertical-align:top"><figure style=3D"margin:1em 0;displa=
+y:block;margin:0 15px 15px 0;max-width:100%;width:32px"><a style=3D"color:#=
+9d1313;display:block;max-width:32px" href=3D"https://click.convertkit-mail4=
+.com/n4uvpd4z8kuvh8nggeni0/p8heh9hzk7gezmuq/aHR0cHM6Ly93d3cuZmFjZWJvb2suY29=
+tL2Fybm9sZA=3D=3D" target=3D"_blank" rel=3D"noopener noreferrer" url-id=3D"=
+1530965582"><img src=3D"https://embed.filekitcdn.com/e/3VFjqsbMRrzoeb4zD9fs=
+DP/6ZG5EVYr8tfJLtAkDnTQf2/email" width=3D"32" style=3D"display:block;height=
+:auto;line-height:100%;outline:none;-webkit-text-decoration:none;text-decor=
+ation:none;max-width:100%;border:0 none;width:32px;max-width:100%;border-ra=
+dius:4px"></a><figcaption style=3D"margin-top:0.4em;font-size:0.8em;text-al=
+ign:center;display:none">=E2=80=8B</figcaption></figure></td></tr></tbody><=
+/table>
+<table width=3D"47" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;tabl=
+e-layout:fixed" align=3D"left" class=3D"email-image"><tbody><tr><td align=
+=3D"left" style=3D"vertical-align:top"><figure style=3D"margin:1em 0;displa=
+y:block;margin:0 15px 15px 0;max-width:100%;width:32px"><a style=3D"color:#=
+9d1313;display:block;max-width:32px" href=3D"https://click.convertkit-mail4=
+.com/n4uvpd4z8kuvh8nggeni0/6qheh8h7v2n47eio/aHR0cHM6Ly93d3cucmVkZGl0LmNvbS9=
+1c2VyL2dvdnNjaHdhcnplbmVnZ2Vy" target=3D"_blank" rel=3D"noopener noreferrer=
+" url-id=3D"1530965584"><img src=3D"https://embed.filekitcdn.com/e/3VFjqsbM=
+Rrzoeb4zD9fsDP/tLatFKwidNWhStUkdURPSf/email" width=3D"32" style=3D"display:=
+block;height:auto;line-height:100%;outline:none;-webkit-text-decoration:non=
+e;text-decoration:none;max-width:100%;border:0 none;width:32px;max-width:10=
+0%;border-radius:4px"></a><figcaption style=3D"margin-top:0.4em;font-size:0=
+.8em;text-align:center;display:none">=E2=80=8B</figcaption></figure></td></=
+tr></tbody></table>
+<table width=3D"47" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;tabl=
+e-layout:fixed" align=3D"left" class=3D"email-image"><tbody><tr><td align=
+=3D"left" style=3D"vertical-align:top"><figure style=3D"margin:1em 0;displa=
+y:block;margin:0 15px 15px 0;max-width:100%;width:32px"><a style=3D"color:#=
+9d1313;display:block;max-width:32px" href=3D"https://click.convertkit-mail4=
+.com/n4uvpd4z8kuvh8nggeni0/kkhmh6hlg96plqil/aHR0cHM6Ly93d3cuaW5zdGFncmFtLmN=
+vbS9zY2h3YXJ6ZW5lZ2dlci8=3D" target=3D"_blank" rel=3D"noopener noreferrer" =
+url-id=3D"1530965585"><img src=3D"https://embed.filekitcdn.com/e/3VFjqsbMRr=
+zoeb4zD9fsDP/P32v7wTNaAn6vAQpjhyv3/email" width=3D"32" style=3D"display:blo=
+ck;height:auto;line-height:100%;outline:none;-webkit-text-decoration:none;t=
+ext-decoration:none;max-width:100%;border:0 none;width:32px;max-width:100%;=
+border-radius:4px"></a><figcaption style=3D"margin-top:0.4em;font-size:0.8e=
+m;text-align:center;display:none">=E2=80=8B</figcaption></figure></td></tr>=
+</tbody></table>
+<table width=3D"47" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=
+=3D"border-collapse:separate;mso-table-lspace:0pt;mso-table-rspace:0pt;tabl=
+e-layout:fixed" align=3D"left" class=3D"email-image"><tbody><tr><td align=
+=3D"left" style=3D"vertical-align:top"><figure style=3D"margin:1em 0;displa=
+y:block;margin:0 15px 15px 0;max-width:100%;width:32px"><a style=3D"color:#=
+9d1313;display:block;max-width:32px" href=3D"https://click.convertkit-mail4=
+.com/n4uvpd4z8kuvh8nggeni0/25h2hoh2ro4x2kb3/aHR0cHM6Ly90d2l0dGVyLmNvbS9TY2h=
+3YXJ6ZW5lZ2dlcg=3D=3D" target=3D"_blank" rel=3D"noopener noreferrer" url-id=
+=3D"1530965587"><img src=3D"https://embed.filekitcdn.com/e/3VFjqsbMRrzoeb4z=
+D9fsDP/3zNQdtJUEs2sXsc7PPRhoy/email" width=3D"32" style=3D"display:block;he=
+ight:auto;line-height:100%;outline:none;-webkit-text-decoration:none;text-d=
+ecoration:none;max-width:100%;border:0 none;width:32px;max-width:100%;borde=
+r-radius:4px"></a><figcaption style=3D"margin-top:0.4em;font-size:0.8em;tex=
+t-align:center;display:none">=E2=80=8B</figcaption></figure></td></tr></tbo=
+dy></table>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5;text-align:center">=E2=80=8B</p>
+</div>
+</div>
+<div class=3D"email-footer">
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5;text-align:center">=E2=80=8B<a href=3D"https://unsubscribe.convertkit-ma=
+il4.com/n4uvpd4z8kuvh8nggeni0" target=3D"_blank" rel=3D"noopener noreferrer=
+" style=3D"color:#9d1313"><span style=3D"font-size:11px">Unsubscribe</span>=
+</a><span style=3D"font-size:11px"> | </span><a href=3D"https://preferences=
+.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0" target=3D"_blank" rel=3D"noope=
+ner noreferrer" style=3D"color:#9d1313"><span style=3D"font-size:11px">Upda=
+te your profile</span></a><span style=3D"font-size:11px">  | 113 Cherry St =
+#92768, Seattle, WA 98104-2205</span></p>
+<div></div>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5;text-align:center"><span style=3D"font-size:11px">=E2=80=8B</span></p>
+<p style=3D"margin:1em 0;font-size:18px;line-height:1.5em;font-family:Georg=
+ia,Times,'Times New Roman',serif;color:#000000;font-size:16px;line-height:1=
+.5">=E2=80=8B</p>
+</div>
+</td></tr></tbody></table></div>
+<!--[if mso]></td></tr></table></center><![endif]-->
+</div></td>
+<td style=3D"vertical-align:top"></td>
+</tr></tbody></table></div>
+<!-- -->
+<img src=3D"https://open.convertkit-mail4.com/n4uvpd4z8kuvh8nggeni0" alt=3D=
+"" style=3D"border:0 none;display:block;height:auto;line-height:100%;outlin=
+e:none;-webkit-text-decoration:none;text-decoration:none;max-width:100%">
+</body>
+</html>
+
+--fa5f9e62fc964513a581230f88ad50491bf60b0db7647676e6bfba157238--

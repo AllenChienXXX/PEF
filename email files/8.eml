@@ -1,0 +1,865 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp1612376dyf;
+        Mon, 20 Mar 2023 07:20:07 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AK7set/hbOqASDSr4boFO86pOynEAMnABr1WIFLlmM/J8ImYQaSW8u4v8GqASecZTeVjw+94jy1E
+X-Received: by 2002:a17:902:c40c:b0:19f:2dff:21a4 with SMTP id
+ k12-20020a170902c40c00b0019f2dff21a4mr19724970plk.16.1679322006770;
+        Mon, 20 Mar 2023 07:20:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1679322006; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tL9t+EFOuhtGURDhj3Bn5Bn15jv1HFsAQM9umURmvIA5OBzSwz9RGhDqA0HXEQBUhw
+         Yi+MtfApMybklcKz3AArQV5bWBpGF5sBXz2qRg4fOH2qlCXTvUD4d65X8+AzCbjRz4xI
+         3crlrkyzECVmt9UtDJ6haUuKpe6KOEafgIIbLJIx1lBi0aKGunW7bUKQG+oPO1pxvp4x
+         C5uOi3KeRsV75Q9d4E0HbwqsOQBUxfRMs1Liq7OhgQKGfy4T/CXRZXoKi4cZxaCLBXax
+         FCnIztkgDDNTuaCpF016gwn2V++qzzw75u8e/Fq8KvBdrpySw/guCReqHlHJkQTIwxo5
+         zgiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=oIm+6SfCSXKhGdDbbC5CtfL0XtMaign3YNKSyUNi4Vw=;
+        b=HzK5UwokZg0XcUoeU5xa9f4wSF1HPvgb6TPbyC9jQq4ggp/qwhxhyZ3lkYpcRR0feL
+         iilwIj50F1VeA7ROYiNSAJ3wcEOMw1fAkW+F52iryMXw+A2ekE9QBfYnaVhZqJBKb0g8
+         dU4N51LMdk8W3HOpQ1GDE8pwhQYYyHBQ7M1W1cQ4s7Pz71i6f3Ki2KbRCHF7ZObTqmwe
+         eSO7EsV41hxYtGxnW1bCJNZAMlQ0itqPT1PE2sLkRpfyO6m3FW5B6L2a/6Ti8vO4tYil
+         kK/YkPuf532hGgacxnzFODx5srODSgSSl5ELDubusxe2crqjHVbwFxCmhAL/COrc8GqA
+         mSpw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail5.zocdoc.com header.s=s1 header.b=i4cafB07;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=uES1Bj2S;
+       spf=pass (google.com: domain of
+ bounces+30151070-6985-allen71090=gmail.com@e.mail5.zocdoc.com designates
+ 223.165.118.254 as permitted sender)
+ smtp.mailfrom="bounces+30151070-6985-allen71090=gmail.com@e.mail5.zocdoc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=zocdoc.com
+Return-Path: <bounces+30151070-6985-allen71090=gmail.com@e.mail5.zocdoc.com>
+Received: from o4505.e.mail5.zocdoc.com (o4505.e.mail5.zocdoc.com.
+ [223.165.118.254])
+        by mx.google.com with ESMTPS id
+ l17-20020a170903245100b001a1c7fe5bccsi4912660pls.248.2023.03.20.07.20.05
+        for <allen71090@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 20 Mar 2023 07:20:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+30151070-6985-allen71090=gmail.com@e.mail5.zocdoc.com designates
+ 223.165.118.254 as permitted sender) client-ip=223.165.118.254;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail5.zocdoc.com header.s=s1 header.b=i4cafB07;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=uES1Bj2S;
+       spf=pass (google.com: domain of
+ bounces+30151070-6985-allen71090=gmail.com@e.mail5.zocdoc.com designates
+ 223.165.118.254 as permitted sender)
+ smtp.mailfrom="bounces+30151070-6985-allen71090=gmail.com@e.mail5.zocdoc.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=zocdoc.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail5.zocdoc.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=oIm+6SfCSXKhGdDbbC5CtfL0XtMaign3YNKSyUNi4Vw=;
+	b=i4cafB07dpNiaf4K8O9nXO6+XjpDQwnA5ElxsgytA0lL1O3pBprcz8zjN/HQuEVsQun8
+	HTIuERqWxISslufX9eK6BkBf/jpxgK8iV4nFWfSPIPRWsgXC9LzbpbwCiInm+wpRBq2znk
+	PxWDkBC+jGzm1N1pr+thWx/eTw8MMvdHAho8tx9oCYoHB9b8jilpGFy3We8Zqe2JILKNWt
+	gTdbQ3842pPz0YBk1FY4x68CEAGy+Uiz+aM1N0ijdkj93WbIPYhYFA1XEmJfp+eOHYgnGK
+	rjAPrTelWSPde3P4LEWefxceEIbq+qMGk7RBO8R9V+1QueGuh3ufVYYrWBsZXW8g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=oIm+6SfCSXKhGdDbbC5CtfL0XtMaign3YNKSyUNi4Vw=;
+	b=uES1Bj2SnFmBQYSP9tOzcxLc88+1tB/SPTgUkLq+vzFdq6Y+5Aa4yuLMRE83m4PWZtXm
+	d1vGvSnp0c8dO1MlOrZsdFLvnVmtigCKaiKDu8xVVxN4cLA1VWuK7eJhd75tCxZwIvvFFj
+	7hF9ElIrKta9ZaqFONr1HUDSDljBWN2ww=
+Received: by filterdrecv-855698b47b-q2pxd with SMTP id
+ filterdrecv-855698b47b-q2pxd-1-64186B94-46
+        2023-03-20 14:20:04.682033315 +0000 UTC m=+2299623.177424403
+Received: from MzAxNTEwNzA (unknown)
+	by geopod-ismtpd-20 (SG) with HTTP
+	id u-VX5OdnSpGuaOX8g5t3Yg
+	Mon, 20 Mar 2023 14:20:04.547 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=c6d6dd565040e1b2dc8b4486b51333ce5e9ff1b546223375e62ee7071021
+Date: Mon, 20 Mar 2023 14:20:04 +0000 (UTC)
+From: Zocdoc <service@mail5.zocdoc.com>
+Mime-Version: 1.0
+Message-ID: <u-VX5OdnSpGuaOX8g5t3Yg@geopod-ismtpd-20>
+Subject: Something irritating you?
+Reply-To: no-reply@zocdoc.com
+X-Feedback-ID: 30151070:SG
+X-SG-EID: 
+ =?us-ascii?Q?C46gflcFT5dom90VQQvPOfMSnt6AFiV7cwCfFn3y3AvUL4ZUAQinn6MpU8fz4t?=
+ =?us-ascii?Q?gvD=2FXBpav+IsCTW4Gx2BRE9Fp+J9dSoKgMKoD4u?=
+ =?us-ascii?Q?MWWpLOwfq5p7bFVGe0T6mX7JyjZCafXnV1IiQia?=
+ =?us-ascii?Q?zKFp9kZxapt249K1aILUbhMI335CdL0taCfM7W1?=
+ =?us-ascii?Q?8VvShzebrvfGa4hB0nreEwxkqx81NSGQVrF65sZ?=
+ =?us-ascii?Q?tqUp8oRb9xp7fExh5oMgIDvydv=2F4Yt3Fw5pQMe?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?ChxFFELxaHGs7fTwY=2FCRrGJX+sDvYXFqnX58+aY?=
+ =?us-ascii?Q?ZO91seKuUG3vJlzjWZQCJApfbCZTBVnOwsi0xgA?=
+ =?us-ascii?Q?Br28UtPOELdX0WTkSPsoTZJvXAuyeYGIibQt+Zf?=
+ =?us-ascii?Q?5oceKBUYHTuR8rKelt0ezJIBWjxVDK08hxAVy64?=
+ =?us-ascii?Q?Ap6L4OGcJITMNEHKQdOTWPHqo0TeNJXz26+ZLxn?=
+ =?us-ascii?Q?h1q6xQZGqRjz9yrJw3nEUJyO7S9PPpZRmdz6anI?=
+ =?us-ascii?Q?TnPBueBfM5YuXywalY3NdVZFh6=2F+4x4HdfBsJLy?=
+ =?us-ascii?Q?cJneQY1I86VfTblY5bWvz1rzMWilV7fQA7LgMrE?=
+ =?us-ascii?Q?f9P+KbgbP8kc4IJSeOX4x2zJQ+5AjuI3ICA9X=2F5?=
+ =?us-ascii?Q?uboKxc043N42ZXwVM=2FTGpO=2FwFfaHt2G8zao9z3j?=
+ =?us-ascii?Q?LVVx1GvFLtVTCgEbMFQWV=2FG=2FWSliF053v716HLC?=
+ =?us-ascii?Q?3Vrmayk6DcyJkbrBNzJFau8=2FEkCiCNyyp52xv=2Fy?=
+ =?us-ascii?Q?tbioPSGxaivfRskeHiUaEzRs7M1oPNfMBFBivYI?=
+ =?us-ascii?Q?+W3tDBa?=
+To: allen71090@gmail.com
+X-Entity-ID: dxm1iaD6nMeYjvylWl9B+A==
+
+--c6d6dd565040e1b2dc8b4486b51333ce5e9ff1b546223375e62ee7071021
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+An allergist might have some ideas.
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C&nFbsp;=E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C
+Zocdoc=20
+( http://clicks.zocdoc.com/ls/click?upn=3DvQ0js4Tt-2Bgj5qSG-2BZvHZXOyt-2F-2=
+Ba1sH-2FoVGD8loBmL58IF84W-2Fl6Wo1CahmrFfEnJ5nxPnnNgpitgRxPoQfdpDZPSBO2iM2vl=
+Cpi4f4EhH1hxMuuWpLfesb3and4BtfJYSlzfLsXdiL-2BUa0G9e6FwyH-2FA7j71wR-2FUysoHJ=
+82zKw5X4ZU8oT-2Fp8r2W1SY4UxNYJpzcS3H70ItAHJi5cFV60CokjN3do32c-2F9E8pBvwMRY-=
+3DwYMM_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FC=
+bw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-=
+2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLV=
+BvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn=
+8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLED=
+oHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-=
+2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIR=
+dttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nz=
+DGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyulTveDgB-2FZGH81NIUanLVI=
+vBTUAMoSqqFESU62yk2by37mN3buAEL-2BNoahg5-2FFad6rhdN0VlYbkTOSqpi3LURvnmg2YDL=
+T4-2F4tNYwQ6UvNrgmWgbi-2Fd8r8Cz66D4-2BesMDfmzesMJEKUtSRPitOKtExI-3D )
+                Itchy, sniffy, rashy, teary
+
+Book an appointment=20
+( http://clicks.zocdoc.com/ls/click?upn=3DvQ0js4Tt-2Bgj5qSG-2BZvHZXOyt-2F-2=
+Ba1sH-2FoVGD8loBmL58IF84W-2Fl6Wo1CahmrFfEnJ5nxPnnNgpitgRxPoQfdpDZPSBO2iM2vl=
+Cpi4f4EhH1hxMuuWpLfesb3and4BtfJYSlzfLsXdiL-2BUa0G9e6FwyH-2FA7j71wR-2FUysoHJ=
+82zKw4NN1GoRUFNO-2BeTf27zhuHOCBhr0udYoD-2B898Ez7LNoBQ-3D-3D699I_Yg5CIIEwjer=
+nwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FV=
+eh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3vu0YQwl-2B9aOen=
+6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvrOFUbypCc1XiQ81L=
+qmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HDCkX4IZm74eKe2SL=
+0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdmTDrB5KADZLubJt=
+-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0WdWayQFUGGMW1T5=
+CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdttk8GyxhT9m0jLaFl=
+TAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO8czblqA1Kiqkspz=
+b1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyuhJg3ISWK96TmH0BXlYahSvYE-2Bz-2FVLmSuYB5T8=
+v3UXEZ5vY-2BIZ9UMLy-2Be4cdKR7BJDqwirVtJ3Kavdv-2BK9h5iLjv7Joezg0cK-2FvC7NxPz=
+WSe-2F0jBP9gRzeTF3U-2BCkOA14DDI08QCtVRWbiynexVaPuA-3D )
+          =E2=80=A6is no way to go through 2023. An appointment with an
+allergist might reveal what=E2=80=99s causing those annoyingly persistent
+skin (or sinus, or digestive) problems you just can=E2=80=99t shake.
+=C2=A9 Zocdoc   568 Broadway 9th Floor, New York, NY, 10012, USA
+Zocdoc does not provide medical advice, diagnosis, or treatment.
+Please discuss all medical questions and concerns with your
+healthcare provider.       Twitter=20
+( http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwblBAL3jbrz=
+d2QLBXqD3op9nzxiOMehRuqlwpFFK9tJIIBVpYtZ40bXf0jLvSOHwqgcgnfm96cxPjJGK2hvYZt=
+vaCVOK8BYyjksNLCQhXaL3lYaoXp93Bcw6CNpsX8xHqFvQzN5SeMi8PhMK6YPSPffrp06yBngZ5=
+BoU9-2B0JN0c-2FT8LQz41c9Kt2A4nosjGbLViyvEEm6zOMpKoX8fqJSh8-3D9Yhr_Yg5CIIEwj=
+ernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2=
+FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3vu0YQwl-2B9aO=
+en6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvrOFUbypCc1XiQ8=
+1LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HDCkX4IZm74eKe2=
+SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdmTDrB5KADZLub=
+Jt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0WdWayQFUGGMW1=
+T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdttk8GyxhT9m0jLa=
+FlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO8czblqA1Kiqks=
+pzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3Jyuum9pHXEexD9HUBZnSKT-2BMiqcIBNALzEmYyFtm=
+dmrV-2Bqqq9MyzGYDzGdn0-2FO4-2BUkaRYRWsknZq9J-2FiDnGiy9K4vqRn-2F1dXuqP7yne3I=
+ZFWq8lRVHATTdpT8Cgipv8l6xXT0cM842tZzeOh-2FcXLgZOgw-3D )
+ Facebook=20
+( http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwWhsdRx9uG8=
+MfGN-2FScVsZfQgxM-2Bsai6ld2sujrTB-2BST-2FyixYLelT6PCYsx0jRUzXpL0ke6ijHDxufY=
+tuXXd-2FXPCgxLx9veyhgEJjOpDIpm9RfvOUnNmr4k-2B2BHREMjB4XqZ8sEUoVOhwYI0Oq2vHE=
+MOHh8pyld2GxiZSzRp-2B65twZLLibRH60qIdtaj1gj488Bv0r-2Bgu6a8HzxYpnMZnpR0-3Dad=
+xr_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2o=
+GYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3v=
+u0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvrO=
+FUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HDC=
+kX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdm=
+TDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0W=
+dWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdttk=
+8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO8=
+czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3Jyug6I2KO-2BLhON3FHr5Ik7pf4OXG=
+hJoi-2FJFrSmoSf99mEQH40q9LhTR4O7BeMk2ARBFmuouEDfhH3zT0l7tq2VIIu5eNYiZmiTUNO=
+X7m6bCQeXeHZNTUVzuNmN-2B-2BopJwtQAk3c0rRK7Asr6gOJqTGRsAo-3D )
+ Instagram=20
+( http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwRgMNOx1OV-=
+2Bt-2FOemJa-2BvbQ4A0MWhtmvsFUD9O2WSlORfVRb10jRoQQxbitthUa-2BDZguDD-2Bsz8FoJ=
+rF9E-2BqkVke-2FQ4obf1zH-2BidG9y3-2BLexDDzYNaV3YwIdflP8BNPbjcXSJyKBO26fN3dMp=
+cn5uPUl9CGmDmvV1VBnhSgHCZ3F1nJcxq7acrMyyzcgxdZUPE-2FJNvHhacUDml4WPbJTZQoF0-=
+3DWnGq_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FC=
+bw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-=
+2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLV=
+BvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn=
+8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLED=
+oHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-=
+2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIR=
+dttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nz=
+DGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyupDhd-2Bqtt8N7J-2BsU7A2z=
+8lJeGe0-2F6R82ew1y7-2BVHXBv4ssNl1ZyFrBhH5DQtmQiQt6KGQ3mG2NAHtz0g3WKfjLTS1Bz=
+0ih3r7c16uKQXilWaP3Bke8bL34YqMfYqkKi9BYe861bNkrSwqMoUfsPQyDM-3D )
+
+Privacy=20
+( http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwYhA9aTHHK4=
+LX8sJbwuDexetr0443H8rN9FSR8aXMXieQT4WpbW39q9gBaA3AwJJDgc3Q6OrjKr79bfmNPOFfw=
+i1xtnN5bA6xqVrWJFRUBHF8YCIwFh-2BctMd2oQswK9tZPXaopfqq9rvGtnm6V7u1t4nOSPGUX-=
+2FEfoGpGos-2F0mg4BiAP8uVGYB-2FWwlBgeyqZdxVEdmBlYIZW6T4L4trQYLISAOOMdTATr2gg=
+30oy-2FHelxELv_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjY=
+ZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDk=
+QAhswaD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXW=
+WE9-2BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6=
+t4PZwDKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphz=
+oZ-2BLEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FP=
+a8ltmCK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpE=
+w-2FNLIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswK=
+QjX118nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyutUzPZOKEfsJ4dmG=
+27j0LNeZE8-2BL1FHm-2FjMI1LAHVF3Wz-2Bo-2FUSD9U9UbJLEonbW-2BMYAS6duRfWDQGkEqD=
+npfY4XeSDRVyuTMJoYj0L-2BtppfMoRqE-2B7NdlZzpFAqKobf2U6VOvBX67H7Qn9hTWAaoSlY-=
+3D )
+ Terms=20
+( http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwYhA9aTHHK4=
+LX8sJbwuDexfQ-2B-2BrQsibucU5eiXaIef7YqY5NIq3FxWi8iNDknkhb8Jao8PFM2fKg-2BGye=
+RNx2IWPnHyWIjvqs-2BlHicX89B9R9DFdNtYYAAFPS-2Bo0dT7hA3tNGYdsx8aHPdtdwbg-2Fe7=
+MRdvUOt35GKlk-2B6O7PzhsqJVZgC6J3ofICzFHefu4Os-2F5olf38sCQJPATEogEHhhhI-3DDv=
+1X_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2o=
+GYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3v=
+u0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvrO=
+FUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HDC=
+kX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdm=
+TDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0W=
+dWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdttk=
+8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO8=
+czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyulWpxmnmG6n9I3m08k6dHWB7ZRFz=
+7KZtUqJLG-2FnXGr54GDhQSSBn0nmBhygX3qU4Jg6nFGlSfgmmJYTvg4rUQYyb-2Fncns33rfqJ=
+8epwYaOH-2FdxS824RPpC-2B6i89VFcGp-2F8yH5wi9ueoL9Qz-2BDh3Hnak-3D )
+=20
+
+
+
+
+
+
+
+
+
+ Unsubscribe (
+http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwf2YFuHZqYl8T=
+X3G5bLHUW2V19tShVoQWfySiIANTynZazwr2DE7oqmVgu1vqiGo3M8o7cPueNJ-2FYVygsCUsUO=
+iImsRZJsci3iovff9oyU9UQtyNt6dAqkRp-2B-2FqWUC3fvimzptpd5YwQWxWIQR7r5dJqz1KfY=
+-2B8z7exDOpmliV4wRBagWv7w5qLYoPjMdTo11YYv52PjRBjN0UxuoD3Nvum-2FN6ZOqsq-2BG8=
+0a-2BM2HoHmtjm4GksCFPdEs7WNxy1ACo69LCwnvRVdlFtyMcKeZ-2FhMkDk-2Bop6JynhVBjEN=
+ucccnbZN2_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-=
+2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhsw=
+aD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2=
+BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZw=
+DKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2B=
+LEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltm=
+CK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FN=
+LIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX11=
+8nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyusurX3Zxq6JsbjshAJ9LT=
+6NWYwpWVb8mc-2FvL5uxc622C1fY3vPjM5HozOluir-2BFiib57MZtJCmBoy7dRNVEUcdLNU9eh=
+mlqlJVp4pGAm1CtFXhYq-2FKqT7-2B6Dp-2FFaKeGY2OfRB65WGQMS0B1-2FTRrOXFY-3D )
+
+--c6d6dd565040e1b2dc8b4486b51333ce5e9ff1b546223375e62ee7071021
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns=3D"http://www.w3.org/199=
+9/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-m=
+icrosoft-com:office:office">
+<head>
+<!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPer=
+Inch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml>
+<![endif]-->
+<title>Zocdoc | Find a Doctor Near You | Book Doctors Online</title>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0 " />
+<meta name=3D"format-detection" content=3D"telephone=3Dno" />
+<meta name=3D"color-scheme" content=3D"light dark" />
+<meta name=3D"supported-color-schemes" content=3D"light dark" />
+<!--[if !mso]><!-->
+<link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" />
+
+<!--<![endif]-->
+
+<style>@font-face {
+font-family: 'Source Sans Pro'; font-style: normal; font-weight: 200; font-=
+display: swap; src: url('https://fonts.gstatic.com/s/sourcesanspro/v21/6xKy=
+dSBYKcSV-LCoeQqfX1RYOo3i94_AkA.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Source Sans Pro'; font-style: normal; font-weight: 300; font-=
+display: swap; src: url('https://fonts.gstatic.com/s/sourcesanspro/v21/6xKy=
+dSBYKcSV-LCoeQqfX1RYOo3ik4zAkA.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Source Sans Pro'; font-style: normal; font-weight: 400; font-=
+display: swap; src: url('https://fonts.gstatic.com/s/sourcesanspro/v21/6xK3=
+dSBYKcSV-LCoeQqfX1RYOo3aPw.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Source Sans Pro'; font-style: normal; font-weight: 600; font-=
+display: swap; src: url('https://fonts.gstatic.com/s/sourcesanspro/v21/6xKy=
+dSBYKcSV-LCoeQqfX1RYOo3i54rAkA.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Source Sans Pro'; font-style: normal; font-weight: 700; font-=
+display: swap; src: url('https://fonts.gstatic.com/s/sourcesanspro/v21/6xKy=
+dSBYKcSV-LCoeQqfX1RYOo3ig4vAkA.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Source Sans Pro'; font-style: normal; font-weight: 900; font-=
+display: swap; src: url('https://fonts.gstatic.com/s/sourcesanspro/v21/6xKy=
+dSBYKcSV-LCoeQqfX1RYOo3iu4nAkA.ttf') format('truetype');
+}
+body {
+margin: 0; padding: 0; -webkit-text-size-adjust: 100% !important; -ms-text-=
+size-adjust: 100% !important; -webkit-font-smoothing: antialiased !importan=
+t;
+}
+img {
+border: 0 !important; outline: none !important;
+}
+@media only screen and (max-width:667px) {
+  .em_main_table {
+    width: 100% !important; max-width: 480px !important;
+  }
+  .em_wrapper {
+    width: 100% !important;
+  }
+  .em_hide {
+    display: none !important;
+  }
+  .em_cta {
+    height: 54px !important;
+  }
+  .em_cta {
+    line-height: 54px !important;
+  }
+  u+.em_body .em_full_wrap {
+    width: 100vw !important;
+  }
+  .em_p1 {
+    padding: 30px 15px 25px !important;
+  }
+  .em_wrapper {
+    width: 100% !important;
+  }
+  .em_f54 {
+    font-size: 40px !important; line-height: 44px !important;
+  }
+  .em_aside30 {
+    padding-left: 30px !important; padding-right: 30px !important;
+  }
+  .em_width_227 {
+    width: 227px !important;
+  }
+}
+@media screen and (max-width:480px) {
+  .em_f54 {
+    font-size: 36px !important; line-height: 40px !important;
+  }
+  .em_w62 img {
+    width: 62px !important;
+  }
+  .em_hide1 {
+    display: none !important;
+  }
+}
+@media screen and (max-width:374px) {
+  .em_f18 {
+    font-size: 15px !important; line-height: 24px !important;
+  }
+  .em_f54 {
+    font-size: 32px !important; line-height: 36px !important;
+  }
+}
+@media screen and (prefers-color-scheme:dark) {
+  .em_full_wrap {
+    background-color: #000000 !important;
+  }
+  .em_main_table {
+    background-color: #101010 !important;
+  }
+  .em_bgcolor {
+    background-color: #101010 !important;
+  }
+  .em_blue {
+    color: #ffffff !important;
+  }
+  .em_blue a {
+    color: #ffffff !important;
+  }
+  .em_text_white {
+    color: #ffffff !important;
+  }
+  .em_text_white a {
+    color: #ffffff !important;
+  }
+}
+</style></head>
+<body class=3D"em_body" style=3D"-webkit-text-size-adjust: 100% !important;=
+ -ms-text-size-adjust: 100% !important; -webkit-font-smoothing: antialiased=
+ !important; margin: 0px auto; padding: 0px;" bgcolor=3D"#ffffff">
+<!-- UPDATE PREVIEW TEXT HERE -->
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">
+An allergist might have some ideas.
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&amp;nFbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbs=
+p;=E2=80=8C&nbsp;=E2=80=8C </div>
+<!-- /UPDATE PREVIEW TEXT HERE -->=20
+<!-- =3D=3D Header Section =3D=3D -->
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"em_full_wrap" bgcolor=3D"#f7f7f7" style=3D"table-layout: fixed; border=
+-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px;">
+  <tr>
+    <td align=3D"center" valign=3D"top" style=3D"border-collapse: collapse;=
+ mso-line-height-rule: exactly;"><table align=3D"center" width=3D"720" bord=
+er=3D"0" bgcolor=3D"#f7f7f7" cellspacing=3D"0" cellpadding=3D"0" class=3D"e=
+m_main_table" style=3D"width: 720px; border-collapse: collapse; mso-table-l=
+space: 0px; mso-table-rspace: 0px; table-layout: fixed;">
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"border-collapse: col=
+lapse; mso-line-height-rule: exactly;"><!-- Block_0_Header_Logo_Section -->
+           =20
+            <table align=3D"center" width=3D"720" style=3D"width: 720px; bo=
+rder-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; tabl=
+e-layout: fixed;" class=3D"em_wrapper" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+              <tbody>
+                <tr>
+                  <td align=3D"center" valign=3D"top" style=3D"border-colla=
+pse: collapse; mso-line-height-rule: exactly; padding: 30px 20px 40px;" cla=
+ss=3D"em_p1"><table align=3D"center" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" style=3D"border-collapse: collapse; mso-table-lspace: 0px; mso-t=
+able-rspace: 0px; table-layout: fixed;">
+                      <tbody>
+                        <tr>
+                          <td align=3D"center" valign=3D"top" style=3D"bord=
+er-collapse: collapse; mso-line-height-rule: exactly;"><a href=3D"http://cl=
+icks.zocdoc.com/ls/click?upn=3DvQ0js4Tt-2Bgj5qSG-2BZvHZXOyt-2F-2Ba1sH-2FoVG=
+D8loBmL58IF84W-2Fl6Wo1CahmrFfEnJ5nxPnnNgpitgRxPoQfdpDZPSBO2iM2vlCpi4f4EhH1h=
+xMuuWpLfesb3and4BtfJYSlzfLsXdiL-2BUa0G9e6FwyH-2FA7j71wR-2FUysoHJ82zKw5X4ZU8=
+oT-2Fp8r2W1SY4UxNYJpzcS3H70ItAHJi5cFV60CokjN3do32c-2F9E8pBvwMRY-3D9EqX_Yg5C=
+IIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Yi=
+FTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3vu0YQwl-=
+2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvrOFUbypCc=
+1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HDCkX4IZm7=
+4eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdmTDrB5KA=
+DZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0WdWayQFU=
+GGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdttk8GyxhT9=
+m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO8czblqA1=
+Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyumMnX1UMo1o0R796elWkRXQPLnMu-2BCVpV=
+vyGv2sq943dHVQ-2FLI85msE-2Bpds-2FXsACO3QgvW-2BT7ru8HQJ2Lf4NvTMbvMacQ5dlPfYj=
+-2BJOxiiaFUGqYSy8RCJedDAq40MT6-2BOdi4VOqzMSibaNojRRPJeI-3D" target=3D"_blan=
+k" style=3D"text-decoration: none; border-collapse: collapse; mso-line-heig=
+ht-rule: exactly;"><img src=3D"https://braze-images.com/appboy/communicatio=
+n/assets/image_assets/images/636c31cb90c88c4d413b6f24/original.png?16680350=
+19" width=3D"106" alt=3D"Zocdoc" style=3D"display: block; max-width: 106px;=
+ color: #000000; font-size: 18px; line-height: 20px; font-family: Arial, sa=
+ns-serif; outline: none !important; border: 0;" /></a></td>
+                        </tr>
+                      </tbody>
+                    </table></td>
+                </tr>
+              </tbody>
+            </table>
+           =20
+            <!-- //Block_0_Header_Logo_Section --><!-- Block_1_Image_Sectio=
+n -->
+           =20
+            <table align=3D"center" width=3D"720" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"em_main_table" style=3D"width: 720px; bor=
+der-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; table=
+-layout: fixed;">
+              <tr>
+                <td align=3D"center" valign=3D"top" style=3D"border-collaps=
+e: collapse; mso-line-height-rule: exactly; padding: 0px 15px 20px;" class=
+=3D"em_w64"><a href=3D"http://clicks.zocdoc.com/ls/click?upn=3DvQ0js4Tt-2Bg=
+j5qSG-2BZvHZXOyt-2F-2Ba1sH-2FoVGD8loBmL58IF84W-2Fl6Wo1CahmrFfEnJ5nxPnnNgpit=
+gRxPoQfdpDZPSBO2iM2vlCpi4f4EhH1hxMuuWpLfesb3and4BtfJYSlzfLsXdiL-2BUa0G9e6Fw=
+yH-2FA7j71wR-2FUysoHJ82zKw7wp0ycStYFqzxFEGjtxzRpecv50sKf4cAZDnKEpsBRCg-3D-3=
+DTVPF_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCb=
+w2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2=
+B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVB=
+vrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8=
+HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDo=
+HdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2=
+F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRd=
+ttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzD=
+GO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3Jyuj9GgxElczynoW9-2BMC8VRiT=
+cgx5g8LLvwgCSKCQQfOnyw-2BOPJNg8X-2BOZkx14QQcmCaA0ybUtmP80WeWEkfu9PVkDGM25-2=
+BilEhAWBM7AFOfq8QZlwPxrV7aP1Yqi07eKq5vY-2BPzFixljj1SrPKSBXFPM-3D" target=3D=
+"_blank" style=3D"text-decoration: none; border-collapse: collapse; mso-lin=
+e-height-rule: exactly;"><img src=3D"https://braze-images.com/appboy/commun=
+ication/assets/image_assets/images/63fd01a73344d576a95fab5c/original.png?16=
+77525415" width=3D"190" height=3D"200" alt=3D"" border=3D"0" style=3D"displ=
+ay: block; max-width: 190px; outline: none !important; border: 0;" /></a></=
+td>
+              </tr>
+            </table>
+           =20
+            <!-- //Block_1_Image_Section --><!-- Block_2_Title_Section -->
+           =20
+            <table align=3D"center" width=3D"720" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"em_main_table" style=3D"width: 720px; bor=
+der-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; table=
+-layout: fixed;">
+              <tr>
+                <td align=3D"center" valign=3D"top" class=3D"em_blue em_f54=
+" style=3D"font-family: 'Sharp Sans No1','Source Sans Pro','Trebuchet MS',A=
+rial,sans-serif; font-size: 54px; line-height: 60px; color: #1D2B54; font-w=
+eight: bold; border-collapse: collapse; mso-line-height-rule: exactly; padd=
+ing: 0 20px 26px;">Itchy, sniffy, rashy, teary
+
+                  <br /></td>
+              </tr>
+            </table>=20
+            <!-- //Block_2_Image_Section --><!-- Block_3_CTA_Section -->
+           =20
+            <table align=3D"center" width=3D"720" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"em_main_table" style=3D"width: 720px; bor=
+der-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; table=
+-layout: fixed;">
+              <tr>
+                <td align=3D"center" valign=3D"top" style=3D"border-collaps=
+e: collapse; mso-line-height-rule: exactly; padding: 0px 15px 48px;" class=
+=3D"em_plrb1"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" style=3D"border-collapse: collapse; mso-table-lspace: 0px; mso-=
+table-rspace: 0px; table-layout: fixed;">
+                    <tbody>
+                      <tr>
+                        <td valign=3D"top" align=3D"center" style=3D"border=
+-collapse: collapse; mso-line-height-rule: exactly;"><a href=3D"http://clic=
+ks.zocdoc.com/ls/click?upn=3DvQ0js4Tt-2Bgj5qSG-2BZvHZXOyt-2F-2Ba1sH-2FoVGD8=
+loBmL58IF84W-2Fl6Wo1CahmrFfEnJ5nxPnnNgpitgRxPoQfdpDZPSBO2iM2vlCpi4f4EhH1hxM=
+uuWpLfesb3and4BtfJYSlzfLsXdiL-2BUa0G9e6FwyH-2FA7j71wR-2FUysoHJ82zKw4NN1GoRU=
+FNO-2BeTf27zhuHOCBhr0udYoD-2B898Ez7LNoBQ-3D-3DWS_f_Yg5CIIEwjernwbxgVw3ff5tS=
+3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69G=
+XqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F8=
+4bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6=
+-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J=
+3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2=
+SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyC=
+BeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6=
+r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO8czblqA1Kiqkspzb1XxY3ga-2Fuz=
+aeGnivhS2xl2cDWjx3JyumszY5dxgoI7NjfS1HJjHkDUT7YlezwjHTuUZtdfjVqjzY-2F1dikg4=
+XvfMjfmyhkKxbbIswF38tHuthOcN-2BAEgI8kaupDaKdDzugO9A8udqw634bc-2FzcuSWRO-2BD=
+1ixXWAqQ35ZOEfE3lkswhw8KL0Nl0-3D" target=3D"_blank" style=3D"text-decoratio=
+n: none; color: #1D2B54; line-height: 57px; display: block; border-collapse=
+: collapse; mso-line-height-rule: exactly;"><img src=3D"https://braze-image=
+s.com/appboy/communication/assets/image_assets/images/636c321becee907644329=
+323/original.png?1668035099" width=3D"250" height=3D"57" alt=3D"Book an app=
+ointment" style=3D"display: block; max-width: 250px; outline: none !importa=
+nt; border: 0;" /></a></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+            </table>
+           =20
+            <!-- //Block_3_CTA_Section --><!-- Block_4_Introduction_Section=
+ -->
+           =20
+            <table align=3D"left" width=3D"720" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" class=3D"em_main_table" style=3D"width: 720px; border=
+-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; table-la=
+yout: fixed;">
+              <tr>
+                <td align=3D"left" valign=3D"top" class=3D"em_blue em_aside=
+30 em_f18" style=3D"font-family: Arial,sans-serif; font-size: 18px; line-he=
+ight: 28px; color: #1D2B54; border-collapse: collapse; mso-line-height-rule=
+: exactly; padding: 0px 143px 52px;">
+             =E2=80=A6is no way to go through 2023. An appointment with an =
+allergist might reveal what=E2=80=99s causing those annoyingly persistent s=
+kin (or sinus, or digestive) problems you just can=E2=80=99t shake.
+
+
+</td>
+              </tr>
+            </table>
+           =20
+            <!-- //Block_4_Introduction_Section --> <!-- Footer_Section -->
+           =20
+            <table align=3D"center" width=3D"720" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" class=3D"em_main_table" style=3D"width: 720px; bor=
+der-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; table=
+-layout: fixed;">
+              <tr>
+                <td align=3D"center" valign=3D"top" style=3D"border-collaps=
+e: collapse; mso-line-height-rule: exactly; padding: 0px 15px 20px;"><table=
+ width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"b=
+order-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: 0px; tab=
+le-layout: fixed;">
+                    <tbody>
+                      <tr>
+                        <td align=3D"center" style=3D"font-family: sharp-sa=
+ns-semibold, Open Sans, Arial, sans-serif; font-size: 13px; line-height: 17=
+px; color: #616161; font-weight: 600; border-collapse: collapse; mso-line-h=
+eight-rule: exactly; padding: 25px 40px 10px;" class=3D"em_text_white">=C2=
+=A9 Zocdoc</td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center" style=3D"font-family: sharp-sa=
+ns-medium, Open Sans, Arial, sans-serif; font-size: 11px; line-height: 17px=
+; color: #616161; border-collapse: collapse; mso-line-height-rule: exactly;=
+ padding: 0px 40px 10px;" class=3D"em_text_white">568 Broadway 9th Floor, N=
+ew York, NY, 10012, USA</td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center" valign=3D"top" class=3D"em_blu=
+e" style=3D"font-family: Arial,sans-serif; font-size: 11px; line-height: 17=
+px; color: #616161; padding-bottom: 15px; border-collapse: collapse; mso-li=
+ne-height-rule: exactly;">Zocdoc does not provide medical advice, diagnosis=
+, or treatment.<br class=3D"em_hide1" />
+                          Please discuss all medical questions and concerns=
+ with your healthcare&nbsp;provider.=20
+                      =20
+</td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center" valign=3D"top" style=3D"paddin=
+g-bottom: 10px; border-collapse: collapse; mso-line-height-rule: exactly;">=
+<table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" st=
+yle=3D"border-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace: =
+0px; table-layout: fixed;">
+                            <tbody>
+                              <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"padding-right: 12px; border-collapse: collapse; mso-line-height-rule: e=
+xactly;"><a href=3D"http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1X=
+JltGKMJwblBAL3jbrzd2QLBXqD3op9nzxiOMehRuqlwpFFK9tJIIBVpYtZ40bXf0jLvSOHwqgcg=
+nfm96cxPjJGK2hvYZtvaCVOK8BYyjksNLCQhXaL3lYaoXp93Bcw6CNpsX8xHqFvQzN5SeMi8PhM=
+K6YPSPffrp06yBngZ5BoU9-2B0JN0c-2FT8LQz41c9Kt2A4nosjGbLViyvEEm6zOMpKoX8fqJSh=
+8-3DyHDW_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2=
+FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswa=
+D-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2B=
+LVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwD=
+Kn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BL=
+EDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmC=
+K-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNL=
+IRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118=
+nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyulBidu11zwtFhwxan-2FSZ=
+-2FdfMa-2FjMX1yE1QzsW2beTw5NoBlxXdxmw72xv3RVdrDMhn5bOdwhspx4CWyu2K7BOW48eWg=
+dB85MKK9eZAUSboK44objdH2YIWkr1PiKAl8VF1DBN0QJD-2FAe5Sooj9hnHCw-3D" target=
+=3D"_blank" style=3D"text-decoration: none; border-collapse: collapse; mso-=
+line-height-rule: exactly;"><img src=3D"https://braze-images.com/appboy/com=
+munication/assets/image_assets/images/636c31c002bbbd79d43fc71b/original.png=
+?1668035008" width=3D"19" alt=3D"Twitter" border=3D"0" style=3D"display: bl=
+ock; max-width: 19px; font-family: Arial,sans-serif; font-size: 10px; color=
+: #091349; outline: none !important; border: 0;" /></a></td>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"padding-right: 12px; border-collapse: collapse; mso-line-height-rule: e=
+xactly;"><a href=3D"http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1X=
+JltGKMJwWhsdRx9uG8MfGN-2FScVsZfQgxM-2Bsai6ld2sujrTB-2BST-2FyixYLelT6PCYsx0j=
+RUzXpL0ke6ijHDxufYtuXXd-2FXPCgxLx9veyhgEJjOpDIpm9RfvOUnNmr4k-2B2BHREMjB4XqZ=
+8sEUoVOhwYI0Oq2vHEMOHh8pyld2GxiZSzRp-2B65twZLLibRH60qIdtaj1gj488Bv0r-2Bgu6a=
+8HzxYpnMZnpR0-3DaNzT_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0=
+Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zX=
+CT1pDkQAhswaD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLp=
+BGNpXWWE9-2BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5=
+mZxbx6t4PZwDKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1O=
+FAZphzoZ-2BLEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6B=
+cq-2FPa8ltmCK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNu=
+IKILpEw-2FNLIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2=
+F1nswKQjX118nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyupOG6bK0oK=
+Ak5215FfdrKlCvkdQXjj6DySXfW5xmTwJzEfuVpinSBzhuYJ8VbXR0vXCWPnHOROfyOnRehf-2F=
+d2fl3IU-2BHIrmrMOU9pA4Iuve-2FtV-2B53EL-2BpGs1BcqXSSwyRrViPpNDGomn043HnMWbWT=
+I-3D" target=3D"_blank" style=3D"text-decoration: none; border-collapse: co=
+llapse; mso-line-height-rule: exactly;"><img src=3D"https://braze-images.co=
+m/appboy/communication/assets/image_assets/images/636c31cbecee907669328c76/=
+original.png?1668035019" width=3D"19" alt=3D"Facebook" border=3D"0" style=
+=3D"display: block; max-width: 19px; font-family: Arial,sans-serif; font-si=
+ze: 10px; color: #091349; outline: none !important; border: 0;" /></a></td>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"border-collapse: collapse; mso-line-height-rule: exactly;"><a href=3D"h=
+ttp://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJwRgMNOx1OV-2Bt=
+-2FOemJa-2BvbQ4A0MWhtmvsFUD9O2WSlORfVRb10jRoQQxbitthUa-2BDZguDD-2Bsz8FoJrF9=
+E-2BqkVke-2FQ4obf1zH-2BidG9y3-2BLexDDzYNaV3YwIdflP8BNPbjcXSJyKBO26fN3dMpcn5=
+uPUl9CGmDmvV1VBnhSgHCZ3F1nJcxq7acrMyyzcgxdZUPE-2FJNvHhacUDml4WPbJTZQoF0-3DK=
+2K7_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2=
+oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5zXCT1pDkQAhswaD-2B3=
+vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQvLpBGNpXWWE9-2BLVBvr=
+OFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZop5mZxbx6t4PZwDKn8HD=
+CkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHd=
+mTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0=
+WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZNuIKILpEw-2FNLIRdtt=
+k8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S-2F1nswKQjX118nzDGO=
+8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyuiSfVVaueupKro7uK3n7hP3fIS8=
+wIKRFz5u9QOyqVPpg-2BAOFoSHr1KOT4mOTC-2FfnsdWCFGEBFQEFqB3fJ-2F05MBe2hjNdQZPc=
+t8eQGf1NjBFPrlA8aoT6m0QjNNv1m0QEyYEc-2Fs2HByVgNPMKgFpo6bs-3D" target=3D"_bl=
+ank" style=3D"text-decoration: none; border-collapse: collapse; mso-line-he=
+ight-rule: exactly;"><img src=3D"https://braze-images.com/appboy/communicat=
+ion/assets/image_assets/images/636c31cbecee907644329317/original.png?166803=
+5019" width=3D"19" alt=3D"Instagram" border=3D"0" style=3D"display: block; =
+max-width: 19px; font-family: Arial,sans-serif; font-size: 10px; color: #09=
+1349; outline: none !important; border: 0;" /></a></td>
+                              </tr>
+                            </tbody>
+                          </table></td>
+                      </tr>
+                      <tr>
+                        <td align=3D"center" valign=3D"top" class=3D"em_blu=
+e" style=3D"font-family: Arial,sans-serif; font-size: 11px; line-height: 15=
+px; color: #616161; border-collapse: collapse; mso-line-height-rule: exactl=
+y;"><a href=3D"http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGK=
+MJwYhA9aTHHK4LX8sJbwuDexetr0443H8rN9FSR8aXMXieQT4WpbW39q9gBaA3AwJJDgc3Q6Orj=
+Kr79bfmNPOFfwi1xtnN5bA6xqVrWJFRUBHF8YCIwFh-2BctMd2oQswK9tZPXaopfqq9rvGtnm6V=
+7u1t4nOSPGUX-2FEfoGpGos-2F0mg4BiAP8uVGYB-2FWwlBgeyqZdxVEdmBlYIZW6T4L4trQYLI=
+SAOOMdTATr2gg30oy-2FHelS1wI_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcd=
+YReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7A=
+D0uI5zXCT1pDkQAhswaD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4=
+FbCQvLpBGNpXWWE9-2BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxB=
+avzZop5mZxbx6t4PZwDKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4=
+d5Wkh1OFAZphzoZ-2BLEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMz=
+q2oMI6Bcq-2FPa8ltmCK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH=
+1w1YZNuIKILpEw-2FNLIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbd=
+wOu7S-2F1nswKQjX118nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3Jyuo3=
+4yWZBewARnBgm-2Bk9KuJLn6qGASih7cqt64bIJSAZU9tL9wrLmtX0bAECjKoQkhBKwhk0c7jS-=
+2FDqbYhV-2BoWNfrLGZwUJxOgtBl7-2BK3oYd5sSbcqR9lab8mji5jPwOqPx0kKVhWzpYJY-2Bf=
+8zQnaSfo-3D" target=3D"_blank" style=3D"text-decoration: none; color: #6161=
+61; border-collapse: collapse; mso-line-height-rule: exactly;">Privacy</a>&=
+nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http://clicks.zocdoc.com/ls/click?upn=3DW=
+JG1gx-2Fg50O1XJltGKMJwYhA9aTHHK4LX8sJbwuDexfQ-2B-2BrQsibucU5eiXaIef7YqY5NIq=
+3FxWi8iNDknkhb8Jao8PFM2fKg-2BGyeRNx2IWPnHyWIjvqs-2BlHicX89B9R9DFdNtYYAAFPS-=
+2Bo0dT7hA3tNGYdsx8aHPdtdwbg-2Fe7MRdvUOt35GKlk-2B6O7PzhsqJVZgC6J3ofICzFHefu4=
+Os-2F5olf38sCQJPATEogEHhhhI-3DlEKs_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5Lr=
+I-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1D=
+Xzmgz7AD0uI5zXCT1pDkQAhswaD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1I=
+plF3mb4FbCQvLpBGNpXWWE9-2BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghT=
+lFoNDxBavzZop5mZxbx6t4PZwDKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9=
+hfo-2B4d5Wkh1OFAZphzoZ-2BLEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb=
+-2BLdMzq2oMI6Bcq-2FPa8ltmCK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHA=
+bET8EiH1w1YZNuIKILpEw-2FNLIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2=
+c6FrHbdwOu7S-2F1nswKQjX118nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWj=
+x3JyunYFLOD-2FrbUl4607BwyTQux6cYqLTYBK1-2BwM3RkLas-2BRGO9Xi-2FtqUS6ceiHWfJf=
+T6LmXzQhpeFQCHgne4o1XE6k4NZoIY0miV3vgIquPKQ4yKhg6rI997-2B5KnCBcpCYqEv-2F1-2=
+BK4-2F22xD-2B7Z5mJ13-2FxM-3D" target=3D"_blank" style=3D"text-decoration: n=
+one; color: #616161; border-collapse: collapse; mso-line-height-rule: exact=
+ly;">Terms</a>&nbsp;&nbsp;&nbsp;&nbsp;<span style=3D"text-decoration: none;=
+ color: #616161; border-collapse: collapse; mso-line-height-rule: exactly;"=
+>
+
+
+
+
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+  <a href=3D"http://clicks.zocdoc.com/ls/click?upn=3DWJG1gx-2Fg50O1XJltGKMJ=
+wf2YFuHZqYl8TX3G5bLHUW2V19tShVoQWfySiIANTynZazwr2DE7oqmVgu1vqiGo3M8o7cPueNJ=
+-2FYVygsCUsUOiImsRZJsci3iovff9oyU9UQtyNt6dAqkRp-2B-2FqWUC3fvimzptpd5YwQWxWI=
+QR7r5dJqz1KfY-2B8z7exDOpmliV4wRBagWv7w5qLYoPjMdTo11YYv52PjRBjN0UxuoD3Nvum-2=
+FN6ZOqsq-2BG80a-2BM2HoHmtjm4GksCFPdEs7WNxy1ACo69LCwnvRVdlFtyMcKeZ-2FhMkDk-2=
+Bop6JynhVBjENucccn3yrW_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8=
+W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT9XFjY69GXqETQA8Ff5VwbJ1DXzmgz7AD0uI5=
+zXCT1pDkQAhswaD-2B3vu0YQwl-2B9aOen6YqOZ7BBy-2F84bO-2Fdw2rHPUy1IplF3mb4FbCQv=
+LpBGNpXWWE9-2BLVBvrOFUbypCc1XiQ81LqmjzzfKSkFad6-2FoI5D0qKHV5ghTlFoNDxBavzZo=
+p5mZxbx6t4PZwDKn8HDCkX4IZm74eKe2SL0bst1xl5OH79J3i6rO-2Fy7h-2By9hfo-2B4d5Wkh=
+1OFAZphzoZ-2BLEDoHdmTDrB5KADZLubJt-2F4ZlnW0jSH2SoQjxPxYzopP-2Fb-2BLdMzq2oMI=
+6Bcq-2FPa8ltmCK-2F0WdWayQFUGGMW1T5CWAwHlhz43eyCBeLL-2Bw-2BviKHAbET8EiH1w1YZ=
+NuIKILpEw-2FNLIRdttk8GyxhT9m0jLaFlTAf7NOc-2FRE6r8zPTM0eJAcc9rX2c6FrHbdwOu7S=
+-2F1nswKQjX118nzDGO8czblqA1Kiqkspzb1XxY3ga-2FuzaeGnivhS2xl2cDWjx3JyunK6RTQl=
+fznnlckWtJ87c9diu96zU72TcX-2FwVNLAak66JzHzUfjzxYnH3XU45bkwfa1av6-2Bq1VV-2Bj=
+eI2V1ifQiAKwsrFjyNxVjDQCqButBWbqjfGOPW1ux7BccD6PTKdhW0033Keau2Avug-2B928OdB=
+8-3D" target=3D"_blank" style=3D"text-decoration: none; color: #616161; bor=
+der-collapse: collapse; mso-line-height-rule: exactly;">Unsubscribe</a>
+</span></td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <tr>
+                <td class=3D"em_hide em_bgcolor" style=3D"line-height: 1px;=
+ min-width: 720px; border-collapse: collapse; mso-line-height-rule: exactly=
+;" bgcolor=3D"#F7F7F7"><img alt=3D"" src=3D"http://image.mail2.zocdoc.com/l=
+ib/fe9213727663037f74/m/1/f3a6efcd-ffb1-4216-9882-fd80f3611632.gif" height=
+=3D"1" width=3D"720" style=3D"max-height: 1px; min-height: 1px; display: bl=
+ock; width: 720px; min-width: 720px; outline: none !important; border: 0;" =
+border=3D"0" /></td>
+              </tr>
+            </table>
+           =20
+            <!-- Footer_Section --></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<img src=3D"http://clicks.zocdoc.com/wf/open?upn=3DlDB-2FIotWgiicHSspVBVs43=
+yKyDs84t4-2FLTa9Az-2BbK-2B-2BDvYknmCeiagFlQBGwXlwk4BrXRsQUTim7bHdxO92mjEnjH=
+tpCp7T09Ftf2zp5eTYVG7SM6w8z4a4sc9NSNks9PZ5WBWQPArXEA2-2F-2Fnu04wCJy8nr29NgN=
+KNNu19dtrsjNF4F-2BGhXTemKXbsnsuKoRaZ1ToJ11l3IsBOi76CJLqFcmIEVJYyt3PeDzb5dPv=
+7H4-2B3HBs-2FriL-2FKfGkPgiv-2Bfp8-2FMwrP9YVGZ99wLnqEMCXQWnEx1dANhiFS8iEOmBn=
+WvTLZQgjiVCl4b-2BOB6qiVp2j1-2FTluAJBusqPlVMtNezD9OcsF0h5lBNp2gEe6UT4plb6DNy=
+W3aPFVY60oGek29KJEM3BEJmp-2Fvh4csrkHtnM2ZWxMggpDUWwWYSnN3BLd4bGWb2Vh-2FXM96=
+QVmk1RlK9pprfTzFfyB-2FbTnc75uJU5Isf4gv9uAvffiGh5Rmr5rqmWz8OEab5lWgfNKWh92vC=
+YPLSOInD3BszC4CBk30h8pxAh5iZVXA-2BiN-2BB9DtS21mm0hbZKfD6i8zGyjtHUsN-2BNuLpQ=
+ZObmHkP2hA-2FdG230Z67jx95dmkB04yzhBOQTGnhxB4CE3J-2F4PgwDavsDlxd7SBk9JVWMeFL=
+aeHOEP36pr-2BCpgp5MyMkSZW0s1eo-2B6NIio5MMBa0kIznbDtKud8Nq-2BhavngBm0fcMqapT=
+IPg1vOHGKRD7Ik6aVbhc4KbHg-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0=
+" style=3D"height:1px !important;width:1px !important;border-width:0 !impor=
+tant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !imp=
+ortant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !=
+important;padding-right:0 !important;padding-left:0 !important;"/></body>
+<custom name=3D"opencounter" type=3D"tracking"></custom>
+</html>
+
+--c6d6dd565040e1b2dc8b4486b51333ce5e9ff1b546223375e62ee7071021--

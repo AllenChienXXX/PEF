@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Visualization</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Phishing Email Detection!</h1>
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="file" name="file" id="file-input" accept=".txt,.eml">
+            <input type="submit" value="Upload" class="button-81">
+        </form>
+    </div>
+    <div class="container">
+        <div class="box">
+            {% if content %}
+                <h2>{{ content }}</h2>
+            {% endif %}
+            <ul class="list">
+                {% for feature in features %}
+                <li><pre class="pretty">{{ feature }}: <p>{{ features[feature][0] }}</p></pre></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="box">
+            <h2>Prediction</h2>
+            <ul class="pretty">
+                <li>Content prediction: <p>{{ pre_content }}</p></li>
+                <li>Html Tag prediction: <p>{{ pre_tag }}</p></li>
+                <li>Numeric prediction: <p>{{ pre_num }}</p></li>
+                <li>Extra prediction: <p>{{ pre_extra }}</p></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

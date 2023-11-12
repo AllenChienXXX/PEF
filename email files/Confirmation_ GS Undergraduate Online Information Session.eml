@@ -1,0 +1,176 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:6787:b0:e6:e9a6:20de with SMTP id v7csp2539475dyh;
+        Wed, 6 Sep 2023 07:08:29 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGWIeI/qwwUWSRxCEZCcleVro0pwEpepr9LpURgFhAsLpHmFFp8tvSfOQ1SA5Gae7nvHka3
+X-Received: by 2002:a05:622a:1187:b0:412:1e0a:772a with SMTP id m7-20020a05622a118700b004121e0a772amr18928106qtk.17.1694009308724;
+        Wed, 06 Sep 2023 07:08:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1694009308; cv=none;
+        d=google.com; s=arc-20160816;
+        b=OlkxmieADLn0XrIS8+9zkYEZ+cTOD6lnFJ+PJ8Ho6sxBVNd942x0wSwZHGPhCL7TzV
+         lNBSK9hPOl7T6TpegH3x3I/et3mWB/20R1YVusqHepBzgdXpVADoBKHnJBPdE4mGWktJ
+         2AbYyuuxWMpZxoHJ4+VaQcs5Bz6vRDrC82UnthsABBBhr85kyp2uPvbrmIzuLo62RDdv
+         qoYAo95cCSRiNLOWIvk8je13fMVJJC++UKnrSZ/WH+/utY8Cm/tx51kvlXIx0OiM4HeN
+         AWmnmQKNx3urTY0AilfYst594v0drZSXsGWKv1xr/DHuFZSvdJMWdxiD2tPIf3MInJC1
+         jDQw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:importance:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=BsloCF3SL7YEV/+BQcO5nrbTcGUWHLHPDpjaKanQIyE=;
+        fh=yyQ3gW2mW8o1BkByuPvORAPDFoE7O88VJjGeIMz1QVA=;
+        b=YQQgdu70oPAJ8MBS62vB8L3pF8Wny96dcl4AghnuyDfMmQph4uKgsJUHMNS/DNRKue
+         Ml0U/4mrEZH990CoSx8W3NkUiQBNbqjToq4YwxFUxvvP1138KT4u+9q9sYur2yRuYq0l
+         bcBClpqyEl+WMWEeUm0S65fH9KQ1OzxqRSuYkmPY5mFU1nBgaj28Ak50MmF/0Ezx/k2U
+         QMw+aiB/vgeM+W53vgph1EVogCN+DOpdWopTD6iFRBeDrsA+W2F7VltKMaG4gUBl29xh
+         4D+nb8kBlH9+Qa4ScS/ef+ygWzVBt/KBoIgTNYOkhhn9Uiv1GJ/U/eSm8YuQDwKGP4bu
+         hG9Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@columbia.edu header.s=s1 header.b=kTR00QbA;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=MHmr5964;
+       spf=pass (google.com: domain of bounces+511372-ca9a-allen71090=gmail.com@slate-mx.columbia.edu designates 167.89.25.12 as permitted sender) smtp.mailfrom="bounces+511372-ca9a-allen71090=gmail.com@slate-mx.columbia.edu";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=columbia.edu
+Return-Path: <bounces+511372-ca9a-allen71090=gmail.com@slate-mx.columbia.edu>
+Received: from o3.mx.technolutions.net (o3.mx.technolutions.net. [167.89.25.12])
+        by mx.google.com with ESMTPS id a8-20020ac85b88000000b004033ec2f5e4si9548590qta.464.2023.09.06.07.08.28
+        for <allen71090@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 06 Sep 2023 07:08:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+511372-ca9a-allen71090=gmail.com@slate-mx.columbia.edu designates 167.89.25.12 as permitted sender) client-ip=167.89.25.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@columbia.edu header.s=s1 header.b=kTR00QbA;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=MHmr5964;
+       spf=pass (google.com: domain of bounces+511372-ca9a-allen71090=gmail.com@slate-mx.columbia.edu designates 167.89.25.12 as permitted sender) smtp.mailfrom="bounces+511372-ca9a-allen71090=gmail.com@slate-mx.columbia.edu";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=columbia.edu
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=columbia.edu;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=BsloCF3SL7YEV/+BQcO5nrbTcGUWHLHPDpjaKanQIyE=;
+	b=kTR00QbA+DHHVZR135kcfhv+xD+EzoPwz7NIXASL440MzgSFOsXxpSPNG9K+pB1o+PQz
+	3WD0xsebNgmkRDqyA8d9K6V7WDGewnTwk3wnhpM2xUzg5Y7xxDw8ZB8v2XRe7EC2lV0QIR
+	sdOab1b6eRfXjnrJCluMuHQ7HoKRxwPq5Jf/DHzKRt8LHbO/NHVdaUzbsPAwTwOI3N6gKT
+	xMs/51BBFknnExOxnurv60T3F0AAfhYhOs6xpQP7JuVtvxgfPZErxp3/PvzwKfz7Kags4r
+	bUcXjhSvR1DeYaJdd8tv7Dq/yZp+AWyWUjWIAynIYuI/8iqupE+L3vNRuLtGBsog==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=BsloCF3SL7YEV/+BQcO5nrbTcGUWHLHPDpjaKanQIyE=;
+	b=MHmr5964HYVNe8/vv62LhmeXinOfUH8Mcp6V5f/PKHuqqlCeqtDUc5oJjLDoFLnOhzZI
+	yevw77ydBrOC8lGu8r7KwStjP0lEvr42wY1i2QMswyLLSAhbatKRWozH9TgshWlGIoEskI
+	lQ0uRWp3JYbU3g19L0XRJBPfJKRze0oU8=
+Received: by filterdrecv-c4b67f958-hqb44 with SMTP id filterdrecv-c4b67f958-hqb44-1-64F887DB-120
+        2023-09-06 14:08:27.968720386 +0000 UTC m=+10247324.481035275
+Received: from NTExMzcy (unknown)
+	by geopod-ismtpd-14 (SG) with HTTP
+	id aC5F-m9FRECRlL1r3zVi7A
+	Wed, 06 Sep 2023 14:08:27.962 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=33283ffc01af172313ed55a800686baf5dd4be95de11b42c049d88a75b1b
+Date: Wed, 06 Sep 2023 14:08:28 +0000 (UTC)
+From: Columbia University School of General Studies <gs-admit@columbia.edu>
+Mime-Version: 1.0
+Message-ID: <df869425-3483-4dfc-aee5-fa0924c73084@technolutions.net>
+Subject: Confirmation: GS Undergraduate Online Information Session
+Importance: Normal
+X-Feedback-ID: 511372:SG
+X-SG-EID: 
+ =?us-ascii?Q?wsg1BBhwRZTYZxsUYSzcupf6Pz1nJhcVx+OEJUxB2bUiUc3lfRMonCAYR9Dm4W?=
+ =?us-ascii?Q?x3zEAz04dAq553cGGCT8BwSaCtvzzfc3m8uzOdv?=
+ =?us-ascii?Q?g+bLzi3wUDLIDuTWHN+h7vvAGvMQawitj=2FwOlPq?=
+ =?us-ascii?Q?dDa=2F6WcFXkgfm6pmMVfrBqBVmQiZZotgw74gs20?=
+ =?us-ascii?Q?2EMt+oyPH=2FKuExhIhVEiRk2dhGFlAkj=2FEUF6EqQ?=
+ =?us-ascii?Q?6KdBdxQ6XVvEJyAfN5ncVZazWllzsQbyNV3a1Gk?=
+ =?us-ascii?Q?FbQu=2Fo5v6vs5qZj2H0NSjILj2J1prl+uEnsfj5L?=
+ =?us-ascii?Q?l0Q=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb9RSUyB3ulQmM+qUWzaIEKpxLK7IJulcb27QcVx37H?=
+ =?us-ascii?Q?Txgy3FT=2Fj1rvfPccCes64RnaZ+fofOBoZP28fDV?=
+ =?us-ascii?Q?YWZVzyEEnDg6WAkUUrxw=2FkEYyDDH54=2FkY5NnIZC?=
+ =?us-ascii?Q?dXK32mc5udFWcI13oute4LSeR0JxpxjDXITv26+?=
+ =?us-ascii?Q?A9bOjO=2FB9ggrtLIsWTaGSqREXNnQg804M6RnaKc?=
+ =?us-ascii?Q?IAQxw1U60Ld0AEdQ7jtduTwcDy7nVT5Waq5kCmn?=
+ =?us-ascii?Q?WJzvH5c6O0N958Fvhe5Gg=3D=3D?=
+To: allen71090@gmail.com
+X-Entity-ID: geQ9Q4xFsXTQDPt3MRicTQ==
+
+--33283ffc01af172313ed55a800686baf5dd4be95de11b42c049d88a75b1b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+Dear Allen,
+
+You are currently registered for the following event:
+
+GS Undergraduate Online Information Session
+Wednesday, September 13, 2023 from 5:00 PM-6:30 PM EST
+
+Webinar Log-in <https://admissions.gs.columbia.edu/share/view?id=3D99591060=
+-e802-478e-8027-658f7ba0158c>
+
+Please note: We recommend students use Google Chrome when viewing the webin=
+ar.
+
+If you can no longer attend, please cancel your registration <https://admis=
+sions.gs.columbia.edu/register/?k=3D99591060-e802-478e-8027-658f7ba0158c>.
+
+Please contact us if you have any questions.
+
+Best Regards,
+
+Columbia University School of General Studies
+(212) 854-2772
+gs-admit@columbia.edu
+--33283ffc01af172313ed55a800686baf5dd4be95de11b42c049d88a75b1b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"content-type" />
+<base target=3D"_blank" />
+<style>a, a:link, a:visited { color: blue; } a:active, a:hover { color: red=
+; } pre { white-space: pre-wrap; }</style>
+</head>
+<body data-gr-ext-installed=3D"" data-new-gr-c-s-check-loaded=3D"14.1022.0"=
+>
+<font face=3D"Times New Roman, Times, serif" size=3D"3"><div style=3D"font-=
+family: Times New Roman, Times, serif; font-size: 12pt;"><p><img alt=3D"" s=
+tyle=3D"width: 275px; height: 69px;" height=3D"69" width=3D"275" src=3D"htt=
+ps://admissions.gs.columbia.edu/www/images/General%20Studies/GeneralStudies=
+_2727_275px.jpg" /><br /><span style=3D"font-size:12px;"><span style=3D"fon=
+t-family:Tahoma,Geneva,sans-serif;">Dear Allen,</span></span></p><p><span s=
+tyle=3D"font-size:12px;"><span style=3D"font-family:Tahoma,Geneva,sans-seri=
+f;">You are currently registered for the following event:</span></span></p>=
+<p><span style=3D"font-size:12px;"><span style=3D"font-family:Tahoma,Geneva=
+,sans-serif;"><strong>GS Undergraduate Online Information Session</strong><=
+br /><strong>Wednesday, September 13, 2023 from 5:00 PM-6:30 PM EST</strong=
+><br /><br /><strong><a href=3D"https://mx.technolutions.net/ss/c/VpDhrCrvz=
+jOrNk6AZ3TbHvSpT0cu7plJmP9fWC2LUGfUaKvwjTmqE4HwzWvceNmTX3imrHV4fv0RYDAL9REi=
+vRHnEKMEEcNCW5CR3eWrBcZSjCo3hDJJm0gn9sfrCNbA/3zd/bEk5pwj-TkWOE_Y1OKgpVQ/h0/=
+0pArgCerUERXe5BRABq7h24V3n2QDoJZUPNstjZsJVE" title=3D"https://admissions.gs=
+.columbia.edu/share/view?id=3D99591060-e802-478e-8027-658f7ba0158c" target=
+=3D"_blank">Webinar Log-in</a></strong></span></span></p><p><span style=3D"=
+font-size:12px;"><span style=3D"font-family:Tahoma,Geneva,sans-serif;"><str=
+ong>Please note:</strong> We recommend students use Google Chrome when view=
+ing the webinar.</span></span></p><p><span style=3D"font-size:12px;"><span =
+style=3D"font-family:Tahoma,Geneva,sans-serif;">If you can no longer attend=
+, please <a href=3D"https://mx.technolutions.net/ss/c/VpDhrCrvzjOrNk6AZ3TbH=
+vSpT0cu7plJmP9fWC2LUGeD9YJ22JhxTtXuWpIU8CYRxHkYkupfDFnQHKP7HU_C7IdW1ehPZ35R=
+s49cQ50Hv9YZcQIxsz6C35F9FfIG4gUb/3zd/bEk5pwj-TkWOE_Y1OKgpVQ/h1/ZJ5KW4k287Cl=
+phCwjZraQn9SN3a1CXv_4eFAQ5zpVkk" title=3D"https://admissions.gs.columbia.ed=
+u/register/?k=3D99591060-e802-478e-8027-658f7ba0158c">cancel your registrat=
+ion</a>.<br /><br />
+Please contact us if you have any questions.<br /><br />
+Best Regards,<br /><br />
+Columbia University School of General Studies<br />
+(212) 854-2772<br /><a href=3D"mailto:gs-admit@columbia.edu" title=3D"mailt=
+o:gs-admit@columbia.edu">gs-admit@columbia.edu</a></span></span></p></div><=
+/font>
+<img src=3D"https://mx.technolutions.net/ss/o/yHCHsZgbT0yLM9hSAJ4AQw/3zd/bE=
+k5pwj-TkWOE_Y1OKgpVQ/ho.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0"=
+ style=3D"height:1px !important;width:1px !important;border-width:0 !import=
+ant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !impo=
+rtant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !i=
+mportant;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+--33283ffc01af172313ed55a800686baf5dd4be95de11b42c049d88a75b1b--

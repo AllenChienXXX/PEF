@@ -1,0 +1,780 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp2395080dyf;
+        Tue, 21 Mar 2023 08:05:36 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AK7set/IuFXuhsyTNCCkgqmFlqUd8dOuj3+rMuUK0hn1BXtJt/31XCDO83+uidDy+I9e9g1aLRLT
+X-Received: by 2002:a05:600c:b43:b0:3ed:af6b:7faa with SMTP id
+ k3-20020a05600c0b4300b003edaf6b7faamr2547953wmr.17.1679411135802;
+        Tue, 21 Mar 2023 08:05:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1679411135; cv=none;
+        d=google.com; s=arc-20160816;
+        b=I5t+yqrRe5mE0/DbxgAvl7/iY1xQejTRZbY0MMyGN5YpH85vkr/q3tIqztVk7DxkDb
+         Pbp7dWZt9M+sFQXbpto4A11eIDcUDmk7qNe38Cbb0WBvPfvrkpXGs0v++Wzi6cbRXN9E
+         k95GrdIM2ZokOoKUIErxdYHcw0Qv8yFGKa95UbzI7MTII0RQxVftXT5LX9WqEQJPCQd1
+         DLbwT8qgsH/srSyZ7L56ufZmBmRu07a4gQ8m78S6DAnxBwdcXVEF25qLPHuFWI0Igp4O
+         bn5FXjYEqDvl+VkIJvhCAi9GbxzMDHIdSvZXoukqobu0qdltmGkns9ci21lSMfLx9oPC
+         OiPg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=date:to:from:subject:reply-to:feedback-id:mime-version:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=5JtqaOcxXRs4FIGbc2eh1ixhHPvXa4mTXimzT69BH/g=;
+        b=riITgf3Boq336a1OVy+Dmpbew5/CjmMfOIF8E+rLR85zYu//gs+nPAB52U0uS+hclj
+         QBbXC+tFZd3n+qFUWu4sbkS6Zg6I6QlJ1liQioRfa4yqSAVWT76CnuwjzDtDR9t9AjTi
+         3xL3zDuUe4ABWZlQEgQo7fj6pqVJJGze8Sm3zTZuNGBG3U1MWUZ7WeixtgQtH20kaMH4
+         Ub5pDr3IXnPU9JM54HM3ICLMR1l1t2BQ9N485FFdk33/PTT1NPMN/5aUtE2c2uVsEXyb
+         KibbTWrQFYXOGUenkfsJY/4jt+1wV5D9dEHQhjt8YMorw6WV6/sUqXf2mO7eZX1ml0HL
+         RwLw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.chase.com header.s=ep1 header.b=LRnOOVzH;
+       spf=pass (google.com: domain of
+ chase-hp2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com designates
+ 142.54.244.57 as permitted sender)
+ smtp.mailfrom=Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.chase.com
+Return-Path: <Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com>
+Received: from mta057b.pmx1.epsl1.com (mta057b.pmx1.epsl1.com.
+ [142.54.244.57])
+        by mx.google.com with ESMTPS id
+ h6-20020a1ccc06000000b003edc208e599si6264896wmb.36.2023.03.21.08.05.34
+        for <allen71090@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 21 Mar 2023 08:05:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ chase-hp2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com designates
+ 142.54.244.57 as permitted sender) client-ip=142.54.244.57;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.chase.com header.s=ep1 header.b=LRnOOVzH;
+       spf=pass (google.com: domain of
+ chase-hp2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com designates
+ 142.54.244.57 as permitted sender)
+ smtp.mailfrom=Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e.chase.com
+Return-Path: <Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=e.chase.com; s=ep1;
+	t=1679411131; bh=SNzQmFTEHr/ny68otAf9kc0wXTmpTbJKd5fu726UA8Y=;
+	h=MIME-Version:Subject:From:To:Date:Content-Type;
+	b=LRnOOVzHdbDtju0HaR+nRq/WTlrFKlf6I5KmfxU4ljg/S8oHY6t+16uwLB++5Nam8
+	 MrPwHju1mN/cZ+9wlerX93juKrNCyc3q63ILvWRXXVXmt7mHnCJzhgxP5dlrMrrzcK
+	 uzZLaf01U5befHqK3zUewgHxNjOYkN2/j4UufcMY=
+Received: from [10.233.19.181] ([10.233.19.181:41006])
+	by pc1udsmtn1n16 (envelope-from
+ <Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com>)
+	(ecelerity 3.6.9.48312 r(Core:3.6.9.0)) with ECSTREAM
+	id C9/D5-34184-BB7C9146; Tue, 21 Mar 2023 15:05:31 +0000
+List-Unsubscribe: 
+ <mailto:Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com?subject=list-unsubscribe>
+Message-ID: <HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com>
+MIME-Version: 1.0
+Feedback-ID: 
+ e35e2194-b2d5-4597-85c0-5f3d6bf2cb43:35b11a27-28c1-46c3-9235-e83d8639fc82:email:epslh1
+X-NSS: e35e2194-b2d5-4597-85c0-5f3d6bf2cb43
+Reply-To: "Chase@e.chase.com"
+ <Chase-HP2v60000018704b430ccb6e54df4bbc786c8157@e.chase.com>
+Subject: Allen, debit card for kids ($0 Monthly Service Fee and Parental
+ Controls)
+From: Chase  <Chase@e.chase.com>
+To: allen71090@gmail.com
+Date: Tue, 21 Mar 2023 15:05:31 +0000
+Content-Type: multipart/alternative;
+ boundary="-=Part.109115.e66d2695bd84a4ad.18704b433ac.d02bc104325f4f6e=-"
+
+---=Part.109115.e66d2695bd84a4ad.18704b433ac.d02bc104325f4f6e=-
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1=2E0 Transitional//EN" "http://ww=
+w=2Ew3=2Eorg/TR/xhtml1/DTD/xhtml1-transitional=2Edtd">
+<html xmlns=3D"http://www=2Ew3=2Eorg/1999/xhtml" lang=3D"en">
+<head><link rel=3D"shortcut icon" href=3D"https://images=2Eharmony=2Eepsil=
+on=2Ecom/ContentHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/SYSTEM/=
+chase_bug_16_16=2Eico">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" /=
+>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1=
+=2E0"/>
+<title>Allen, debit card for kids ($0 Monthly Service Fee and Parental Con=
+trols)</title>
+<style type=3D"text/css">
+* {
+    line-height: normal !important;
+}
+strong {
+    font-weight: bold !important;
+}
+em {
+    font-style: italic !important;
+}
+body {
+    background-color: #F0F0F0 !important;
+    -webkit-text-size-adjust: none !important;
+}
+=2EExternalClass * {
+    line-height: 112%
+}
+=2EExternalClass p, =2EExternalClass span, =2EExternalClass font, =2EExter=
+nalClass td {
+    line-height: 112%
+}
+td {
+    -webkit-text-size-adjust: none;
+}
+a[href^=3Dtel] {
+    color: inherit;
+    text-decoration: none;
+}
+=2Eapplelinkswhite a {
+    color: #FFFFFE !important;
+    text-decoration: none;
+}
+=2Eapplelinksgray a {
+    color: #101820 !important;
+    text-decoration: none;
+}
+=2Eapplelinksblack a {
+    color: #000001 !important;
+    text-decoration: none;
+}
+=2Eapplelinkswhite a {
+    color: #FFFFFE !important;
+    text-decoration: none;
+}
+=2EwordBreak {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+}
+
+@media screen and (max-width: 600px) {
+=2EfullWidth {
+    width: 100% !important;
+    min-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0px !important;
+    text-align: center !important;
+}
+=2Ehero {
+    width: 100% !important;
+    height: auto !important;
+}
+=2EmoPad {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+=2EzeroPad {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+=2EversionID {
+    padding-top: 12px !important;
+}
+=2Emax300 {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 300px !important;
+}
+=2Emax260 {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 260px !important;
+}
+=2Emax160 {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 160px !important;
+}
+=2ET40_alt {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 181px !important;
+}
+=2Ew110 {
+    width: 110px !important;
+    height: auto !important;
+}
+=2Ew104 {
+    width: 104px !important;
+    height: auto !important;
+}
+=2Ew132 {
+    width: 132px !important;
+    height: auto !important;
+}
+=2Ew174 {
+    width: 174px !important;
+    height: auto !important;
+}
+=2Efont14 {
+    font-size: 14px !important;
+}
+}
+
+@media print and (max-width: 600px) {
+=2EfullWidth {
+    width: 100% !important;
+    min-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0px !important;
+    text-align: center !important;
+}
+=2Ehero {
+    width: 100% !important;
+    height: auto !important;
+}
+=2EmoPad {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+=2EzeroPad {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+=2EversionID {
+    padding-top: 12px !important;
+}
+=2Emax300 {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 300px !important;
+}
+=2Emax260 {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 260px !important;
+}
+=2Emax160 {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 160px !important;
+}
+=2ET40_alt {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 181px !important;
+}
+=2Ew110 {
+    width: 110px !important;
+    height: auto !important;
+}
+=2Ew104 {
+    width: 104px !important;
+    height: auto !important;
+}
+=2Ew132 {
+    width: 132px !important;
+    height: auto !important;
+}
+=2Ew174 {
+    width: 174px !important;
+    height: auto !important;
+}
+=2Efont14 {
+    font-size: 14px !important;
+}
+}
+</style>
+</head>
+<body style=3D"padding: 0px;margin: 0px; background-color:#F0F0F0;">
+<table role=3D"presentation" align=3D"center" width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" style=3D"min-width:600px; background-co=
+lor:#F0F0F0;" class=3D"fullWidth">
+  <tr>
+    <td align=3D"center" style=3D"vertical-align:top; padding:0px 0px 0px =
+0px; min-width:600px; background-color:#F0F0F0;" class=3D"fullWidth"><table=
+ role=3D"presentation" align=3D"center" width=3D"600" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" class=3D"fullWidth" style=3D"background-color:#=
+FFFFFF;">
+        <!-- Start of Content -->=20
+        <!-- Header_Chase-->
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding:15px 28p=
+x 15px; font-size:14px; font-weight:normal; font-family:Arial, Helvetica, s=
+ans-serif; color:#53565A;" class=3D"moPad">Exclusively for Chase checking c=
+ustomers</td>
+        </tr>
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding:0px 28px=
+ 15px; font-size:14px; font-weight:normal; font-family:Arial, Helvetica, sa=
+ns-serif; color:#000000;" class=3D"moPad"><a target=3D"_blank" href=3D"http=
+s://e=2Echase=2Ecom/H/2/v60000018704b430ccb6e54df4bbc786c8/e35e2194-b2d5-45=
+97-85c0-5f3d6bf2cb43/HTML" style=3D"color: #005EB8; text-decoration:underli=
+ne;" rel=3D"noopener noreferrer">View Online</a> | <a href=3D"#Email_Securi=
+ty_Information" style=3D"color: #005EB8; text-decoration:underline;" rel=3D=
+"noopener noreferrer">Email Security Information</a></td>
+        </tr>
+
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding: 0px 0px=
+; border-top: 1px solid #ffffff;"><table role=3D"presentation" width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; padding:0p=
+x 0px;width:25%;"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Cont=
+entHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0206634_L=
+C-CFBQ123W3V_IMAGES/chaseBlueHeaderSpace=2Ejpg" width=3D"100%" height=3D"80=
+" border=3D"0" style=3D"display:block;" alt=3D""/></td>
+                <td align=3D"center" style=3D"vertical-align:top; padding:=
+0px 0px;"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandl=
+er/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0206634_LC-CFBQ12=
+3W3V_IMAGES/Chase_Header_80x300=2Ejpg" width=3D"300" height=3D"auto" border=
+=3D"0" style=3D"display:block;" alt=3D"Chase"/></td>
+                <td align=3D"left" style=3D"vertical-align:top; padding:0p=
+x 0px;width:25%;"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Cont=
+entHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0206634_L=
+C-CFBQ123W3V_IMAGES/chaseBlueHeaderSpace=2Ejpg" width=3D"100%" height=3D"80=
+" border=3D"0" style=3D"display:block;" alt=3D""/></td>
+              </tr>
+            </table></td>
+        </tr>
+        <!-- End Header_Chase-->=20
+        <!-- P10 -->
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; background-color=
+: #ffffff;"><table role=3D"presentation" width=3D"100%" align=3D"left" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top;"><a href=
+=3D"https://e=2Echase=2Ecom/T/v60000018704b430ccb6e54df4bbc786c8/e35e2194b2=
+d545970000021ef3a0bcc2/e35e2194-b2d5-4597-85c0-5f3d6bf2cb43?__dU__=3Dv0G4RB=
+KTXg2Gt2dz4tEDEgM0S7hb84hN7V&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPv=
+XMWoX_0IA9a7wNY25qD5G3eSEu8x69SjfXe0Zmw1NXp7TeUmPTryEkBCppwtgvVmF7z-5VJ2oG8=
+OwJ5yRpakErmEsA_Pmp1lDAWBCzoa5Wv3VZZe4yaH7GpoxDSjIVvvzs3QbvUFLmjwNbDvNQB838=
+rYLAOjd5UGPdsD0wazlI8DtV1y07gWcs9AeyMmRyN-ecj-5CaPt2sG63kYxpaT9t1kyWhXy1s7S=
+nQi5LcE4u0So5QUFvvSzeHPS8m3uzDWxdtpoifilCoBUTgaWjkhCUTGOdaPEksDaG6Rr7PO-BuW=
+LrIsvVVsARfrm2dBtgoEcEAz4xWqaKRCsbVL1RoyImT4S32_" target=3D"_blank" rel=3D"=
+noopener noreferrer"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/C=
+ontentHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS020663=
+4_LC-CFBQ123W3V_IMAGES/CFB_hero_email-v2=2Epng" width=3D"600" height=3D"aut=
+o" border=3D"0" style=3D"display:block;" alt=3D"Debit card for kids with a =
+$0 monthly service fee=2E Chase First Banking service mark" class=3D"hero" =
+/></a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding:36px 28p=
+x 36px; font-size:18px; font-weight:normal; font-family:Arial, Helvetica, s=
+ans-serif; color:#101820;" class=3D"moPad">You're invited to learn more abo=
+ut this debit card for kids=2E Chase First Banking is exclusively for paren=
+ts/guardians who are existing Chase checking customers=2E It includes the f=
+ollowing:</td>
+        </tr>
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding:0px 28px=
+ 36px;" class=3D"moPad"><table role=3D"presentation" align=3D"center" width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; padding:0p=
+x 0px 0px 12px;"><table role=3D"presentation" align=3D"center" width=3D"100=
+%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"background-col=
+or:#ffffff;">
+                    <tr>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 10px; font-size:24px; font-weight:normal; font-family:Arial, He=
+lvetica, sans-serif; color:#101820; width: 24px"><img src=3D"https://images=
+=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images/35b11a27-28c1-46c3-9235-e8=
+3d8639fc82/CFB_Acqu/CS0140239_LC-CFBQ122CHALL_IMAGES/checkmark_list_blue_21=
+x21=2Epng" width=3D"21" height=3D"21" border=3D"0" style=3D"display:block;"=
+ alt=3D""/></td>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 10px; font-size:18px; font-weight:normal; font-family:Arial, He=
+lvetica, sans-serif; color:#101820;">$0 Monthly Service Fee<span style=3D"f=
+ont-size:70%; line-height:0; vertical-align:9px;">1</span></td>
+                    </tr>
+                    <tr>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 10px; font-size:24px; font-weight:normal; font-family:Arial, He=
+lvetica, sans-serif; color:#101820; width: 24px"><img src=3D"https://images=
+=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images/35b11a27-28c1-46c3-9235-e8=
+3d8639fc82/CFB_Acqu/CS0140239_LC-CFBQ122CHALL_IMAGES/checkmark_list_blue_21=
+x21=2Epng" width=3D"21" height=3D"21" border=3D"0" style=3D"display:block;"=
+ alt=3D""/></td>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 10px; font-size:18px; font-weight:normal; font-family:Arial, He=
+lvetica, sans-serif; color:#101820;">Debit card in your child's name</td>
+                    </tr>
+                    <tr>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 10px; font-size:24px; font-weight:normal; font-family:Arial, He=
+lvetica, sans-serif; color:#101820; width: 24px"><img src=3D"https://images=
+=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images/35b11a27-28c1-46c3-9235-e8=
+3d8639fc82/CFB_Acqu/CS0140239_LC-CFBQ122CHALL_IMAGES/checkmark_list_blue_21=
+x21=2Epng" width=3D"21" height=3D"21" border=3D"0" style=3D"display:block;"=
+ alt=3D""/></td>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 10px; font-size:18px; font-weight:normal; font-family:Arial, He=
+lvetica, sans-serif; color:#101820;">Banking account owned and managed by y=
+ou</td>
+                    </tr>
+                    <tr>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 0px; font-size:24px; font-weight:normal; font-family:Arial, Hel=
+vetica, sans-serif; color:#101820; width: 24px"><img src=3D"https://images=
+=2Eharmony=2Eepsilon=2Ecom/ContentHandler/images/35b11a27-28c1-46c3-9235-e8=
+3d8639fc82/CFB_Acqu/CS0140239_LC-CFBQ122CHALL_IMAGES/checkmark_list_blue_21=
+x21=2Epng" width=3D"21" height=3D"21" border=3D"0" style=3D"display:block;"=
+ alt=3D""/></td>
+                      <td align=3D"left" style=3D"vertical-align:top; padd=
+ing:0px 0px 4px; font-size:18px; font-weight:normal; font-family:Arial, Hel=
+vetica, sans-serif; color:#101820;">For children ages 6-17 years old</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align=3D"center" style=3D"padding:0px; vertical-align:top; p=
+adding: 0px 0px 44px 0px" class=3D"moPad"><table role=3D"presentation" alig=
+n=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"vert=
+ical-align:top;">
+              <tr>
+                <td role=3D"button" align=3D"center" style=3D"background-c=
+olor:#2ca753; color: #fffffe; font-size: 18px; font-family: Arial, Helvetic=
+a, sans-serif; font-weight:bold; padding: 18px 0px; border: 1px solid #2ca7=
+53; vertical-align:top; border-radius:6px; width: 280px;"><a href=3D"https:=
+//e=2Echase=2Ecom/T/v60000018704b430ccb6e54df4bbc786c8/e35e2194b2d545970000=
+021ef3a0bcc3/e35e2194-b2d5-4597-85c0-5f3d6bf2cb43?__dU__=3Dv0G4RBKTXg2Gt2dz=
+4tEDEgM0S7hb84hN7V&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0r7F=
+igEMozySCnDUlyP_TwE76-ZnOJeE2N9jZhKI_P8zYaZ4Y3DVDw0tZc7nn8b728VLAAFkjDM3eD9=
+iwqbBmEcLxguztvb0K_dFFqjUIKihXOD2QlyGqbvoOdEqDkx_fIMV6cNyBybytVY5ag-jEC_EZn=
+OeuyRASuvJpzvFoxMroUxYEGRis_AMEwLJKEo6u5RhUxcuOBUcogr85pPjYiFrgY045epauCg2r=
+wbQnTrbyc9WCF3_51JEc2An1RXClRMfRJRQk7fsMp-kUDVGIq3oESzGGYuj8-hUcUAylJSMpemr=
+NRNLoXkhKpjh23gSNyUrUFxMwAxuSwwL8bqYmex5j3Zm-NCwFvkf1_tw_hfk7mJ0wvtc7A" tar=
+get=3D"_blank" style=3D"color: #fffffe; text-decoration:none;" rel=3D"noope=
+ner noreferrer">Open an account&nbsp;&raquo;</a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <!-- END P10 -->=20
+        <!--START S501 -->
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top;padding: 0px 28px=
+;" class=3D"moPad"><table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; font-size:=
+ 16px; font-family: Arial, Helvetica, sans-serif; color: #101820; padding: =
+0px 0px 36px 0px;">Account subject to approval=2E To learn more about Chase=
+ First Banking go to <a style=3D"text-decoration: underline; color:#007ac0;=
+" href=3D"https://e=2Echase=2Ecom/T/v60000018704b430ccb6e54df4bbc786c8/e35e=
+2194b2d545970000021ef3a0bcc4/e35e2194-b2d5-4597-85c0-5f3d6bf2cb43?__dU__=3D=
+v0G4RBKTXg2Gt2dz4tEDEgM0S7hb84hN7V&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDg=
+UUCCPvXMWoX_0IA9a7wNY25qD5G3eSEu8x69SjfXe0Zmw1NXp7TeUmPTryEkBCppwtgvVmF7z-5=
+VJ2oG8OwJ5yRpakErmEsA_Pmp1lDAWBCzoa5Wv3VZZe49J6J3Aml_SQI3f9y8QjD-LMMMwuXNwz=
+ydu-HvFBPzv-VfMwVhkbePN_4tpvV6Kc-RWFwc5czq1PJ5G1WyAwbumFufEib85Jr3wU4gxhkcX=
+a8vp1xEZ2hY3IFLk6e4E3RtvdE3PE-h9_6M41uqYKZe8suHaajpx5-pRC5sLQvv_KxFTaNBtaoV=
+zbDnGkz4R-g9tdBZPOfhBgTRWYJrbYx-y5OtPxJ1jl8ngTFPteb5_t" target=3D"_blank" r=
+el=3D"noopener noreferrer">chase=2Ecom/FirstBanking</a></td>
+              </tr>
+              <tr>
+                <td role=3D"heading" align=3D"left" style=3D"vertical-alig=
+n:top; font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-wei=
+ght: bold; color: #101820; padding: 0px 0px 24px 0px;">Account features</td=
+>
+              </tr>
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; font-size:=
+ 16px; font-family: Arial, Helvetica, sans-serif; color: #101820; padding: =
+0px 0px 36px 0px;">With a debit card just for them, your child will learn <=
+strong>good money habits</strong> firsthand, while you monitor spending and=
+ set account alerts=2E</td>
+              </tr>
+            </table></td>
+        </tr>
+        <!--END S501 -->=20
+        <!-- S41 -->
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top;padding:0px 28px =
+28px;" class=3D"moPad"><table role=3D"presentation" width=3D"100%" align=3D=
+"left" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top;"><table ro=
+le=3D"presentation" width=3D"181" align=3D"left" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" class=3D"fullWidth">
+                    <tr>
+                      <td align=3D"center" style=3D" vertical-align:top; p=
+adding:0px 0px 16px; "><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom=
+/ContentHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0140=
+239_LC-CFBQ122CHALL_IMAGES/Spend_Card=2Epng"  width=3D"122" height=3D"122" =
+alt=3D"" border=3D"0" style=3D"display:block;"/></td>
+                    </tr>
+                    <tr>
+                      <td role=3D"heading" align=3D"center" style=3D"verti=
+cal-align:top; font-size: 18px; font-family: Arial, Helvetica, sans-serif; =
+color: #005eb8; font-weight: bold; padding: 0px 30px 16px;" class=3D"zeroPa=
+d">Spend</td>
+                    </tr>
+                    <tr>
+                      <td align=3D"center" style=3D"vertical-align:top; fo=
+nt-size: 14px; font-family: Arial, Helvetica, sans-serif; color: #101820; p=
+adding: 0px 10px 24px;" class=3D"zeroPad">Set up account alerts to keep tra=
+ck of kids' debit card purchases<span style=3D"font-size:70%; line-height:0=
+; vertical-align:3px;">2</span></td>
+                    </tr>
+                  </table>
+                 =20
+                  <!--[if mso]></td><td align=3D"left" style=3D"vertical-a=
+lign: top;"><![endif]-->
+                 =20
+                  <table role=3D"presentation" width=3D"182" align=3D"left=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"fullWidth">
+                    <tr>
+                      <td align=3D"center" style=3D" vertical-align:top; p=
+adding:0px 0px 16px 0px; "><img src=3D"https://images=2Eharmony=2Eepsilon=
+=2Ecom/ContentHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/=
+CS0140239_LC-CFBQ122CHALL_IMAGES/Save_Piggy=2Epng"  width=3D"122" height=3D=
+"122" alt=3D"" border=3D"0" style=3D"display:block;"/></td>
+                    </tr>
+                    <tr>
+                      <td role=3D"heading" align=3D"center" style=3D"verti=
+cal-align:top; font-size: 18px; font-family: Arial, Helvetica, sans-serif; =
+color: #005eb8; font-weight: bold; padding: 0px 5px 16px 5px;" class=3D"zer=
+oPad">Save</td>
+                    </tr>
+                    <tr>
+                      <td align=3D"center" style=3D"vertical-align:top; fo=
+nt-size: 14px; font-family: Arial, Helvetica, sans-serif; color: #101820; p=
+adding: 0px 5px 24px 5px;" class=3D"zeroPad">Transfer money to kids and tea=
+ch them how to save and manage their money</td>
+                    </tr>
+                  </table>
+                 =20
+                  <!--[if mso]></td><td align=3D"left" style=3D"vertical-a=
+lign: top;"><![endif]-->
+                 =20
+                  <table role=3D"presentation" width=3D"181" align=3D"left=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"fullWidth">
+                    <tr>
+                      <td align=3D"center" style=3D" vertical-align:top; p=
+adding:0px 0px 16px 0px;"><img src=3D"https://images=2Eharmony=2Eepsilon=2E=
+com/ContentHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0=
+140239_LC-CFBQ122CHALL_IMAGES/Earn_Trophy=2Epng"  width=3D"122" height=3D"1=
+22" alt=3D"" border=3D"0" style=3D"display:block;"/></td>
+                    </tr>
+                    <tr>
+                      <td role=3D"heading" align=3D"center" style=3D"verti=
+cal-align:top; font-size: 18px; font-family: Arial, Helvetica, sans-serif; =
+color: #005eb8; font-weight: bold; padding: 0px 5px 16px 5px;" class=3D"zer=
+oPad">Earn</td>
+                    </tr>
+                    <tr>
+                      <td align=3D"center" style=3D"vertical-align:top; fo=
+nt-size: 14px; font-family: Arial, Helvetica, sans-serif; color: #101820; p=
+adding: 0px 5px 24px;" class=3D"zeroPad">Assign chores and create allowance=
+s for kids with recurring payments in the Chase Mobile<span style=3D"font-s=
+ize:70%; line-height:0; vertical-align:3px;">&reg;</span> app<span style=3D=
+"font-size:70%; line-height:0; vertical-align:3px;">3</span></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top;padding: 0px 28px=
+;" class=3D"moPad"><table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td role=3D"heading" align=3D"left" style=3D"vertical-alig=
+n:top; font-size: 24px; font-family: Arial, Helvetica, sans-serif; font-wei=
+ght: bold; color: #101820; padding: 0px 0px 24px 0px;">What our Chase First=
+ Banking kids are saying:</td>
+              </tr>
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; font-size:=
+ 18px; font-family: Arial, Helvetica, sans-serif; color: #101820; padding: =
+0px 0px 36px 0px; font-style: italic;">"It is my money, and mom and dad let=
+ me use it to buy what I want=2E It makes me feel independent=2E"</td>
+              </tr>
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; font-size:=
+ 16px; font-family: Arial, Helvetica, sans-serif; color: #101820; padding: =
+0px 0px 36px 0px;"><strong> - Bradley</strong><br/>
+                  Participants are compensated for their survey participat=
+ion=2E<span style=3D"font-size:70%; line-height:0; vertical-align:3px;">4</=
+span></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align=3D"center" style=3D"vertical-align:top; padding: 0px 0=
+px 36px 0px;" class=3D"moPad"><table role=3D"presentation" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" style=3D"vertical-align:top;" align=3D"cen=
+ter">
+              <tr>
+                <td role=3D"button" align=3D"center" style=3D"background-c=
+olor:#2ca753; color: #fffffe; font-size: 18px; font-family: Arial, Helvetic=
+a, sans-serif; font-weight:bold; padding: 18px 0px; border: 1px solid #2ca7=
+53; vertical-align:top; border-radius:8px; -moz-border-radius: 8px; -webkit=
+-border-radius:8px;width: 280px;"><a href=3D"https://e=2Echase=2Ecom/T/v600=
+00018704b430ccb6e54df4bbc786c8/e35e2194b2d545970000021ef3a0bcc5/e35e2194-b2=
+d5-4597-85c0-5f3d6bf2cb43?__dU__=3Dv0G4RBKTXg2Gt2dz4tEDEgM0S7hb84hN7V&__F__=
+=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0IA9a7wNY25qD5G3eSEu8x69SjfX=
+e0Zmw1NXp7TeUmPTryEkBCppwtgvVmF7z-5VJ2oG8OwJ5yRpakErmEsA_Pmp1lDAWBCzoa5Wv3V=
+ZZe49J6J3Aml_SQI3f9y8QjD-LWZn0_9QxFo9u-HvFBPzv-VfMwVhkbePN_4tpvV6Kc-RWFwc5c=
+zq1PJ5G1WyAwbumFufEib85Jr3wU4gxhkcXa8vp1xEZ2hY3IFLk6e4E3RtvdE3PE-h9_6M41uqY=
+KZe8suHaajpx5-pRC5sLQvv_KHMdA98bj9ITh-6nAG-P_bbGttgPOGYeuDs6m9ROpugnwxBxlzf=
+YWRHgTFPteb5_t" rel=3D"noopener noreferrer" target=3D"_blank" style=3D"colo=
+r: #FFFFFE; text-decoration:none;">See details&nbsp;&raquo;</a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <!-- END S41 -->=20
+        <!-- ESI_Promo_EN-->
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding: 0px 0px=
+; border-top: 1px solid #E2E4E5;"><table role=3D"presentation" width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td align=3D"left" style=3D"vertical-align:top; padding:0p=
+x 0px;width:25%;"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Cont=
+entHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0140239_L=
+C-CFBQ122CHALL_IMAGES/whiteHeaderSpace=2Ejpg" width=3D"100%" height=3D"80" =
+border=3D"0" style=3D"display:block;" alt=3D""/></td>
+                <td align=3D"center" style=3D"vertical-align:top; padding:=
+0px 0px;"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/ContentHandl=
+er/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0140239_LC-CFBQ12=
+2CHALL_IMAGES/ChaseLogo_Footer_Logo_80x300=2Ejpg" width=3D"300" height=3D"a=
+uto" border=3D"0" style=3D"display:block;" alt=3D"Chase"/></td>
+                <td align=3D"left" style=3D"vertical-align:top; padding:0p=
+x 0px;width:25%;"><img src=3D"https://images=2Eharmony=2Eepsilon=2Ecom/Cont=
+entHandler/images/35b11a27-28c1-46c3-9235-e83d8639fc82/CFB_Acqu/CS0140239_L=
+C-CFBQ122CHALL_IMAGES/whiteHeaderSpace=2Ejpg" width=3D"100%" height=3D"80" =
+border=3D"0" style=3D"display:block;" alt=3D""/></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align=3D"left" style=3D"vertical-align:top; padding: 30px 28=
+px 20px;background-color: #e2e4e5;" class=3D"moPad"><table role=3D"presenta=
+tion" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+              <tr>
+                <td height=3D"594" align=3D"left" style=3D"font-family:Ari=
+al, Helvetica, sans-serif; font-size:12px; color:#101820; vertical-align:to=
+p;" class=3D"font14"><a name=3D"email_security"></a><a name=3D"Email_Securi=
+ty_Information"></a><strong role=3D"heading">Email Security Information</st=
+rong><br />
+                  <br />
+                  Email intended for allen71090@gmail=2Ecom<br />
+                  <br />
+                  If you have concerns about the authenticity of this mess=
+age, please visit <a href=3D"https://e=2Echase=2Ecom/T/v60000018704b430ccb6=
+e54df4bbc786c8/e35e2194b2d545970000021ef3a0bcc6/e35e2194-b2d5-4597-85c0-5f3=
+d6bf2cb43?__dU__=3Dv0G4RBKTXg2Gt2dz4tEDEgM0S7hb84hN7V&__F__=3Dv0fUYvjHMDjRP=
+MSh3tviDHXIoXcPxvDgUUCCPvXMWoX_0JoZLAZABQF1wkk_CxjfXW1q-2GU9gjXSTbvrVeWYUv7=
+3uafuSbLkDQf_GIq-zqb7UFmTVJOYSDJ3flQhniuc3hzOmF_PTVDbMJIcYuVtYXxk4VCvWLZ-_K=
+1VjlqD6MQL8Rmc567JEBK68mnO8WjEyuhTFgQZGKz8AwTAskoSjq7lGFTFy44FRyiCvzmk-NiIW=
+uBjTjl6lq4KDavBtCdOtvJz1YIXf_nUkRzYCfVFcKVEx9ElFCTt-wyn6RQNUYiregRLMYZi6Pz6=
+FRxQDKUlIml2EOQrYpkeF-xYBd91qTP5FEQfR2TRArXWsjbIhqxon2cgr-Rfyim-R_X-3D-F-Tu=
+YnTC-1zsA=3D" target=3D"_blank" style=3D"color:#005eb8; text-decoration:und=
+erline; font-weight: bold;" rel=3D"noopener noreferrer">chase=2Ecom/Custome=
+rService</a> for options on how to contact us=2E<br />
+                  <br />
+                  <span style=3D"font-weight: bold; text-transform: upperc=
+ase" role=3D"heading">important information</span><br />
+                  <br />
+                  <span style=3D"font-size:70%; line-height:0; vertical-al=
+ign:3px;">1</span>For parents/guardians interested in teaching their child =
+how to manage money using a debit card with the child's name on it=2E The p=
+arent/guardian is the owner of this account and must have an online profile=
+ and one of these other checking accounts at account opening: a Chase Secur=
+e Checking<span style=3D"font-size:70%; line-height:0; vertical-align:3px;"=
+>SM</span>, Chase Total Checking<span style=3D"font-size:70%; line-height:0=
+; vertical-align:3px;">&reg;</span>, Chase Premier Plus Checking<span style=
+=3D"font-size:70%; line-height:0; vertical-align:3px;">SM</span>, Chase Sap=
+phire<span style=3D"font-size:70%; line-height:0; vertical-align:3px;">SM</=
+span> Checking, or a Chase Private Client Checking<span style=3D"font-size:=
+70%; line-height:0; vertical-align:3px;">SM</span> account=2E Benefits offe=
+red to these checking accounts do not apply to Chase First Checking account=
+s=2E Only the parent/guardian who opened the account can fund, view or mana=
+ge this account=2E You can open a Chase First Checking account for your chi=
+ld who is 6-17 years old=2E Once the child has reached the age of 18, Chase=
+ may recommend they open their own account=2E<br />
+                  <br />
+                  <span style=3D"font-size:70%; line-height:0; vertical-al=
+ign:3px;">2</span><b>Account Alerts:</b> There's no charge from Chase, but =
+message and data rates may apply=2E Delivery of alerts may be delayed for v=
+arious reasons, including service outages affecting your phone, wireless or=
+ internet provider; technology failures; and system capacity limitations=2E=
+ Any time you review your balance, keep in mind it may not reflect all tran=
+sactions including recent debit card transactions=2E <br />
+                  <br />
+                  <span style=3D"font-size:70%; line-height:0; vertical-al=
+ign:3px;">3</span><b>Chase Mobile<span style=3D"font-size:70%; line-height:=
+0; vertical-align:3px;">&reg;</span> app</b> is available for select mobile=
+ devices=2E Message and data rates may apply=2E <br/>
+                  <br/>
+                  <span style=3D"font-size:70%; line-height:0; vertical-al=
+ign:3px;">4</span>The Testimonials on this page or provided via linked vide=
+os are the sole opinions, findings or experiences of our customer and not t=
+hose of JPMorgan Chase Bank, N=2EA=2E or any of its affiliates=2E These opi=
+nions, findings, or experiences may not be representative of what all custo=
+mers may achieve=2E JPMorgan Chase Bank, N=2EA=2E or any of its affiliates =
+are not liable for decisions made or actions taken in reliance on any of th=
+e testimonial information provided=2E <br />
+                  <br />
+                  <span role=3D"heading" style=3D"font-weight: bold; text-=
+transform: uppercase;">About this message</span><br />
+                  <br />
+                  This promotional email was sent to you to provide inform=
+ation about products, services, or special offers that may be of interest t=
+o you=2E <br />
+                  <br />
+                  You can <a href=3D"https://e=2Echase=2Ecom/U/v6000001870=
+4b430ccb6e54df4bbc786c8/e35e2194b2d545970000021ef3a0bcc7" target=3D"_blank"=
+ style=3D"color: #005eb8; font-weight: bold; text-decoration: underline;" r=
+el=3D"noopener noreferrer">unsubscribe</a> from future promotional emails f=
+rom the JPMorgan Chase &amp; Co=2E family of companies including "points, p=
+erks and prizes" such as this or submit your request in writing to Chase Pr=
+ivacy Operations, <span class=3D"applelinksgray"><a style=3D"color: #101820=
+; text-decoration: none;">P=2EO=2E Box 734007, Dallas, TX 75373-4007</a></s=
+pan>=2E It takes up to 10 business days to process your request=2E You'll c=
+ontinue to receive Chase service emails=2E<br />
+                  <br />
+                  This email was sent from an unmonitored mailbox=2E Go to=
+ <a href=3D"https://e=2Echase=2Ecom/T/v60000018704b430ccb6e54df4bbc786c8/e3=
+5e2194b2d545970000021ef3a0bcc8/e35e2194-b2d5-4597-85c0-5f3d6bf2cb43?__dU__=
+=3Dv0G4RBKTXg2Gt2dz4tEDEgM0S7hb84hN7V&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPx=
+vDgUUCCPvXMWoX_0JoZLAZABQF1wkk_CxjfXW1q-2GU9gjXSTbvrVeWYUv73uafuSbLkDQf_GIq=
+-zqb7UFmTVJOYSDJ3flQhniuc3hzOmF_PTVDbMJIcYuVtYXybcoNRE1KXw6tD3ML2LZ9K1bRHnc=
+lVyjDQa32eEpolD_Q7_0I_n5jSSdN7JNLLzczXR_po7sZBfeBLNOT7kB0qOQy87AlIWaFE6gUMG=
+GtRRmvo7d6ZXJIiIPQ-UQYV0AtybkCTmdD0xHBcieHFYC_QyA3L2s6U27mrGlJWmeyAHE_O_Fe2=
+fLbUDt3zHiqmUtpe5PSM1xR2aV-WDVGP4n0ktJSJZf-uzHIEmdyFrPEBr" target=3D"_blank=
+" style=3D"color: #005eb8; font-weight: bold; text-decoration: underline;" =
+rel=3D"noopener noreferrer">chase=2Ecom/CustomerService</a> for options on =
+how to contact us=2E<br />
+                  <br />
+                  Your privacy is important to us=2E See our online <a hre=
+f=3D"https://e=2Echase=2Ecom/T/v60000018704b430ccb6e54df4bbc786c8/e35e2194b=
+2d545970000021ef3a0bcc9/e35e2194-b2d5-4597-85c0-5f3d6bf2cb43?__dU__=3Dv0G4R=
+BKTXg2Gt2dz4tEDEgM0S7hb84hN7V&__F__=3Dv0fUYvjHMDjRPMSh3tviDHXIoXcPxvDgUUCCP=
+vXMWoX_0JoZLAZABQF1wkk_CxjfXW1q-2GU9gjXSYD44WwyUkZ3Es3jwfkUJSuTCCoPri5KGnjY=
+cmqcHSJqyn8FSoauxNSmvIEZu-5Qr_7J75Cw5H0B_lhIZeFrxpsIXmUYW1OdblqwByOEGan0BC1=
+66QnwnUrryac7xaMTK6FMWBBkYrPwDBMCyShKOruUYVMXLjgVHKIK_OaT42Iha4GNOOXqWrgoNq=
+8G0J0628nPVghd_-dSRHNgJ9UVwpUTH0SUUJO37DKfpFA1RiKt6BEsxhmLo_PoVHFAMpSUjKXpq=
+zUTS6F0V9iigQYjmLClSPCeUJTJlE_9EIZ6gQjsxARsmQ-zf7b5H9f7cP4X5O5idML7XOwA=3D=
+=3D" target=3D"_blank" style=3D"color: #005eb8; text-decoration: underline;=
+ font-weight: bold;" rel=3D"noopener noreferrer">Security Center</a> to lea=
+rn how to protect your information=2E<br />
+                  <br />
+                  JPMorgan Chase Bank, N=2EA=2E Member FDIC<br />
+                  &copy;2023 JPMorgan Chase &amp; Co=2E<br />
+                  <br />
+                  LC-CFBQ123W3V</td>
+              </tr>
+            </table></td>
+        </tr>
+        <!-- END ESI_Promo_EN-->=20
+        <!--End of Content -->
+      </table></td>
+  </tr>
+</table>
+
+<img src=3D'https://e=2Echase=2Ecom/O/v60000018704b430ccb6e54df4bbc786c8/e=
+35e2194b2d5459700004c5a42963aa1' style=3D"display:none; max-height: 0px; fo=
+nt-size: 0px; overflow: hidden; mso-hide: all"/></body>
+</html>
+---=Part.109115.e66d2695bd84a4ad.18704b433ac.d02bc104325f4f6e=---
+

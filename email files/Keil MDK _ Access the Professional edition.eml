@@ -1,0 +1,662 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp2126521dyf;
+        Sat, 17 Jun 2023 17:17:40 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ4VPiBfcxSaNCruUR0JFdCeGFADst2KB6e1L27cBvpZ/ips5WUzMgAiCWBCcoF+aM8kvjGG
+X-Received: by 2002:a05:6214:260d:b0:626:101a:f8 with SMTP id gu13-20020a056214260d00b00626101a00f8mr8272186qvb.25.1687047460189;
+        Sat, 17 Jun 2023 17:17:40 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1687047460; cv=none;
+        d=google.com; s=arc-20160816;
+        b=FS3IrsF0ZgjK/idwMn/3Tho55isZ/4kvuTbkhAgPAdAzXSGkxfZJW7WueyVh5pC2mm
+         fVwyPYSzWh6f4ooe2zBnkMuNn2z+EjGKMCphVsxEMimJEt3u1oAlDb5zrqT8xO+mIKgc
+         6pCKOuSlMJo76EoUZJUJ0MqY6TBEe9zUGm2wy3OcakvxAFxjcgb2rpIBhS4ORBLet5+t
+         UMNN9DIcmVbFR+nrpJXwQyHw62iyZftBsV8HIp++4NrWfowS4u8cqeosZnITr/txm68j
+         vLTeRTR2SQT5XIKcXQB2WvTIL4QFK+ieiOOX/pE4P1hNY861ikS0KwMP2wcyPZ7qUDXA
+         VA3Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=iEAplK1j2fLucQ7vH7/RAkvDQNo8BwMD66LRmWwBydk=;
+        b=fvCEVm2LgJLMTfORsEdmXH4tHRd4xios3grK5QxLXh5OYzScDI8QzNrcUNpIQfVtmN
+         6bMOU98BaVquECSHLMTL8RKzWoXry7pomv6MBYRKzbO52Dd8q0DyXHM3AcGPiVenGjHO
+         5+7m/3wLSikRIkgqgL9jsiHUIsu1AZl6BuWJAPnbEK+qWjBB3GYG7VM+gLkzodGsbd5O
+         N9/hVkUFi1PkkFtuidb4IdIzQSloQfdBsnhuG9kGofcL999f8xYyzvY1yJM3qb7KhrIf
+         KIvIxZMssNjCIUXuKW44nsEc36emVfGX+X7vuxnsQLogwQ/jO+oSpmJDrSRCtFX1HIgR
+         9JCg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@arm.com header.s=m2 header.b=E7NMclgR;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=LsisXI5k;
+       spf=pass (google.com: domain of 479-zyw-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com designates 192.28.145.83 as permitted sender) smtp.mailfrom=479-ZYW-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=arm.com
+Return-Path: <479-ZYW-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com>
+Received: from engaged.mail.arm.com (engaged.mail.arm.com. [192.28.145.83])
+        by mx.google.com with ESMTPS id iw5-20020a0562140f2500b0062ff6acac0asi3083362qvb.472.2023.06.17.17.17.39
+        for <allen71090@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 17 Jun 2023 17:17:40 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 479-zyw-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com designates 192.28.145.83 as permitted sender) client-ip=192.28.145.83;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@arm.com header.s=m2 header.b=E7NMclgR;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=LsisXI5k;
+       spf=pass (google.com: domain of 479-zyw-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com designates 192.28.145.83 as permitted sender) smtp.mailfrom=479-ZYW-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=arm.com
+X-MSFBL: PJc52sAT2jIknfy1LOaRtPYxWVEW/7FVKqfB4PEAxN8=|eyJ1IjoiNDc5LVpZVy0
+	5MDc6MDoyMzU4OjEyODQwOjE6MTA0Mzo5OjY2Mzc6MjM3ODcxNTgtMiIsImciOiJ
+	iZy1hYmQtMTAyNyIsInIiOiJhbGxlbjcxMDkwQGdtYWlsLmNvbSIsImIiOiJkdnA
+	tMTkyLTI4LTE0NS04MyJ9
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1687047459;
+	s=m2; d=arm.com; i=@arm.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=iEAplK1j2fLucQ7vH7/RAkvDQNo8BwMD66LRmWwBydk=;
+	b=E7NMclgRzGZcoR70Yo+Rp3JhvfpV2uFSZE+bNxRBeMLIbBN7B616S0eZqsc7FLna
+	cDGH5isOoKZ1J97pTVJQXfxnBSV9sihSIpoRguZnwMV6tP/0GnPBDB6c1kl87Jjmc+b
+	VnIsksRohgtUMpaEI57+ZmqtqzMkpA7CqMVWXx/w=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1687047459;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=iEAplK1j2fLucQ7vH7/RAkvDQNo8BwMD66LRmWwBydk=;
+	b=LsisXI5kyql3yXbDpPey0zVpX3rxqt9jB4ke0m/+NBv79WknTBFaw9sF3YfGujNd
+	FGaiO1u7OxkE1jLeUJeXeAGI2eMmCvEDn52vbQ0DHOpiBnjZATD6i2B6hDloAqmTaQi
+	0uR9yKH2X/5gR9/Bqot/L9HMnaWrHm3x58qdS2uE=
+Date: Sat, 17 Jun 2023 19:17:39 -0500 (CDT)
+From: Arm <inside-sales@arm.com>
+Reply-To: inside-sales@arm.com
+To: allen71090@gmail.com
+Message-ID: <28692155.10712264.1687047459662@abmktmail-trigger1g.marketo.org>
+Subject: Keil MDK | Access the Professional edition
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10712263_913825980.1687047459642"
+X-Binding: bg-abd-1027
+X-MarketoID: 479-ZYW-907:0:2358:12840:1:1043:9:6637:23787158-2
+X-Mailfrom: 479-ZYW-907.0.6637.0.0.1043.9.23787158-2@engaged.mail.arm.com
+List-Unsubscribe: <mailto:MVRGE4KKIVRU4WLYKJTW44DPJNUVUWKQJ5ETCNCEKBEUY3KEIFSHMYKDJRZWIY3GIVIUKPI=.6637.1043.9@unsub-ab.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_10712263_913825980.1687047459642
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Keil MDK
+MDK-Professional
+Hi Allen,
+We hope that you enjoy using Keil MDK. If you haven=E2=80=99t done so, tell=
+ us about your experience <https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNV6=
+_E98wcYJrpnLjq3RsjYsFhk4QTZG1SFRBY-2kVBLx7cXuHLBRerq-FweqKzTnfwQ=3D> by fil=
+ling out our short survey !
+Our community <https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNQI5jkZIZOqNtHZ=
+ZoEFFWMIqPwXUt_cQr4inNh5IznbT_CE_YbthArMG2rNrql7bli4=3D> and application en=
+gineers <https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNUET8izJaZzJpxlmg4LfM=
+AFBmQf0mt9marCT1hzd5S-GraQlwxkwYetldDNhS8ksKLg=3D> are always here to suppo=
+rt you in case you have technical questions about Keil MDK.
+Have you already tried the advanced features of MDK-Professional? It is sti=
+ll not too late to activate the 30-day trial license <https://goto.arm.com/=
+NDc5LVpZVy05MDcAAAGMatYDNS3wV9rG1_lidjgL4eDMTAxSZf1_X6gC_gdeYYdq6Jdah8Co28c=
+0c3CG34GYA0ole7k=3D>, once you downloaded the Keil MDK Lite edition.
+How to buy=20
+If you=E2=80=99d like to go on to buy Keil MDK-Professional or other commer=
+cial editions, visit our online store <https://goto.arm.com/NDc5LVpZVy05MDc=
+AAAGMatYDNSGLw0Ool8auxsNhEiod-xW2tcO8dyFl4ckbUw2_OwRuxrcifNyvCKvPhdcdS1CFen=
+I=3D> or find your local distributor <https://goto.arm.com/NDc5LVpZVy05MDcA=
+AAGMatYDNYQ4Fb6DEvy7gng0VPYnyXlcvx_hfrWoto1_HxkJBP3TQc9mDqnM8ygYonmNyuz8AgE=
+=3D>.
+If you have unanswered questions, please contact us by replying to this ema=
+il and one of our colleagues will get back to you shortly.=C2=A0
+Best regards,
+The team at Arm
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNYZBk3ShhCSGJRQuxCwfckFR9ZeYg=
+fDnJcyogdaUeAsGr6cM7hwxF3UjTa_wH5YBDmk=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNZxFbtCdr3OoApLTB_mVLGI9EhD2K=
+5bGWUEcyyM_4vJXD5Msk4JECtZeS57tG3X_qUQ=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNXagkq6fYB0iJ-mo9wE9i1rRb0cM_=
+YLLbjAmkGWoxQP8cwVF5g7mT6RjZxrpBhq_eRk=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNf0aZw9zs-Won4LRFYi_VBIu-a2U8=
+F8KNOq92ZBVfWqVFBJBUEacO-UF6EHIxXp36RI=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNTKYLHC3R3g-CLOM1RF7ecdgrT0zx=
+W7S9ek7ICbxyQ0hLcdZbF8-t9gH3B0c40HLppk=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNc5n1cMBhr_0VwQiJm-0KtO6DIwHN=
+v7Fs2YfiK8BA8qvpdbrqWX1yjx0TM6Gjb3QSCU=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNXW-mro3n5F1S4rHo5qmR72JyUeUV=
+5xopcRymUZnyEntbG8VOlJDbVce11QPoNfwt3E=3D>
+<https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNZaxDo-hrPBs9mt7zOGA4XbYFfqaB=
+FcJ6s8_Xuz_nN2UuAvv2KA6S4pM_1UtWvHocls=3D>
+<[[https://engaged.arm.com/index.php/email/emailWebview?mkt_tok=3DNDc5LVpZV=
+y05MDcAAAGMatYDNQChzVVdhlvwz0Emr9lcN_WRBDM3hW87Pekmotc8zTtqPvUg2kBxrkSJvpYZ=
+90blZWxw37tD5PtJ6PFCDq2YcuVoZnQansrx7zkN3A&md_id=3D1043&aliId=3DhkpYeMzOKwY=
+N3CoWmIDoSNaJ8EejAe7X2coPdYuSraFdvT0cBY2lTw%3D%3D]]>Unsubscribe <[[https://=
+engaged.arm.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DNDc5LVpZ=
+Vy05MDcAAAGMatYDNQChzVVdhlvwz0Emr9lcN_WRBDM3hW87Pekmotc8zTtqPvUg2kBxrkSJvpY=
+Z90blZWxw37tD5PtJ6PFCDq2YcuVoZnQansrx7zkN3A]]> | Privacy Policy <https://go=
+to.arm.com/NDc5LVpZVy05MDcAAAGMatYDNQoU7zr6eHG3vxnCSGRtnhzI33rUEYaF-hHgwIWj=
+qx_LHOL4V_h6Gb2di2pL-e1UE-E=3D> | Trademarks <https://goto.arm.com/NDc5LVpZ=
+Vy05MDcAAAGMatYDNa4zWZg5AK2Cq5Zb2m1fHwMMVWOLh_TTE2PKwL8UgFjQuB4Xzq2FEKjhdbh=
+_0iz0kiQ=3D>=20
+Arm Ltd. 110 Fulbourn Road, Cambridge, CB1 9NJ | UK
+Registered in England 2557590
+
+------=_Part_10712263_913825980.1687047459642
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>=20
+<!--[if !mso]><!-->=20
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=20
+<!--<![endif]-->                                                       =20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />=
+=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0" />=20
+<title></title>=20
+<meta name=3D"color-scheme" content=3D"light dark" />=20
+<meta name=3D"supported-color-schemes" content=3D"light dark" />=20
+<style type=3D"text/css">
+a, p a, li a, .copy a, .copy p a, .copy li a, .ii p a[href], .copy h3 a, .c=
+opy h4 a, .links-copy a, .separate th a, .copy .links-copy a {color: #0091b=
+d;}
+    ol,ul {padding-left: 20px;}
+    li {margin-top: 0; margin-bottom: 6px;}
+    .two-col .column {max-width: 277px;}
+    .three-col .column {max-width: 184px;}
+    .three-col .copy {text-align: left !important;}
+    .split-content .two-col .left {max-width: 142px;}
+    .split-content .two-col .right {max-width: 396px;}
+    .two-col .inner, .three-col .inner {padding-left: 0 !important;padding-=
+right: 0 !important;}
+=09=09.align-center {margin: 0 auto;}
+=09=09.text-align-center {text-align: center;}
+=09=09.text-align-left {text-align: left;}
+=09=09.text-align-right {text-align: right;}
+    .copy a, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {text-decoration: none;}
+  .links-headings h2 a {color: #333e48; text-decoration: none;}
+=09=09.hero-a-links h1 a, .hero-a-links h3 a {color: #ffffff;}
+    .column-stroke .left {border-right: 1px solid #eeeeee;}
+=09</style>=20
+<style>
+=09=09a[x-apple-data-detectors=3Dtrue] {text-decoration: none !important; c=
+olor: inherit !important;}
+    div[style*=3D"margin: 16px 0"] {margin: 0 !important;}
+    :root {color-scheme: light dark; supported-color-schemes: light dark;}
+=09=09@media screen and (max-width: 499px) {
+=09=09  .inner, .two-col .inner, .three-col .inner {padding-left: 20px !imp=
+ortant; padding-right: 20px !important;}
+=09=09  .column, .column-stroke .column.left {max-width: 100% !important; b=
+order-right: 0px !important; border-left: 0px !important;}
+=09=09  .image img {margin: 0 auto !important;}
+=09=09  .three-col .copy {text-align: center !important;}
+=09=09  .three-col .copy .buttonwrapper {margin: 0 auto !important; float: =
+none !important;}
+=09=09  .two-col .image img {max-width: 100% !important;}
+=09=09  .buffered {padding-left: 0 !important; padding-right: 0 !important;=
+}
+      .feature-bg {background-position: left top; background-size: auto;}
+      .hero-a-spacer {display: none !important;}
+      .hero-a-logo {max-width: 100px !important;}
+      .hero-a-inner {padding-top: 30px; padding-bottom: 200px;}
+=09=09  .social {margin-top: 5px !important;}
+=09=09  .social td {width: 40px !important;}
+      .social img {width: 30px !important;}
+      .striped {padding-top: 30px !important; padding-bottom: 30px !importa=
+nt;}
+      .reset-height {height: auto !important;}
+=09=09}
+=09=09@media screen and (min-width: 370px) and (max-width: 499px) {
+=09=09  .outer {width: 85% !important; margin: 0 auto !important;}
+=09=09}
+    @media screen and (min-width: 500px) {
+      .footer-logos {width: 80% !important;}
+    }
+=09=09@media screen and (min-width: 500px) and (max-width: 615px) {
+      .three-col .column {max-width: 32% !important;}
+      .two-col .column {max-width: 49% !important;}
+      .one-col .inner {padding-left: 20px !important; padding-right: 20px !=
+important;}
+      .one-col .image img {max-width:100% !important;}
+      .two-col .inner {padding-left: 5px !important; padding-right: 5px !im=
+portant;}
+      .two-col .buffered {padding-left: 15px !important; padding-right: 15p=
+x !important;}
+=09=09  .three-col .inner {padding-left: 5px !important; padding-right: 5px=
+ !important;}
+=09=09}
+    @media (prefers-color-scheme: dark ) {
+      .wrapper, .gap {background-color: #333e48 !important;}
+      .outer, .divider {background-color: #252e36 !important;}
+      .highlight-arrows {background-color: #134863 !important;}
+      .arrow {border-top-color: #134863 !important;}
+      .striped {background-color: #454f58 !important;}
+      .copy h1, .copy h2, .copy h3, .copy h4, .copy h5, .copy h6 {color: #f=
+fffff!important;}=20
+      .copy p, .copy ul, .copy ol, .section-agenda .dmtext {color: #e9eaeb =
+!important;}=20
+      .y-btn .button a {background-color: #F6C545 !important;}
+      .button a {color: #333e48 !important;}
+      .column-stroke .left, .border-right {border-right: 1px solid #566068 =
+!important;}
+      .footer-color {background-color: #001b30 !important;}
+      .section-footer {color: #e5eceb !important;}
+    }
+    @media (prefers-color-scheme: dark) and (min-width: 500px) {
+      .column-stroke .left {border-right: 1px solid #eeeeee;}
+    }
+    @media (prefers-color-scheme: dark) and (max-width: 500px) {
+      .gap {display: none !important;}
+    }
+  </style>=20
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=3DLato:wght@300;4=
+00;700&display=3Dswap');
+    @media screen {
+      body, div, table, td, h1, h2, h3, h4, p, ol, ul {font-family: 'Lato',=
+ Arial, sans-serif;}
+=09=09}
+  </style>=20
+<!--[if(mso)|(IE)]>
+<style type=3D"text/css">
+=09=09table {border-collapse: collapse !important; mso-table-lspace:0pt !im=
+portant; mso-table-rspace:0pt !important; border-spacing: 0 !important;}
+=09=09table, div, td, a {font-family: Arial, sans-serif !important; border-=
+spacing: 0 !important;}
+    .copy p a, .copy li a, .links-copy a, .links-headings p a, .links-headi=
+ngs li a {color: #0091bd !important; text-decoration: none !important;}
+    .dates-links th a, .dates-links td a {color: #0091bd !important;}
+    .links-headings h2 a {color: #333e48 !important; text-decoration: none =
+!important;}
+    .three-col .links-copy {text-align: left !important;}
+=09=09.hero-a-links a, .hero-a-links h1 a, .hero-a-links h3 a {color: #ffff=
+ff !important; text-decoration: none !important;}
+    .two-col .image img {max-width: 247px !important;}
+    .split-content .image img {max-width: 136px !important;}
+    .three-col .image img {max-width: 172px !important;}
+.button a, .button div a {color: #333e48 !important;}
+=09</style>
+=09<![endif]-->=20
+<!--[if mso]>
+<style type=3D"text/css">
+    ol, ul {margin-left: 27px !important; margin-top: 0 !important;}
+    .border-right {border-right: 1px solid #eeeeee;}
+=09</style>
+=09<xml>
+=09  <o:OfficeDocumentSettings>
+=09    <o:AllowPNG/>
+=09    <o:PixelsPerInch>96</o:PixelsPerInch>
+=09 </o:OfficeDocumentSettings>
+=09</xml>
+  <![endif]-->=20
+<!--[if IE]>
+<style type=3D"text/css">
+    ol, ul {margin-left: 20px !important; padding-left:3px !important;}
+    </style>
+=09<![endif]-->=20
+</head>=20
+<body style=3D"font-family:Arial,sans-serif;margin:0;padding:0;background-c=
+olor:#ffffff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;color:#333e48;" vlink=3D"#333e48"><style type=3D"text/css">div#email=
+PreHeader{ display: none !important; }</style><div id=3D"emailPreHeader" st=
+yle=3D"mso-hide:all; visibility:hidden; opacity:0; color:transparent; mso-l=
+ine-height-rule:exactly; line-height:0; font-size:0px; overflow:hidden; bor=
+der-width:0; display:none !important;">Unleash the power of your device=E2=
+=80=99s peripherals   </div>=20
+<center>=20
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" =
+border=3D"0" class=3D"wrapper" style=3D"margin-top:0;margin-bottom:0;margin=
+-right:auto;margin-left:auto;font-family:Arial,sans-serif;table-layout:fixe=
+d;width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;backgr=
+ound-color:#F0F0F0;">=20
+<tbody>
+<tr>=20
+<td align=3D"center" style=3D"padding-bottom: 40px;">=20
+<center>=20
+<!--[if(mso)|(IE)]>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"600" style=
+=3D"width:600px;">
+<tr>
+<td><![endif]-->=20
+<table bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ class=3D"outer" style=3D"margin:0;width:100%;max-width:600px;">=20
+<tbody>
+<tr>=20
+<td class=3D"mktoContainer" id=3D"main-container">
+<table class=3D"mktoModule section-hero hero-a" id=3D"module-hero-overlaye7=
+965ab7-f93f-456c-8643-8c1f7e862a2c" width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr class=3D"one-col">=20
+<td class=3D"feature-bg" style=3D"background-color: #7d868c; background-ima=
+ge: url('https://engaged.arm.com/rs/479-ZYW-907/images/Dev-studio_computer_=
+600x400v2.jpg');" valign=3D"top">=20
+<!--[if mso]>
+=09=09=09=09=09=09=09=09=09=09  <v:rect xmlns:v=3D"urn:schemas-microsoft-co=
+m:vml" fill=3D"true" stroke=3D"false" style=3D"width:600px;">
+=09=09=09=09=09=09=09=09=09=09    <v:fill type=3D"tile" src=3D"https://enga=
+ged.arm.com/rs/479-ZYW-907/images/Dev-studio_computer_600x400v2.jpg" color=
+=3D"#7d868c" />
+=09=09=09=09=09=09=09=09=09=09    <v:textbox style=3D"mso-fit-shape-to-text=
+:true" inset=3D"0,0,0,0">
+=09=09=09=09=09=09=09=09=09=09  <![endif]-->=20
+<div style=3D"margin:0;">=20
+<table role=3D"presentation" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0">=20
+<tbody>=20
+<tr>=20
+<td class=3D"hero-a-inner inner" align=3D"left" style=3D"font-family:Arial,=
+sans-serif;padding-left:40px;padding-right:40px;">=20
+<div class=3D"spacer hero-a-spacer" style=3D"mso-line-height-rule:exactly;h=
+eight:30px;font-size:30px;line-height:30px;margin:0;display:block;width:30p=
+x;width:200px;width:100px;width:100%;background-position:left top;backgroun=
+d-size:auto;">
+ &nbsp;=20
+</div> <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNf-B0xcUhpin6P0KmzsOjneuf2U4k=
+xHnfii1XfemHwPkaeEeshjxPa0W2RNBfORFx34=3D" style=3D"text-decoration:none;co=
+lor:#ffffff;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/arm-blue-200px.p=
+ng" width=3D"100" alt=3D"arm" style=3D"width:100%;max-width:100px;border-wi=
+dth:0;height:auto;display:block;" class=3D"hero-a-logo align-left" /></a>=
+=20
+<div class=3D"spacer hero-a-spacer" style=3D"mso-line-height-rule:exactly;h=
+eight:200px;font-size:200px;line-height:200px;margin:0;display:block;">
+ &nbsp;=20
+</div>=20
+<!--[if mso]>
+<p style=3D"mso-line-height-rule:exactly;margin:0;mso-hide:all;font-size:0;=
+line-height:0;"><o:p xmlns:o=3D"urn:schemas-microsoft-com:office:office">&n=
+bsp;</o:p></p>
+<![endif]--></td>=20
+</tr>=20
+<tr>=20
+<td class=3D"inner" align=3D"left" style=3D"text-align:left;font-family:Ari=
+al,sans-serif;padding-left:40px;padding-right:40px;padding-top:30px;padding=
+-bottom:20px;background:#0091bd;font-style:normal;background:rgba(0,145,173=
+,0.8);font-weight:300;color:#ffffff;">=20
+<div class=3D"hero-a-links">=20
+<div class=3D"mktEditable" id=3D"hero-text-nobuttone7965ab7-f93f-456c-8643-=
+8c1f7e862a2c" style=3D"margin:0;color:#ffffff;">=20
+<h3 style=3D"margin: 0; font-size: 18px; line-height: 20px; color: #ffffff;=
+">Keil MDK</h3>=20
+<h1 style=3D"font-size: 26px; line-height: 30px; color: #ffffff; font-weigh=
+t: 300; margin: 0 0 8px 0;">MDK-Professional</h1>=20
+</div>=20
+</div>=20
+<!--[if mso]>
+<p style=3D"mso-line-height-rule:exactly;margin:0;mso-hide:all;font-size:0;=
+line-height:0;"><o:p xmlns:o=3D"urn:schemas-microsoft-com:office:office">&n=
+bsp;</o:p></p>
+<![endif]--></td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+</div>=20
+<!--[if mso]>
+<p style=3D"mso-line-height-rule:exactly;margin:0;mso-hide:all;font-size:0;=
+line-height:0;"><o:p xmlns:o=3D"urn:schemas-microsoft-com:office:office">&n=
+bsp;</o:p></p>
+=09=09=09=09=09=09=09=09=09      </v:textbox>
+=09=09=09=09=09=09=09=09=09    </v:rect>
+=09=09=09=09=09=09=09=09=09    <![endif]--> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule section-intro" id=3D"rich-text" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">=20
+<tbody>=20
+<tr class=3D"one-col">=20
+<td class=3D"inner text-align-left copy" align=3D"left" style=3D"padding-to=
+p:30px;padding-bottom:30px;padding-right:40px;padding-left:40px;font-family=
+:Arial,sans-serif;font-size:15px;line-height:20.5px;mso-line-height-alt:21p=
+x;color:#333e48;text-align:left;">=20
+<div class=3D"links-copy" style=3D"margin:0;">=20
+<div class=3D"mktEditable" id=3D"body-copy" style=3D"margin:0;">=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">Hi Allen,</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">We hope that you enjoy using Keil MDK. If you haven=E2=80=99t d=
+one so, <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNV6_E98wcYJrpnLjq3RsjYsFhk4QT=
+ZG1SFRBY-2kVBLx7cXuHLBRerq-FweqKzTnfwQ=3D" target=3D"_blank" id=3D""
+>tell us about your experience</a> by filling out our short survey !</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">Our <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNaUtjAK0CkLhJiDSkDygYTM0fAX4n=
+glDBDDVsY-4xYohAZ4hJ21S4fmnNeA3TK7rmiU=3D" target=3D"_blank" id=3D""
+>community</a> and <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNWcolOLsHcOKt3Fq_TZks-cwpOBVn=
+mqWQKXlbCX6QN3ZvTUS3Vt5p0wHGzsJ0eTxT5g=3D" target=3D"_blank" id=3D""
+>application engineers</a> are always here to support you in case you have =
+technical questions about Keil MDK.</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">Have you already tried the advanced features of MDK-Professiona=
+l? It is still not too late to <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNZOt9QLylBIGtWLaZUVRo8n_mDZPY=
+zIV_VVSZ1WSb8ye06kuOCgkrDQUb4QjEJAhLO0=3D" target=3D"_blank" id=3D""
+>activate the 30-day trial license</a>, once you downloaded the Keil MDK Li=
+te edition.</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;"><strong>How to buy </strong></p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">If you=E2=80=99d like to go on to buy Keil MDK-Professional or =
+other commercial editions, <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNa-SePOEV6xygH9x94aVjeLg3ThoW=
+6iCHLSTXX0p6sEVmldMOX03gSMOPp9RxVC-kXY=3D" target=3D"_blank" id=3D""
+>visit our online store</a> or <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNf5lZ_yQ6GgfjXc04v3BBserRTGFt=
+02NRR0L67BPfNlNcLvHqE9TxqUvLN9eE-e5_Bo=3D" target=3D"_blank" id=3D""
+>find your local distributor</a>.</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">If you have unanswered questions, please contact us by replying=
+ to this email and one of our colleagues will get back to you shortly.&nbsp=
+;</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;">Best regards,</p>=20
+<p style=3D"font-size: 15px; line-height: 20.5px; color: #333e48; margin: 0=
+ 0 12px 0;"><strong>The team at Arm</strong></p>=20
+</div>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>
+<table class=3D"mktoModule section-footer" id=3D"module-footer29450817-b143=
+-4fd9-b540-51f669202521" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" style=3D"text-align:left;color:#e5eceb;">=20
+<tbody>=20
+<tr>=20
+<td class=3D"type footer-color" style=3D"font-family:Arial,sans-serif;paddi=
+ng-top:32px;padding-bottom:10px;padding-right:10px;padding-left:10px;" bgco=
+lor=3D"#002b49">=20
+<!--[if(mso)|(IE)]>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"465" align=
+=3D"center" style=3D"width:465px;">
+<tr>
+<td><![endif]-->=20
+<table class=3D"footer-logos" align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" style=3D"font-family:Arial,sans-serif;width:100%;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"width:32%;text-align:center;" valign=3D"bottom">=20
+<div class=3D"mktoText" id=3D"arm-blueprint29450817-b143-4fd9-b540-51f66920=
+2521">=20
+<p style=3D"margin-top:0;margin-bottom:0;"><a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNfaNqEG7IUBSVGxLgNueX4eOxmcyl=
+5gJ05ytKnFmljpuKxpOHEQtqodfZhse_bTUrl0=3D" style=3D"text-decoration:none;co=
+lor:#ffffff;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/arm-logo-bluepri=
+nt.png" title=3D"Arm Blueprint" alt=3D"Arm Blueprint" width=3D"140" border=
+=3D"0" style=3D"height:auto;margin:0 auto;display:inline-block;width:100%;m=
+ax-width:140px;" /></a></p>=20
+</div> </td>=20
+<td style=3D"width:34%;text-align:center;" valign=3D"bottom">=20
+<div class=3D"mktoText" id=3D"arm-community29450817-b143-4fd9-b540-51f66920=
+2521">=20
+<p style=3D"margin-top:0;margin-bottom:0;"><a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNcZzjzFt7ILmyZ20tfZKW2t1oCTKC=
+Au5v6_L8LC_Khyq0vLDLH-R53sUWhyaPIzE88o=3D" style=3D"text-decoration:none;co=
+lor:#ffffff;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/arm-logo-communi=
+ty.png" title=3D"Arm Community" alt=3D"Arm Community" width=3D"150" border=
+=3D"0" style=3D"height:auto;margin:0 auto;display:inline-block;width:100%;m=
+ax-width:150px;" /></a></p>=20
+</div> </td>=20
+<td style=3D"width:34%;text-align:center;" valign=3D"bottom">=20
+<div class=3D"mktoText" id=3D"arm-develpers29450817-b143-4fd9-b540-51f66920=
+2521">=20
+<p style=3D"margin-top:0;margin-bottom:0;"><a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNUiA_sTGllCf0Rlh3H_QjoLEBIU_z=
+jR3ID6i89_tCTddlUWTexMLrANpbyAo3qfXeck=3D" style=3D"text-decoration:none;co=
+lor:#ffffff;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/arm-logo-develop=
+er.png" title=3D"Arm Developers" alt=3D"Arm Developers" width=3D"150" borde=
+r=3D"0" style=3D"height:auto;margin:0 auto;display:inline-block;width:100%;=
+max-width:150px;" /></a></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table>=20
+<!--[if(mso)|(IE)]></td>
+</tr>
+</table>
+<![endif]--> </td>=20
+</tr>=20
+<tr class=3D"one-col">=20
+<td class=3D"inner footer-color" style=3D"font-family:Arial,sans-serif;padd=
+ing-bottom:20px;padding-right:15px;padding-left:15px;border-radius: 0 0 5px=
+ 5px;" bgcolor=3D"#002b49">=20
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"font-size:12px;line-height:22px;color:#e5eceb;text-align:center;">=20
+<tbody>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif;">=20
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" cl=
+ass=3D"social" style=3D"font-size:8px;line-height:10px;margin-right:auto;ma=
+rgin-left:auto;">=20
+<tbody>=20
+<tr>=20
+<td width=3D"60" align=3D"center" style=3D"font-family:Arial,sans-serif;">=
+=20
+<div class=3D"mktEditable" id=3D"social-facebook29450817-b143-4fd9-b540-51f=
+669202521">=20
+<p style=3D"margin-top:0;margin-right:0;margin-left:0;margin-bottom:20px;">=
+<a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNf0aZw9zs-Won4LRFYi_VBIu-a2U8=
+F8KNOq92ZBVfWqVFBJBUEacO-UF6EHIxXp36RI=3D" style=3D"text-decoration:none;co=
+lor:#e5eceb;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/email-footer-soc=
+ial-facebook-grey.png" title=3D"Facebook" alt=3D"Facebook" width=3D"40" bor=
+der=3D"0" style=3D"height:auto;margin-right:auto;margin-left:auto;width:90%=
+;max-width:40px;" /></a></p>=20
+</div> </td>=20
+<td width=3D"60" align=3D"center" style=3D"font-family:Arial,sans-serif;">=
+=20
+<div class=3D"mktEditable" id=3D"social-linkedin29450817-b143-4fd9-b540-51f=
+669202521">=20
+<p style=3D"margin-top:0;margin-right:0;margin-left:0;margin-bottom:20px;">=
+<a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNTKYLHC3R3g-CLOM1RF7ecdgrT0zx=
+W7S9ek7ICbxyQ0hLcdZbF8-t9gH3B0c40HLppk=3D" style=3D"text-decoration:none;co=
+lor:#e5eceb;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/email-footer-soc=
+ial-linkedin-grey.png" title=3D"LinkedIn" alt=3D"LinkedIn" width=3D"40" bor=
+der=3D"0" style=3D"height:auto;margin-right:auto;margin-left:auto;width:90%=
+;max-width:40px;" /></a></p>=20
+</div> </td>=20
+<td width=3D"60" align=3D"center" style=3D"font-family:Arial,sans-serif;">=
+=20
+<div class=3D"mktEditable" id=3D"social-instagram29450817-b143-4fd9-b540-51=
+f669202521">=20
+<p style=3D"margin-top:0;margin-right:0;margin-left:0;margin-bottom:20px;">=
+<a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNc5n1cMBhr_0VwQiJm-0KtO6DIwHN=
+v7Fs2YfiK8BA8qvpdbrqWX1yjx0TM6Gjb3QSCU=3D" style=3D"text-decoration:none;co=
+lor:#e5eceb;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/email-footer-soc=
+ial-instagram-grey.png" title=3D"Instagram" alt=3D"Instagram" width=3D"40" =
+border=3D"0" style=3D"height:auto;margin-right:auto;margin-left:auto;width:=
+90%;max-width:40px;" /></a></p>=20
+</div> </td>=20
+<td width=3D"60" align=3D"center" style=3D"font-family:Arial,sans-serif;">=
+=20
+<div class=3D"mktEditable" id=3D"social-twitter29450817-b143-4fd9-b540-51f6=
+69202521">=20
+<p style=3D"margin-top:0;margin-right:0;margin-left:0;margin-bottom:20px;">=
+<a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNXW-mro3n5F1S4rHo5qmR72JyUeUV=
+5xopcRymUZnyEntbG8VOlJDbVce11QPoNfwt3E=3D" style=3D"text-decoration:none;co=
+lor:#e5eceb;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/email-footer-soc=
+ial-twitter-grey.png" title=3D"Twitter" alt=3D"Twitter" width=3D"40" border=
+=3D"0" style=3D"height:auto;margin-right:auto;margin-left:auto;width:90%;ma=
+x-width:40px;" /></a></p>=20
+</div> </td>=20
+<td width=3D"60" align=3D"center" style=3D"font-family:Arial,sans-serif;">=
+=20
+<div class=3D"mktEditable" id=3D"social-youtube29450817-b143-4fd9-b540-51f6=
+69202521">=20
+<p style=3D"margin-top:0;margin-right:0;margin-left:0;margin-bottom:20px;">=
+<a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNZaxDo-hrPBs9mt7zOGA4XbYFfqaB=
+FcJ6s8_Xuz_nN2UuAvv2KA6S4pM_1UtWvHocls=3D" style=3D"text-decoration:none;co=
+lor:#e5eceb;"
+><img src=3D"https://engaged.arm.com/rs/479-ZYW-907/images/email-footer-soc=
+ial-youtube-grey.png" title=3D"YouTube" alt=3D"YouTube" width=3D"40" border=
+=3D"0" style=3D"height:auto;margin-right:auto;margin-left:auto;width:90%;ma=
+x-width:40px;" /></a></p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+<tr>=20
+<td style=3D"font-family:Arial,sans-serif;">=20
+<div class=3D"mktEditable" id=3D"address29450817-b143-4fd9-b540-51f66920252=
+1">=20
+<p style=3D"margin-top:0;margin-right:0;margin-left:0;margin-bottom:20px;">=
+<a href=3D"https://engaged.arm.com/index.php/email/emailWebview?mkt_tok=3DN=
+Dc5LVpZVy05MDcAAAGMatYDNQChzVVdhlvwz0Emr9lcN_WRBDM3hW87Pekmotc8zTtqPvUg2kBx=
+rkSJvpYZ90blZWxw37tD5PtJ6PFCDq2YcuVoZnQansrx7zkN3A&md_id=3D1043&aliId=3Dhkp=
+YeMzOKwYN3CoWmIDoSNaJ8EejAe7X2coPdYuSraFdvT0cBY2lTw%3D%3D" style=3D"color:#=
+e5eceb;text-decoration:none;"></a><a href=3D"https://engaged.arm.com/Unsubs=
+cribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DNDc5LVpZVy05MDcAAAGMatYDNQChzV=
+Vdhlvwz0Emr9lcN_WRBDM3hW87Pekmotc8zTtqPvUg2kBxrkSJvpYZ90blZWxw37tD5PtJ6PFCD=
+q2YcuVoZnQansrx7zkN3A" style=3D"color:#e5eceb;text-decoration:none;">Unsubs=
+cribe</a> | <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNZeJh4XiTutb_qHFHuN87HCtDvs1i=
+aBVv1B6s-OiG4wuqzZNAdVpDdBi42mx_Q2qHJ0=3D" style=3D"color:#e5eceb;text-deco=
+ration:none;"
+>Privacy Policy</a> | <a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNaY_QG0WiyBJWOiZihM_AkVXJdmaE=
+OsZSMg5jfFs_5AnDsZoFLHexMctwXiBIfvvVNM=3D" style=3D"color:#e5eceb;text-deco=
+ration:none;"
+>Trademarks</a> <br />Arm Ltd. 110 Fulbourn Road, Cambridge, CB1 9NJ | UK<b=
+r />Registered in England 2557590</p>=20
+</div> </td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>
+</table>=20
+<!--[if(mso)|(IE)]></td>
+</tr>
+</table>
+<![endif]-->=20
+</center> </td>=20
+</tr>=20
+</tbody>
+</table>=20
+</center> =20
+<a href=3D
+"https://goto.arm.com/NDc5LVpZVy05MDcAAAGMatYDNWdfMNxws7OQBgtCX-ab2aitbQqyc=
+7c3TtQhYZXze0MQW_9t5VXVwSIz3jz9BZ_coMc=3D"
+></a>
+<img src=3D"https://goto.arm.com/trk?t=3D1&mid=3DNDc5LVpZVy05MDc6MDoyMzU4Oj=
+EyODQwOjE6MTA0Mzo5OjY2Mzc6MjM3ODcxNTgtMjpudWxs" width=3D"1" height=3D"1" st=
+yle=3D"display:none !important;" alt=3D"" />
+</body>
+</html>
+------=_Part_10712263_913825980.1687047459642--

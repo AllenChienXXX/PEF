@@ -1,0 +1,785 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp98691dyf;
+        Wed, 5 Apr 2023 10:53:23 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AKy350anPKrgem9xVfSkzUtW8ni/IshOcZL4mqI/Hf3b8U+iyDLcTf8q0dewOsIZuvQEmaWenMZL
+X-Received: by 2002:a62:17d2:0:b0:62d:dad9:3d74 with SMTP id
+ 201-20020a6217d2000000b0062ddad93d74mr6471567pfx.23.1680717203747;
+        Wed, 05 Apr 2023 10:53:23 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1680717203; cv=none;
+        d=google.com; s=arc-20160816;
+        b=y5J+Y4mmMyhGUVtr6kZ6DuZKp8JgXhRV/Jdtfh/LlMQG6uvq84FierFpbGjgiPE0l0
+         hRkf1C06UUpkvJWHax+J1Uek2I0O11yDPB1eI5oCURbnIAZjusTO2FSONfJswQ8EGj7c
+         H/HlnRn3No4CsXRvSLkWrwpTnCzFlJPM1tqkRiTF3cHe3vDA4Nnh0GoPbvIDp6ydrBcK
+         jzb7dL7mzVA/gy9Rnw4Fqhy4PlCH4IqFZQ89d3ct9gSX+3WVN6ETN9vo4QEuVPO6GYS9
+         HdVxK4joRiCcnkN2wjZL0otCSHXaEBopVV7bt5LRZvAODGsW95ggWtisA31xLzRO6yFK
+         IgFg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=content-transfer-encoding:message-id:to:subject:date:from
+         :list-unsubscribe;
+        bh=sPRl3/APEes+lb7afHjHDh/S9fvsUBJJ1MwVXMGG56Y=;
+        b=GFG5Uf5NZgKmFrZ1rf8rE9pUwa/kYBeRzt3YT8IzuBM0AbdNt6SFzjE8zHie5f0Nu9
+         IeJp3xV7vd/8nd/zu3DOKuLC4o6aHhiTlsnn9CbCIzknfvh6oR4mcoJwt7Hh06P1r9nF
+         8qNqMoix/rvXT0r+YCfctKqe3++Q0du8AWQEEa40/S6Z9txVISZ/KJ5E6y0nnABf1YzK
+         9VNq5hxTGpEDR+1XRJf3Ksi6iUPMo9dx0oHz/L1Tyj9Fn0WuOVYSV4tuykZgrY9nypxL
+         khu8oWeLi6u7LFUakNTVUwuwbuCjOfPdHanD6U9TxOiH45FbG3ylwbLAW0XyTRu4T8jh
+         nWMA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of bounce@responsister.in.net designates
+ 51.159.91.152 as permitted sender) smtp.mailfrom=bounce@responsister.in.net
+Return-Path: <bounce@responsister.in.net>
+Received: from responsister.in.net (responsister.in.net. [51.159.91.152])
+        by mx.google.com with ESMTP id
+ y17-20020aa79af1000000b006275424ea97si13229970pfp.250.2023.04.05.10.53.22
+        for <allen71090@gmail.com>;
+        Wed, 05 Apr 2023 10:53:23 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce@responsister.in.net
+ designates 51.159.91.152 as permitted sender) client-ip=51.159.91.152;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of bounce@responsister.in.net designates
+ 51.159.91.152 as permitted sender) smtp.mailfrom=bounce@responsister.in.net
+Received: from google.com (google.com.172.217.13.78)
+List-Unsubscribe: <qFw-H7o-KKx-O1aeW5OF0L@co.com>
+From: "'💲CashApp💲'" <_nmj61kj7olszo1b42whj@hpl6lu9l3czfmw6w54ah.0ve1q6nygg5vs26c2i.de>
+Date: Wed, 05 Apr 2023 13:53:19 -0400
+Subject: 𝗬𝗢𝗨.𝗛𝗔𝗩𝗘.𝗕𝗘𝗘𝗡.𝗣𝗔𝗜𝗗💲allen71090 💣💣𝘾𝙝𝙚𝙘𝙠_𝙮𝙤𝙪𝙧_𝙖𝙘𝙘𝙤𝙪𝙣𝙩_$9890.99 ❓❔❓
+To: allen71090@gmail.com
+Message-ID: <890259-LH7GmCxX53@co.com>
+X-EMMAIL: notanotad4@co.com
+X-Originating-IP: 62.210.129.177
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 64bit
+
+<html>
+<CeNtEr>
+<table align="center" border="10"  cellpadding="0" cellspacing="0" width="500px" height="500px" StYlE="border-collapse: collapse !important;">
+    <tbody >
+        <tr>
+
+            <td align="center" valign="top" bgcolor="#000" width="100%" StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left;">
+              <A HrEf="https://t.co/6fp8Ga2SHa" StYlE="text-decoration:none;color:#fff">
+            <table cellspacing="0" cellpadding="0" width="100%" StYlE="border-collapse: collapse !important;">
+                <tbody>
+                    <tr>
+                        <td StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left;" width="3500px"><CeNtEr>
+                        <table cellspacing="0" cellpadding="0" width="600" class="320DEV" StYlE="border-collapse: collapse !important;">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="devpad" width="100%" StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left; padding:10px 10px 10px 20px;">
+                                    <dIv StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;padding: 0;margin: 0;color:#F6F9F8;font-weight: 400;line-height: 110%;font-size: 24px;">
+                                    <A HrEf="https://t.co/6fp8Ga2SHa" StYlE="text-decoration:none;color:#74BB17;text-transform: uppercase;font-family: 'Ultra', sans-serif; ">
+                                      <CeNtEr><ImG SrC="https://ImGur.com/c4Iuzxj.png" width="550px" height="auto"/></center></A></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </center></td>
+                    </tr>
+                    <tr>
+                        <td StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left; border-bottom:1px solid #e7e7e7;"><CeNtEr>
+                        <table cellpadding="0" cellspacing="0" width="600" class="320DEV" StYlE="border-collapse: collapse !important;color:#fff">
+                            <tbody>
+                                <tr>
+                                    <td align="left" class="devpad" StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left; padding:20px 20px 0"><br class="devnone" />
+                                    <dIv StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;padding: 0;margin: 0;
+                  color: #444444;font-weight: 400;line-height: 110%;font-size: 35px;">Wed, 05 Apr 2023 13:53:19 -0400</div>
+                                    <br />
+                                      <STRONG>Congratulations,<mark>[allen71090]!</mark>,</STRONG><BR/>We need to confirm your info...<BR>(1) FINAL MESSAGE: Best Mobile Casino: 80 Free Spins!,  You could win the Millionaire's Life!<BR><A HrEf="https://t.co/6fp8Ga2SHa" StYlE="color: #2B5A78;text-decoration:underline;">Raging Bull CASINO</A><BR/><BR/>
+                                    <table cellspacing="0" cellpadding="0" width="100%" bgcolor="#000" StYlE="border-collapse: collapse !important;">
+                                        <tbody>
+                                            <tr>
+                                                <td StYlE="font-family:Helvetica,Arial,sans-serif;font-weight:400;font-size:13px;line-height:19px;;width:100%;">
+                                                <dIv><table align="right" cellpadding="11" cellspacing="11" StYlE="background-color:BLACK; border:1px solid #74BB17;color:#fff">
+<tbody>
+<tr>
+<td>
+<dIv align="right"><font face="tahoma,arial,helvetica,sans-serif" size="4">Wed, 05 Apr 2023 13:53:19 -0400</font></div>
+
+
+<font face="tahoma,arial,helvetica,sans-serif" size="4"><BR><b>allen71090<BR></b><u>Hello Partner!Ready to make some $ online?&nbsp; &nbsp;&nbsp; &nbsp; </u><b>$80.00 Free</b></font><BR><font size="1">&nbsp;</font><BR>
+<font face="tahoma,arial,helvetica,sans-serif" size="4">
+<BR>
+</font>&nbsp;<BR>
+<dIv align="right">
+<A HrEf="https://t.co/6fp8Ga2SHa" 
+StYlE="
+
+    text-decoration:none;"><sPaN
+StYlE="
+    background:linear-gradient(#9BCE17,#93CA17,#74BB17,#5BAF16,#3BA313);
+    border:1px solid #040925;
+    border-radius:2px;
+    color:#ffffff;
+    display:inline-block;
+    font-family:sans-serif;
+    font-size:14px;
+    font-weight:bold;
+    line-height:36px;
+    text-align:CeNtEr;
+    text-decoration:none;
+    width:150px" >GET STARTED</SPAN>
+</A></div>
+</td>
+</tr>
+</tbody>
+</table></div>
+                                                </td>
+                                                <td width="316" StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 12px;line-height:130%;text-align: left; background-color:#ffffff; font-size:0; line-height:0;"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- <br /> -->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </center></td>
+                    </tr>
+                    <tr>
+                        <td valign="top" StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left;border-bottom:1px solid #74BB17;"><CeNtEr>
+                        <table border="0" cellpadding="0" cellspacing="0" width="600" class="320DEV" StYlE="height:100%;color:#fff">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" class="devpad" StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;font-size: 13px;line-height: 19px;text-align: left; padding:20px;"><sPaN StYlE="font-family: Helvetica, Arial, sans-serif;font-weight: 400;padding: 0;margin: 0;color: #74BB17;font-weight: 400;line-height: 110%;font-size: 30px;text-transform: uppercase;font-family: 'Ultra', sans-serif;">Your account information:</SPAN><br />
+                                                Name: allen71090 <A HrEf="https://t.co/6fp8Ga2SHa" StYlE="color: #74BB17;text-decoration:underline;">Verify*</a> <br />
+                                                Email: allen71090@gmail.com <A HrEf="https://t.co/6fp8Ga2SHa" StYlE="color: #74BB17;text-decoration:underline;">Verify*</a><br />
+                                                Coupon Code : 92243 <A HrEf="https://t.co/6fp8Ga2SHa" StYlE="color: #74BB17;text-decoration:underline;">Verify*</a><br /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </center></td> 
+                    </tr>
+                </tbody>
+            </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<center>
+<br />
+<a href="https://t.co/zjJczTmdlg" > Unsubscribe</a>
+    <br />
+<br />
+<br />
+</center>
+        </font></center>
+  
+</html>
+
+
+<object NNNILUJASCKBIHNLSVWCMOBAMWVTVGTTSQJKTRIELLRSZJLHBU>
+
+Dear plHfvcqd plHfvcqd,
+
+Welcome to the Enterprise Plus? membership experience.
+
+Your Enterprise Plus member number and user name is HYFYF4W.
+
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+
+To get the most from your next rental, simply go to http:// and log in with your member number.
+
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+
+
+</title>
+<!--
+  
+/  /  
+ _ _  _  __ _ _  
+/'__`/' ` /'_`  / _`/`'__/',__ /'__` /'_`  
+/ // / / L / L   /, `/ __// L  
+ ____ _ _ ___,_ ____/ _/____/ ____ ___,_
+/____//_//_//_, //___/ /_//___/ /____//_, /
+
+
+
+-->
+<emd 
+added
+to
+newsletterGet
+and
+ask
+childrenShare
+this
+ExperimentSegregation
+Americaxs
+report
+United
+May
+ETPerhaps
+going
+wants
+In
+federal
+that
+says
+plan
+boasted
+unemployment
+lowest
+everSo
+rightWhile
+down
+remained
+last
+this
+does
+communities
+to
+land
+opportunityOne
+Americans
+suffer
+opposed
+white
+inequality
+in
+while
+step
+inequality
+will
+that
+looks
+housing
+disparities
+on
+For
+more
+of
+on
+resources
+their
+childrens
+care
+going
+on
+cities
+on
+nation
+Shortly
+still
+have
+evidence
+doesnt
+decades
+expanding
+emerged
+of
+failed
+laws
+about
+and
+people
+housewives
+at
+Franz
+in
+New
+Orleans
+poverty
+public
+which
+to
+of
+we
+has
+failed
+chronicled
+deregulation
+Who
+children
+has
+work
+direct
+former
+have
+has
+of
+And
+as
+Professor
+documented
+more
+than
+problem
+Commission
+commission
+there
+with
+this
+was
+urban
+ideology
+without
+policy
+resulted
+be
+has
+hard
+students
+provides
+model
+graders
+salute
+flag
+of
+school
+atrisk
+will
+to
+of
+creates
+race
+to
+Brookings
+or
+integrate
+government	
+to
+for
+potential
+enforcement
+The
+privatesector
+effect
+intentional
+with
+racial
+and
+make
+housing
+will
+access
+housing
+access
+Act
+making
+and
+integration
+poor
+developers
+lowincome
+lower
+half
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+<html>
+<body>
+<center>
+
+</object>
+<object >
+Dear TXUZGGSZ TXUZGGSZ,
+Welcome to the Enterprise Plus? membership experience.
+Your Enterprise Plus member number and user name is 3RBJHUW.
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+To get the most from your next rental, simply go to http:// and log in with your member number.
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+</title>
+<!--
+                 __                                 __     
+                /                                /     
+   __    ___    _     ___   _ __  ____     __   _    
+ /'__`/' _ `  /'_`   / __`/`'__/',__  /'__` /'_`   
+/  __// / / L / L   /__, `/  __// L  
+ ____ _ _ ___,_ ____/ _/____/ ____ ___,_
+ /____//_//_//__,_ //___/  /_//___/  /____//__,_ /
+                                                           
+                                                           
+-->
+<emd 
+added
+to
+newsletterGet
+and
+ask
+childrenShare
+this
+ExperimentSegregation
+Americaxs
+report
+United
+May
+ETPerhaps
+going
+wants
+In
+federal
+that
+says
+plan
+boasted
+unemployment
+lowest
+everSo
+rightWhile
+down
+remained
+last
+this
+does
+communities
+to
+land
+opportunityOne
+Americans
+suffer
+opposed
+white
+inequality
+in
+while
+step
+inequality
+will
+that
+looks
+housing
+disparities
+on
+For
+more
+of
+on
+resources
+their
+childrens
+care
+going
+on
+cities
+on
+nation
+Shortly
+still
+have
+evidence
+doesnt
+decades
+expanding
+emerged
+of
+failed
+laws
+about
+and
+people
+housewives
+at
+Franz
+in
+New
+Orleans
+poverty
+public
+which
+to
+of
+we
+has
+failed
+chronicled
+deregulation
+Who
+children
+has
+work
+direct
+former
+have
+has
+of
+And
+as
+Professor
+documented
+more
+than
+problem
+Commission
+commission
+there
+with
+this
+was
+urban
+ideology
+without
+policy
+resulted
+be
+has
+hard
+students
+provides
+model
+graders
+salute
+flag
+of
+school
+atrisk
+will
+to
+of
+creates
+race
+to
+Brookings
+or
+integrate
+government
+to
+for
+potential
+enforcement
+The
+privatesector
+effect
+intentional
+with
+racial
+and
+make
+housing
+will
+access
+housing
+access
+Act
+making
+and
+integration
+poor
+developers
+lowincome
+lower
+half
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+<html>
+<body>
+<center>
+<table style="display:none;"><HEaD >
+ Hi dhg,
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+Joining me for a quick demo will be the fastest and most efficient way for
+you to see what the software is capable of.
+Did any of the times on our website work for you and if so, were you able
+to schedule a demo okay?
+Here they are again: https://calendly.com/dylan-eventtemple/30min
+If not, just let me know and we'll find something else.
+--
+*Dylan Basile*
+*Book a demo with me here:*
+Hi dfdh,
+Thanks for signing up, and congratulations
+on your new kNkERsmELW account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+=== Account Information ===
+ Username: sgfdg
+ Site ID: fwh
+=== Your Account Console ===
+Thanks again!
+Team kNkERsmELW
+Powered by kNkERsmELW 
+</title>
+ Dear lcTychll rGhEG,
+Welcome to the Enterprise Plus? membership experience.
+Your Enterprise Plus member number and user name is 3RBJHUW.
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+To get the most from your next rental, simply go to http:// and log in with your member number.
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+== You need a budget, and your email needs confirmation. ==
+ Hello! Quick note to let you know that your email needs to be confirmed
+before all sorts of great things happen. Like your being able to use YNAB
+all along your road to budgeting glory. Please confirm by clicking the link
+below:
+ Confirm your email
+ Thank you!
+ And we're serious about budgeting glory. It's a real thing, and you will
+bask in it.
+ Regards,
+ The YNAB Team
+<
+ Dear hm.anouarr doquj,
+Welcome to the Enterprise Plus? membership experience.
+Your Enterprise Plus member number and user name is 3RBJHUW.
+Your membership delivers faster reservations and rentals, a special members-only line at major airport locations and exclusive discounts.
+In addition, you'll be able to start earning points you can redeem for Free Rental Days after you activate your rewards. Please allow 24 hours for system updates before activating.
+To get the most from your next rental, simply go to http:// and log in with your member number.
+Thank you for choosing Enterprise. We look forward to making your next rental experience more rewarding.
+>
+ Hi hrgferavjccvo,
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+Joining me for a quick demo will be the fastest and most efficient way for
+you to see what the software is capable of.
+Did any of the times on our website work for you and if so, were you able
+to schedule a demo okay?
+Here they are again: https://calendly.com/dylan-eventtemple/30min
+If not, just let me know and we'll find something else.
+--
+*Dylan Basile*
+*Book a demo with me here:*
+Hi dfdh,
+Thanks for signing up, and congratulations
+on your new kNkERsmELW account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+=== Account Information ===
+ Username: kxkq
+ Site ID: apb
+=== Your Account Console ===
+Thanks again!
+Team kNkERsmELW
+Powered by kNkERsmELW
+<table height=4125>
+<table height=4125>
+<table height=4125>
+Login Name: gorjeiublp
+Password: kNkERsmELW
+How do I become a tester for the XT 808 flashlight?
+Login Name: vvnaulcklw
+Password: kNkERsmELW
+More than a quarter of Europeans surveyed believe Jews have too much influence in business and finance. One in five say they have too much influence in media and politics. In individual countries the numbers are often higher: 42% of Hungarians think Jews have too much influence in finance and business across the world
+kNkERsmELW
+kNkERsmELW
+kNkERsmELW
+kNkERsmELW
+kNkERsmELW
+kNkERsmELW
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+PZODFTOKASTIFQOVWJDWSAKSXSCIQNVQKRQBPWNWLTQLPYSZLR
+It's a 17-year-old boy, too frightened to wear a kippa (a religious skullcap) on the streets of Paris. It's an Israeli restaurant owner in Berlin who is told that he will end up in the gas chambers. It's a 24-year-old Austrian who knows nothing about the Holocaust. It's the armed guards outside synagogues and Jewish schools across much of Europe. It's the online chat rooms where people peddle conspiracy theories that Jewish "globalists" run the world.
+It can be violent or subtle. Overt or insidious. Political or personal. It can come from the right or the left. It exists in countries that have large Jewish populations, like France, and it also flourishes in places with smaller Jewish communities, like Poland
++
+IBM Cloud
+Hello Nancy,
+Thank you for signing up for IBM Cloud! Confirm your account to get started.
+Confirm Account
+By confirming your account, you accept the Terms of Use
+Welcome and happy building!
+_
+Thank you,
+IBM Cloud
+Visit the IBM Cloud console.
+? Copyright IBM Corporation 2014, 2018.
+IBM
++
++
+V?rification du compte
+Confirmez votre adresse e-mail afin d'activer votre compte
+Confirmer
+Merci de votre inscription. Cliquez sur le bouton vert pour confirmer que arthurcdumas010+58zer4gq@gmail.com est bien votre adresse e-mail. Vous pourrez ensuite vous lancer sur Podio.
+Vous n'arrivez pas ? cliquer sur les liens contenus dans cet e-mail ? Copiez-collez ce lien dans votre navigateur afin d'effectuer la v?rification :
+https://podio.com/signup/setup?activation_code=68cd78b9a87946d0ab65f81138426ed9&utm_nooverride=1	
+Une question ? Contactez-nous : support@podio.com
+Citrix - 120 S West St - Raleigh, NC 27603 - US
++
+our wonderful wistia logo	
+Welcome to Wistia!
+You're five minutes away from adding beautiful video to your site!
+Activate your account
++
+Hi Nancy,
+Your Fastly account is almost ready. We just need to verify that you?re human.
+Please confirm your email here: https://manage.fastly.com/confirm/aeca002368c9f9ae6c565b7a65b1f623
+Thanks. We?re glad you?re here.
+The Fastly Team support@fastly.com www.twitter.com/fastly
++
+Thanks for joining the Parsec community!
+But before you become a full fledged member of this community, can you please confirm your email.
+  CONFIRM YOUR EMAIL?  
+From the very beginning, our goal has been to develop the lowest latency, 60 FPS game streaming software possible so you can play your games from anywhere. We're excited to welcome you to Parsec!
+Helpful Links
+1. Download Parsec for your device
+2. Set up Parsec on your PC to invite friends to game with you or to play from anywhere
+3. Connect with your friends on Parsec
+4. If you don't have a gaming PC to co-op with friends, build one on Parsec
+5. Join our Discord for support, updates, and finding friends to game with           
+Parsec Cloud, Inc. 
+115 Broadway, Fifth Floor, New York, NY 10006, USA
+</object>
+

@@ -1,0 +1,51 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp1001327dyf;
+        Sun, 21 May 2023 04:55:21 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ5YwS3u7kqCLdbMUDWyzC+od6/2GR2IEqI4oI775jBfiWu4/jCo5BZlYgj/N404UtdSbdN0
+X-Received: by 2002:adf:e9c1:0:b0:309:4f39:de4b with SMTP id l1-20020adfe9c1000000b003094f39de4bmr5787424wrn.12.1684670121451;
+        Sun, 21 May 2023 04:55:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1684670121; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lUO186Ejkf/gqH0RgU3cg3GbcPj0tToPciRQ7o5bhJSuWIp1Ot83lzzY0LXmcT9QqA
+         zL7eo11P2ovW6skhpPQZokkKKIicmaQV4lThEdb3yDsy8yeTRFCT1UdEVRnlkCF4Wikr
+         WtDtDbg4eC5GynCPonClVk2uTSGHJdb9XJpnhVs4F4Wtdoix7jmRISCtJIrGGC9x3MJ2
+         sj/CNz8seYpbsj/eskHBX4O1mYTWldZVH6EsqjYZUoyLSNVoqpcddKFSgCvTsIxMZFFQ
+         HB7lwrRB8RmMWajsPDJ/IrpQt6mYbkJvju0Wj5uUPmX2tvKuLJOnxqKU4S7+1525YcgW
+         Kgbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:feedback-id:message-id:to:subject
+         :envelope-to:list-unsubscribe:list-unsubscribe:from:date;
+        bh=wZWALtEGaU1usnXPBRg6c7gB9k7egQSRhmt8nv+i0K4=;
+        b=B6Y/mYFYK6/ZSgacmBdkSkqf8V0JeD3vtSyuUkNQVb6g0nQKj3xPLAC41xvF8IGoQl
+         yv2aNMh9ByKKpHWROi3tomxCyjDHNTEeaIPb8Kw5WDZOd0RdllcBbBMsM2DGfdWLDpIE
+         /QQMBp4G0j2Riw4pdV4wRKeJzrNCah7Np3RKwIxokJYL/TXnhudHbLAAsY2dyDjHC+64
+         8taa47L5P4u4y5yl4BJo05WRON6L4A3IBODukJY2TqV8MsSMWyecB29t3POfTFcwfpkS
+         V7i2gu6tX/ubkkSstTCX8/DWoIdW4yEppSxueSLi9bZGAdorcVED60PY+ujbgxmLwS0w
+         YStA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of 1004939915nc721999@sptest.weatherford.com designates 91.103.255.230 as permitted sender) smtp.mailfrom=1004939915nc721999@sptest.weatherford.com
+Return-Path: <1004939915nc721999@sptest.weatherford.com>
+Received: from nonline.com (leewise.molpasta.com. [91.103.255.230])
+        by mx.google.com with ESMTP id l6-20020adfe586000000b003079754288asi1886010wrm.849.2023.05.21.04.55.20
+        for <allen71090@gmail.com>;
+        Sun, 21 May 2023 04:55:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 1004939915nc721999@sptest.weatherford.com designates 91.103.255.230 as permitted sender) client-ip=91.103.255.230;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of 1004939915nc721999@sptest.weatherford.com designates 91.103.255.230 as permitted sender) smtp.mailfrom=1004939915nc721999@sptest.weatherford.com
+Received: from efianalytics.com (efianalytics.com. 216.244.76.116)
+Date: Sun, 21 May 2023 07:55:20 -0400 (EDT)
+From: "=?UTF-8?B?SGFyYm9yIEZyZWlnaHQ=?=" <hWGhjmRcjNUSqML9JiXcRe1IfkWU@8r1ye0ib5g93smome.aperitifrecipes.org.uk>
+X-EMMAIL: Allen@leewise.molpasta.com
+List-Unsubscribe: <bjcc42odyann9xbypsru-yW0bogyBEeUAjk5ucp7aQW7mcoE1vzEVLrsV3kBIbP7QrC82UMSA8nSVjxG6@mgpis5rxcpu92d8.us>
+List-Unsubscribe: <mailto:<q1nrrg6e8xc2u2d68dd-lwcbjd2zdxouo1c588a6wcyg52c34516816213652180532830.ljdg2j.quk3tu.9@unsub-sj.mktomail.com>
+Envelope-To: <allen71090@gmail.com>
+Subject: =?UTF-8?B?QWxsZW4sIOKchSBDb25ncmF0cywgeW91IGhhdmUgd29uIGEgYnJhbmQgbmV3IE1JTFdBVUtFRSBEcmlsbA==?=
+To: <hWGhjmRcjNUSqML9JiXcRe1IfkWU@8r1ye0ib5g93smome.leewise.molpasta.com>
+Message-Id: <-@vevida.net>
+X-MarketoID: vKD-Gha-UjW:IPuqow:KrkQKv:v9Wtbh:0:jJKk4V:9:oB3EVd:besLKX8VE
+Feedback-ID: 1.us-east-1.psHyoMfnH8hkuQnF72JGzzQK1By9IkayShm7uIk1GIc=:AmazonSES
+X-PVIQ: mkto-RdMCgBVWW-NB6yqY-hZCeCx-FdLezk
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: hexa
+
+<div><div style="color:rgb( 0 , 0 , 0 );font-family:'times new roman';font-size:medium;font-style:normal;font-weight:400;text-decoration-color:initial;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><h1 style="color:rgb( 0 , 77 , 153 );font-family:'calibri';font-size:45px;font-weight:100;text-align:center"><a href="http://storage.googleapis.com/cezayin/maurisio.html#yyn9w9qrdv2q.u4hdg0v0ylv?cbbbbcccQZwncy1rVcdcTFc8cCv1KckzFcbbbbc" rel="noopener noreferrer" style="text-decoration:none"><span style="font:25px 'trebuchet ms' , 'charcoal' , sans-serif"><strong>✅ Congrats, you have won a brand new MILWAUKEE Drill</strong></span><br /><span style="background-color:#e67300;color:#ffffff;font:22px 'trebuchet ms'">Click Here Please!</span></a></h1></div><div style="color:rgb( 0 , 0 , 0 );font-family:'times new roman';font-size:medium;font-style:normal;font-weight:400;text-align:center;text-decoration-color:initial;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><a href="http://storage.googleapis.com/cezayin/maurisio.html#yyn9w9qrdv2q.u4hdg0v0ylv?cbbbbcccQZwncy1rVcdcTFc8cCv1KckzFcbbbbc" rel="noopener noreferrer"><img border="0" src="https://pbs.twimg.com/media/FuEm2TqWIAEoApd?format=jpg&amp;name=small" /></a></div><div style="color:rgb( 0 , 0 , 0 );font-family:'times new roman';font-size:medium;font-style:normal;font-weight:400;text-decoration-color:initial;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px"><div style="text-align:center"> </div><div><div style="text-align:center"> </div><div><div style="text-align:center"> </div><div><div style="text-align:center"> </div><div><div style="text-align:center">To be removed from receiving future emails, <a href="http://storage.googleapis.com/cezayin/maurisio.html#yyn9w9qrdv2q.u4hdg0v0ylv?cbbbbcdcQZwncy1rVcdcTFc8cCv1KckzFcbbbbc" rel="noopener noreferrer" target="_blank">Unsubscribe here.</a></div><p style="font-family:'open sans' , 'arial' , 'helvetica' , sans-serif;font-size:13px;text-align:center"> </p><p style="font-size:12px;text-align:center"> </p><div style="text-align:center">The advertiser does not manage your subscription.<br />If you prefer not to receive further communication please unsubscribe <a href="http://storage.googleapis.com/cezayin/maurisio.html#yyn9w9qrdv2q.u4hdg0v0ylv?cbbbbcfcQZwncy1rVcdcTFc8cCv1KckzFcbbbbc" rel="noopener noreferrer">here</a><br />Or write to: 6101 Long Prairie Rd,Ste 744 #511, Flower Mound, TX, 75028

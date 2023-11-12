@@ -1,0 +1,2081 @@
+Delivered-To: allen71090@gmail.com
+Received: by 2002:a05:7300:76cf:b0:ac:7760:ad67 with SMTP id e15csp1443162dyf;
+        Mon, 20 Mar 2023 03:03:54 -0700 (PDT)
+X-Google-Smtp-Source: 
+ AK7set9apc+kGpqcMQxuNecsTQc5kiPBZfpN2Ebvb4839a2mNsuMJB9QAIdEKpsXrd/i3jYp1rPr
+X-Received: by 2002:a05:6a20:1a12:b0:d9:ab8b:9f4b with SMTP id
+ cj18-20020a056a201a1200b000d9ab8b9f4bmr2571439pzb.46.1679306634697;
+        Mon, 20 Mar 2023 03:03:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1679306634; cv=none;
+        d=google.com; s=arc-20160816;
+        b=d5Uky4ya4VH8dOZgN/XbzAtpiEubxi+XdyUFc+YNOy6rFHtLRoH9lJvdzvMkftO9ej
+         1E4KBgqG75hW6xLoq5FQHiZ44Bu7kWb9XRaPRit7qyOtSubau2xfQdYkzxTJXT6HKSeN
+         O8qpsJ8Drwl6yQGMSvfVCSpEOlAOBY4lGZfIHQOnM6KrCHTmgHtHCD/XHTaHfiLPfgfG
+         8pCSOGV4IZy7NtGkwBqZUbsUK+tfTZAheEvFXMq39VQ0Y7RQxLd0/+WHf74EtvkTN1XO
+         18CTUuIxJQC31XDt4BRGLT5TmnWnPxLJRmmzQ+GuBwXfjEJAKeH5FRXPX7wxFlq4N+Nc
+         6VUA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date:dkim-signature
+         :dkim-signature;
+        bh=fJ0a+H3XCQC8x/g0FwFWrxcrpYZw7t1vNsTanvAn/3I=;
+        b=Batn4v3KyAfgs0PUapBt7tKp3k4raKkkCWnYRTTfRzbGXeVa923Dx+Drc8zFnFK0m+
+         sNnklkTA+vkYiCW/uN0Zol6M6tVNlF8KdRst4o5wUrDZJJZPFTPatTZmvCHoOAqdRa98
+         GHGcjhgqY3EjH5lxJL8LcBPQm/ztPM1a5y1hKmH7a3MlZmuUVwGwznwCvDlz1pdKCHRC
+         o5LiWnApi5bbz58aWG3ZhVy+SUqZ1vUE4oHHeEZDEQI0hD6S09a3+QJeNoWHlraeeqWu
+         W7QEBY//JMPTdOwaWcpMXxKEkNPfqKDvtkwiHJueWRLXv6a1xTYpd55UbrVgmWYxVlI3
+         o0FQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.meetup.com header.s=s1 header.b=B+cgCG5p;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=R4xnVPAC;
+       spf=pass (google.com: domain of
+ bounces+28368967-494e-allen71090=gmail.com@e.email.meetup.com designates
+ 167.89.54.29 as permitted sender)
+ smtp.mailfrom="bounces+28368967-494e-allen71090=gmail.com@e.email.meetup.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=meetup.com
+Return-Path: <bounces+28368967-494e-allen71090=gmail.com@e.email.meetup.com>
+Received: from o4242.e.email.meetup.com (o4242.e.email.meetup.com.
+ [167.89.54.29])
+        by mx.google.com with ESMTPS id
+ n186-20020a6327c3000000b004fbf520c66csi10189562pgn.254.2023.03.20.03.03.54
+        for <allen71090@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 20 Mar 2023 03:03:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of
+ bounces+28368967-494e-allen71090=gmail.com@e.email.meetup.com designates
+ 167.89.54.29 as permitted sender) client-ip=167.89.54.29;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.meetup.com header.s=s1 header.b=B+cgCG5p;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=R4xnVPAC;
+       spf=pass (google.com: domain of
+ bounces+28368967-494e-allen71090=gmail.com@e.email.meetup.com designates
+ 167.89.54.29 as permitted sender)
+ smtp.mailfrom="bounces+28368967-494e-allen71090=gmail.com@e.email.meetup.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=meetup.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.meetup.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=fJ0a+H3XCQC8x/g0FwFWrxcrpYZw7t1vNsTanvAn/3I=;
+	b=B+cgCG5pxf6UuUKhnsZfNdHmL/newF9J+gVz1cRik6QWSCrVAmeVtSIZinTO2WJxa//v
+	L8o7BecuM6dkDFvQJkkDOoAkFIcQTNH2yjTcDZoLwthHVKauHGYY9cSnnEpEoabbMX84BA
+	DucoLgHKs1VxhNySBAATijkSyUmLX9NbwWDcn/Ol4a75871udT7XtmlQ9qw8EhuqLVFuEX
+	/ltphxSAhKhm+Ck1xXSzlnolRlcTRf3T76NPW/zwEtIVCNVMB2f2aFk5OvigRBC8M4GUsd
+	j+GGAdQXCJJqXrbeq5J/EBCRNa+EUONuqK25qT6vqgL1Z5Js7/WSsAH+Y06BUx8g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=fJ0a+H3XCQC8x/g0FwFWrxcrpYZw7t1vNsTanvAn/3I=;
+	b=R4xnVPACcW5tJe2Bs53ZzweZIoLWTE4I5zvDRYP0skd/0TpKKKxmgNOCRX5LqlmBu+uD
+	XKf5Flafrc15V5LCh0gJ0aHv1E1B1LPxnuaJLltwZduUIcmYjGkj/m6jTjz75xfE5LBSxl
+	WFw9n6x2uJiDJ4am0CTaj3V+ACTplfcsY=
+Received: by filterdrecv-57ffdccb46-j2b7z with SMTP id
+ filterdrecv-57ffdccb46-j2b7z-1-64182F89-5B
+        2023-03-20 10:03:53.920832583 +0000 UTC m=+2284289.762871805
+Received: from MjgzNjg5Njc (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id kgSBJia9RVCZ8wwcyu3zHA
+	Mon, 20 Mar 2023 10:03:53.787 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=37a5888358a93d4e55435853e4486cd3a7b238afe78a174e080a4860c3f5
+Date: Mon, 20 Mar 2023 10:03:53 +0000 (UTC)
+From: Global Distributed Cloud Group <info@email.meetup.com>
+Mime-Version: 1.0
+Message-ID: <kgSBJia9RVCZ8wwcyu3zHA@geopod-ismtpd-8>
+Subject: Join 6 Members at "Edge Clouds Where You Need: The Location-based
+ Alternative to the Big Cloud tomorrow ""
+X-Feedback-ID: 28368967:SG
+X-SG-EID: 
+ =?us-ascii?Q?QGeW+qgh0fV5KYZieBxcPvYjS91Nx9AyIkCdjHknHDnpZueJ38MgNEGqg=2FYNXx?=
+ =?us-ascii?Q?Gs2bArc6wkKERwz+9V7Y6V52oohFV9WR2F8kklS?=
+ =?us-ascii?Q?zviDqg+hccffdNzTo5GQVxDfUoZCYyT=2FPTD7sur?=
+ =?us-ascii?Q?23fY74Y79e08441QZ9NQNcX=2FyfZvg9tDvv1yfnl?=
+ =?us-ascii?Q?o6+tQE48uXEsHENMfi2P9iLTJSls+1xtd0Kbpa6?=
+ =?us-ascii?Q?insTTyvsAmYrOMEKFDi8xsvakCiyYPmYD7pch2d?=
+ =?us-ascii?Q?Mle=2FmzlllEd8=2FI5UIxUeQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?ChggnN3up3N+FFj4LKd+OwTdUkBvyMzwIF2lihO?=
+ =?us-ascii?Q?YcBRADmVp3fQEekuTFzM4xpdyJq7sFMO2gKIwcY?=
+ =?us-ascii?Q?pcptzbFVngSL+dZQfr3RioSC13+WuSg8T4AKvs5?=
+ =?us-ascii?Q?lEp0AHw8yw21rnXfb8k5cXqQsyXl90FVU8Tz8+s?=
+ =?us-ascii?Q?=2F0M=2FVU85M8luCBRlysk3ejtOk3iaPDGe1VPxj0M?=
+ =?us-ascii?Q?JvPsW=2FWb+4E6z9vyqvflKgpGl7kKlKBPdw=2FS4bV?=
+ =?us-ascii?Q?hJc13bb5W4pSwYTdmSWWUCKMWKqa7hpWssOENEV?=
+ =?us-ascii?Q?xy5vI62gzJsYeESkJ0fhlhfPS+JyfmlQlI1wsQ=2F?=
+ =?us-ascii?Q?ps2wI5FdbFhGOiHcQJshs0CqysWzPFUomrbmTzq?=
+ =?us-ascii?Q?nzjJ=2Fm=2FNudIQCFOXQQ42LxYMlIxXUVVuTRmTmVO?=
+ =?us-ascii?Q?O0joa8HZ+ovHn3pjerdAAvAyU0FgTsWbStjlTmm?=
+ =?us-ascii?Q?vl0VuolFUXfviuUunmET=2FBZhLcxxbLmk9mp7Wm1?=
+ =?us-ascii?Q?2Hwtpn58TKeLnhOZLl3CT3fvT2wxU8EGTkL4P+d?=
+ =?us-ascii?Q?0UFbtqw?=
+To: allen71090@gmail.com
+X-Entity-ID: yQyHiGYXYurLHzVm/MhzzQ==
+
+--37a5888358a93d4e55435853e4486cd3a7b238afe78a174e080a4860c3f5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+Global Distributed Cloud Group
+invites you to keep connecting=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Meetup  @media only screen and (max-device-width: 480px) {
+.other-meetups-tearsheet { display:none; }
+*[class=3Dpeople],*[class=3DnoFloat] { width: 100%!important;
+float:none!important } .showMobile { color:#222!important;
+line-height: 16px!important; max-height:20px!important;
+height:20px!important; } .hideMobile { color:#fff!important;
+line-height:0px!important; display:none!important; }
+.mu-subheader { font-size: 9px !important; } } @media only screen
+and (max-device-width: 320px) { .event-meta, .event-rsvp-box,
+.noFloat, .event-rsvp-box-status { float:none!important;
+width:100%!important; } .showMobile { color:#222!important;
+line-height: 16px!important; max-height:20px!important;
+height:20px!important; } .hideMobile { color:#fff!important;
+line-height:5px!important; display:none!important; }
+.event-rsvp-box { margin-top:8px; } .other-meetups-rsvp {
+width:40%!important; } .other-meetups-event-meta {
+width:60%!important; } .event-rsvp-box-actions { width:100%; }
+*[class=3Dpeople] { width: 100%!important; float:none!important } }
+@media only screen and (min-width: 10px) {
+.meetup-button-gradient {
+background-image:-webkit-gradient(linear,left top,left
+bottom,from(#e6304c),to(#cb1834));
+background-image:-moz-linear-gradient(center
+top,#e6304c,#cb1834); text-shadow:#b8263c -1px -1px 0;
+box-shadow:#ed6e81 1px 1px 0 0 inset; } .meetup-button-link {
+border: none!important; padding: 5px 18px!important; } /* Css
+button */ .button-learn-more { background-color: #ff1154;
+border-radius: 6px; color: #ffffff; display: inline-block;
+font-family: helvetica, regular; font-size: 16px; line-height:
+25px; width: 80%; text-align: center; text-decoration: none;
+padding: 2% 10%; -webkit-text-size-adjust: none; }
+.button-learn-more-2 { background-color: #ffffff; border-radius:
+6px; border-style: solid; border-color: #ff1154; color: #ff1154;
+display: inline-block; font-family: helvetica, regular;
+font-size: 16px; line-height: 25px; width: 75%; text-align:
+center; text-decoration: none; padding: 2% 10%;
+-webkit-text-size-adjust: none; } .group-name { border:2px solid
+#fff; border-width:2px 0 6px; color:#545454 !important;
+font-size:18px; font-weight:bold; } .meetup-link, .footer-link,
+.event-description a { color:#3987cb !important;
+text-decoration:none; } .footer-univ { background:#eee
+!important; font-family:arial,sans-serif; } } .footer-text {
+font-family: Helvetica,Neue,Regular; font-size: 10px; color:
+#697a80; line-height: 150%; } .footer-below { padding: 7% 0;
+/*Space content below footer*/ } /* Css button */
+.button-learn-more { background-color: #ff1154; border-radius:
+6px; color: #ffffff; display: inline-block; font-family:
+helvetica, regular; font-size: 16px; line-height: 25px; width:
+80%; text-align: center; text-decoration: none; padding: 2% 10%;
+-webkit-text-size-adjust: none; } .button-learn-more-2 {
+background-color: #ffffff; border-radius: 6px; border-style:
+solid; border-color: #ff1154; color: #ff1154; display:
+inline-block; font-family: helvetica, regular; font-size: 16px;
+line-height: 25px; width: 75%; text-align: center;
+text-decoration: none; padding: 2% 10%; -webkit-text-size-adjust:
+none; } .container { max-width:584px; width:100% }
+.layout-body-content { padding: 0 16px; margin: 0 auto; }
+
+
+
+
+
+
+
+
+    Meetup=20
+( http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4=
+CzodbRR1Rd1lMbY-2F0BB6sl1-2BGb-2BU4Xb61IYOfzSGDr1WLA6MC9Dyq9-2F8g3ZHmsfIhK4=
+vjh2BPLpy42f3rEU96tlbBf8Yo9-2BSg8w-2B4fUXr6Pi6UkjoTZIkJQ-3D-3DvyxR_Yg5CIIEw=
+jernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-=
+2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4=
+eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghN=
+CW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc64=
+6ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnz=
+PnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2O=
+SqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3=
+OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7T=
+Bp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s49bkKUh-2B0qZYwnI21VboScdETrkoOpQe3kutZXYxTx=
+Nq-2FnkJBpZ0VwnLjpbmhZb62i4KIPnfjG-2BHDS7PsA4KgxaArloKb3J0pwg15Wnl8HtRk12jN=
+G4OFEgpt1urXGCzNwORY44kHlA5jQ8BJ4AfSU-3D )
+     =20
+
+
+
+
+
+
+
+
+             =20
+( http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4=
+CzodbRR1Rd1lucdvIwHwxpqyRpUJ2cLgrLceiLidYHikYKFDLUotqnKr1wFOtdTEoK-2Fs3Zb-2=
+F-2BDHTvafxxGt3kp-2F36-2BZ2o1DTGvQXnwByoFLgruuNfJPW87w-3D-3DG8sM_Yg5CIIEwje=
+rnwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2F=
+Veh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eW=
+SMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW=
+8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646u=
+eaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPn=
+zAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSq=
+sScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OW=
+AFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp=
+97-2Fl5v98zrnaeM7tVCdgQ9rUP7swxU6ESZuQT5IRf3eUdV-2FbPKw-2BuHKh7-2BNL5H7xING=
+S57MVjgEJmlaCAWjN2c9mPV3OJJVHksBjaj4uskExsgwG6mLo6aQLe-2F1k8rc2KsL9U6A27pAq=
+RgVl-2BKRl5-2BuehsJprx8G-2Fnx-2FZeVtyrKvtf3s0-3D )
+
+
+-----------------------------------------------------------------
+You are 2
+RSVPs
+away from 5 RSVPs
+-----------------------------------------------------------------
+
+
+( http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4=
+CzodbRR1Rd1lucdvIwHwxpqyRpUJ2cLgrLceiLidYHikYKFDLUotqnKr1wFOtdTEoK-2Fs3Zb-2=
+F-2BDHTvafxxGt3kp-2F36-2BZ2o1DTGvQXnwByoFLgruuNfJPW87w-3D-3D0Jyj_Yg5CIIEwje=
+rnwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2F=
+Veh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eW=
+SMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW=
+8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646u=
+eaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPn=
+zAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSq=
+sScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OW=
+AFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp=
+97-2Fl5v98zrnaeM7tVCdgQ9rUP7syxJuLK5m5qsQuMclgRBZAG5VfQh8fxJEJduWNHjkGisqdt=
+P6ziPU65cb6OM4MeNPka4CUaakV-2FnDRd85iyx88Q10-2FuDBR1XuSz5jHW4WNJJjeDFWNR9eF=
+U5XZ0qv0dNRcjzsgBrwVW7vQmJ5QcsU3s-3D )
+                =20
+
+
+
+tomorrow
+Edge Clouds Where You Need: The Location-based Alternative to the Big Cloud=
+ (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxu=
+m9lHxmAgDN-2BK-2F2xmXyUBlYtFIKUJUi_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5Lr=
+I-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B=
+4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYq=
+O2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz9=
+05ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDlu=
+RAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9=
+gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDH=
+kmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQ=
+FT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s4=
+h5dvwBA4aTftJqByvVSC0A5-2BBBF3mD6zACHLsqZjn4u7Uv7-2BnDLZ2PjpbxJxKumYNkoeWwj=
+zeQyiTe51SUVw0bW8BqRXvERzaZ1h-2BPWSCV2-2FY3L7wZV4c-2FaedANR1l9uUpE5xgfrsKl5=
+nW2Onf3g0-3D )
+
+Global Distributed Cloud Group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tuesday, March 21, 2023
+
+11:00 AM
+America/New_York
+
+
+Online event
+
+
+ Link visible for attendees
+
+
+
+
+
+     Add to calendar (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxu=
+m9lHyxRwEZgG9Uv5x2DJQ5PMdcjDfDCNtyyw-2BAc3lZ8xR97pT9UH20RKFRy-2BvPUMSF45ya7=
+3I-2FnveNnPi6sk4Pjs3RoYQm7ys9ms5QIDpyL-2Bt7qVGyrwUzfWxq6dujf27clY4-3DXvAd_Y=
+g5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc=
+3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I=
+2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5=
+xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK=
+2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1R=
+lYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm=
+7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL=
+-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqP=
+bPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s0kuAzOpAZvWkQKBn994Na6cO2spoD-2Bg9H9n=
+2Q0S4llzwSAKn9ol3l-2FBbKVCGTU727toDCLCdxT9GjatdLwZIbp0Bo5P6gd-2BS4JicvmeLkZ=
+HXPMYX9Tm9-2BikHBnwO-2FSJ2XuSj40sy1T-2FAitQjalppC8-3D )
+ Add to calendar
+ (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxu=
+m9lHyxRwEZgG9Uv5x2DJQ5PMdcjDfDCNtyyw-2BAc3lZ8xR97pT9UH20RKFRy-2BvPUMSF45ya7=
+3I-2FnveNnPi6sk4Pjs3RoYQm7ys9ms5QIDpyL-2Bt7qVGyrwUzfWxq6dujf27clY4-3DvKiX_Y=
+g5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc=
+3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I=
+2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5=
+xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK=
+2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1R=
+lYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm=
+7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL=
+-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqP=
+bPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s7yBC13GkAwAjwum2UZt5dJCGpbV76OM4jhACD=
+W56rpfnhx-2BLMOeThJ2QjVrRgD-2BAht8CHCNcxRiM4-2FurLJXFdp-2BnM7MptZzJvOY3Ggc3=
+NH5qfA2QBf2N9rhfPYcgibt1l-2F-2FmVJ0hv-2FNOZksKptT7xc-3D )
+
+
+
+RSVP
+today (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxu=
+m9lHwvFjufI2pDgmQsxqq4E6fdlK6w-2Bhs0TAKzoj8zPYWAfvGMaLJDAK5m3R9eDhge997rFMN=
+z2oTp2V9i5i3Ko3Xa4UpSa6VdZQrJLr8AQCfiBOSV9PIPeHM7Fw7uKAJghBs-3D9eL4_Yg5CIIE=
+wjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy=
+-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ=
+4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDgh=
+NCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc6=
+46ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMn=
+zPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2=
+OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC=
+3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7=
+TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s2hzxVMp9MNXT6CmlEthSCjxY2Fwc2qexo6xnrxELxyC=
+iwX4DFJp3rAgKK1xfee4JGjT1VlbNfYNVmlu-2BWNKFgXmb8qZW0t2OvMNLt522pziFyC07IMqB=
+mNbcUxyzGitJrS0ziKhi5VpXJc87-2B3qEP8-3D )
+
+
+
+
+
+
+
+6
+Members going, including:
+
+
+
+
+
+
+
+
+
+          (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYpZ1-2FLXK1Vw42CKZAP=
+CF5DlpBjVTga5kR17s40r6OX7adcwa_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7szMOUb=
+patsEu3hLubsASE-2BF4c9ebskCiB3fpZsxioqfhnm9SqR16Tn1YAubRopus0FqRvguRqEZPtfn=
+Yzcfzgk7ZQUsNc9Pp9roNN4wORmbmQOwhIYdh27xsTZxwQqGdyTfsxzG4X-2F-2BhBLuoCRTW0s=
+Y-3D )
+Rachel Grand (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYpZ1-2FLXK1Vw42CKZAP=
+CF5DlpBjVTga5kR17s40r6OX7a8aH1_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s43SKB=
+KOviPifBjyaQisEcK-2Fi3J-2F-2BEMbdUOILQK4onfbwKvGMkRbGyTWonUgqhFJq5G5hXAnkHy=
+jgbkmo60O1LsGpAU6-2BKodSkP8VVgi3mt2FkFcOAqmOaiBX0BtzvdmKJDqkivi7pzw1Xx4ouw6=
+HVs-3D )
+
+
+
+
+
+
+
+          (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYnb-2B7oQWBFLCNmYFII=
+jflC7g2aDz1my4dXWb72-2FvZaNpZmNs_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-=
+2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4e=
+EN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2=
+fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905=
+ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRA=
+Mv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gs=
+FLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkm=
+TK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT=
+3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s6-2=
+BwcXCViQ4mxOfzyfHIPiRrFXok-2FhMhilA2SEbd0ywdGooujnnPzh4c9dblVhh-2FpGC0XzjQi=
+ARVSpFE8ZaURtE6SJhUGqBRe9yEHRUUQ5-2Bylj63nZ-2FjPT4sHHYjn8LTxP2ckAOnHgaPkU7C=
+xYLXdsY-3D )
+Ridwane Rahab (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYnb-2B7oQWBFLCNmYFII=
+jflC7g2aDz1my4dXWb72-2FvZaNpe8U0_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-=
+2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4e=
+EN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2=
+fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905=
+ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRA=
+Mv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gs=
+FLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkm=
+TK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT=
+3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s8DN=
+uba7gRP7d0tHn4lKeFMHbqAQnBi8UbK4ZSrC1eIIoGluDPd8aB0ixddubA4yjKijB5-2F9gCC-2=
+FWAONCAzYI86y39zkDjxExfPRvRkDXiukVouI6ILUDX6gHQo20KPLXYBftPWD9ZJd2Aj33KEEo0=
+s-3D )
+
+
+
+
+
+
+
+          (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYnaCRXxklZMGtLSZi1Yt=
+wz88YLJ-2Bfyz5VJhYnxARZNyD6lGu_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7sz4Jnv=
+s-2FahIOL1RJF0ykw0GygLctRzftIIrqLzPo1tLXhtiXxH-2BfpdIaSBaeBGXS8MWRrVSUm-2B0=
+4H5EQF4Pm8a8kAA9daq8CEd69wG9-2FHOXRNmWdtD4kxCdFB-2B4diJD1Vkdul8oqXd3nWTM4d8=
+aI-2Bg0-3D )
+Olivia Lara Gresty (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYnaCRXxklZMGtLSZi1Yt=
+wz88YLJ-2Bfyz5VJhYnxARZNyDAAxu_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s2m0ha=
+ce-2BBCUhRrY6Tc2L-2B-2FdmCv6rhJoLQmT35tWRl45rJpvcJcQ-2FHji5qVjnWXuKn-2B73OF=
+w7koKfS2wz1jUp-2FUG0EXUGhQLYpE7q9-2BE5ihOK9-2FMS7FXitfg53bGC3mlU2-2FcRyLj5P=
+nXpjzjKl0Z-2FIY-3D )
+
+
+
+
+
+
+
+          (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYo7FhjuAfZsdZ-2F81Uo=
+faw-2B0-3DVncq_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjY=
+ZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQn=
+yrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61J=
+gQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2=
+F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwx=
+CNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYb=
+nVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2=
+yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC=
+90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s5MmSTGLsw9aPx6RSAGfVN=
+UyLM4s39sH0m0fqirfP2hd2bWfAimjLUaPnZ-2BkMjJSRw8eaRAMzHgtOOQnttJrqI8o4U-2FgG=
+rBZ6ExpaPgkG2OEJRzNNFoyO3lq9faTcerAcNb7aPFqjuwLgrN074cFiX0-3D )
+Dev  (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYo7FhjuAfZsdZ-2F81Uo=
+faw-2B0-3Dhmyw_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjY=
+ZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQn=
+yrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61J=
+gQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2=
+F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwx=
+CNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYb=
+nVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2=
+yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC=
+90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s-2B-2By5HnblxCan7yAPB=
+xM0Q-2Bl2cr2JWvevKKz93NKJ1xmz8g0DTCZy2fuQsCdQJRWKCYJR7MfF5kmO900JcjL-2FdQoS=
+6LMmZPknmXys9uErjnkuRqloC2eRFZTA3457qZOKkFJh8sLF4QAOTuDE1HJxXo-3D )
+
+
+
+
+
+
+
+          (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYuyHRG7LQl2xL1fyaegu=
+pJqRAY1LDmBM2D-2F2sxj6v2VM0Fca_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7sxHssf=
+9PdGWQOVdUGfp8GWcSLPLwmYV5CoP43UN7rF8TuATykFd8Z3HZcTWrfzpgRdCTBau99lBS-2F7w=
+R-2FhhuoHUX2HLImNzMUo2TY1xdzbtfi6CDI-2FgyeOCuXA4wjYoGjlTRiVIpzt0J6vs5ZUQDUI=
+8-3D )
+Addy M (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYuyHRG7LQl2xL1fyaegu=
+pJqRAY1LDmBM2D-2F2sxj6v2VM-hZ-_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s06InR=
+-2Bz0z1XQDJ2Fik-2FaTL-2BjpghSDXJI3Zx9UtARI4kFq-2F6L4EdjJ24vRAolRI6QGXHQ5gi3=
+oql6He7OFdro3PBa4O366QKv-2F2TOJ8jIZkFLJRU7oLRs-2B7jIKqoPOtfbzDq6kSevkDUeahF=
+Gi8okNQ-3D )
+
+
+
+
+
+
+
+          (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYs3C5DwX-2FrpHaULMVI=
+cMllg-3Dv4Rr_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZM=
+lG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyr=
+CuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQ=
+OYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-=
+2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCN=
+rcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnV=
+OtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yj=
+fT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90=
+Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7szZI1kXe1jlTlwO-2Bfoe8uF=
+-2B1ID2vxaiWtoaX1PzCRm5WoWDpqQwHZGCp0w-2F40QZwUQcKX0ZtTnV7AkfqgXJOXCDnQSr05=
+DQXuiRiX4yfpwzM81izv2s6QuDcqu62LbT9T1zmcOqoaCnNt7cbfRmHD4o-3D )
+Fred Richard (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEXv3jVmng-2FZvvrD6SyerOYs3C5DwX-2FrpHaULMVI=
+cMllg-3DTt0I_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZM=
+lG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyr=
+CuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQ=
+OYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-=
+2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCN=
+rcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnV=
+OtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yj=
+fT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90=
+Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s6lESOSkJkWUu9MVcUKbr-2F=
+3hQDMl3vrzP9xWPwSGDjVk6wQiwR0PQ16asebfcyJJFbPX7w8s43T2OZPRRARhcjTMaT3nZTytg=
+Wgyn9GqQdjZI4aHmb-2B0xjzPH0lCXDcBaAxzb-2BGDzF-2FVi97KyhZi3Pg-3D )
+
+
+
+
+
+
+
+Event
+description:
+Hear from cloud provider Ridge about their distributed cloud solution in th=
+is Meetup webinar.
+
+Join to find out:
+* How to improve app performance by deploying in the location of your choic=
+e
+* Using...
+
+ Learn more
+ (
+http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4Cz=
+odbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxu=
+m9lHxmAgDN-2BK-2F2xmXyUBlYtFIKzJlf_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5Lr=
+I-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B=
+4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYq=
+O2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz9=
+05ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDlu=
+RAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9=
+gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDH=
+kmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQ=
+FT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7sx=
+JYUfNmM6mfb1HCSbJmHs1W-2BwafJ0-2FREgWF0fPVijghtAUX-2BOWEjxbqDi6queDHPY7L1aJ=
+1-2F6-2FaTdh-2FM2Zf8HVhFWH9qhpnb4d-2BAYcsw14Eiy7pZRPVudjY78re84BjrXnItzCThz=
+xXZW6sjNvBpqc-3D )
+
+
+
+
+
+
+
+   You received this message
+because you are a registered member of Meetup.
+Unsubscribe ( http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5Mohr=
+Ypdrra25MtI4CzodbRR1Rd1kywzczhjZraOOdC2TGfIeY3aXoeqBVBXLJNt5STaWElGxjEUrhER=
+SQCv-2BgJDCiaeB-2BxSLkfijCUbxw72z0sWcC-2BNqqXGzbI8uSmrGSziaE9a-2Fot1VCvveQc=
+Rphk-2BoxFec6-2BaQPsbTS90omk1pidAcVtOHmDCKrtdK-2B2qWoYvSTOtp2KgyteVUFBxdv9A=
+WK3LRwK94xBZn0zSFmGO5hCITwMbUi_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s4s5-2=
+Fy5YAcjphrDEMNNKJEJFmjeaFGkU5A5HQgqIaOlJ7AIWU907V64ghUCGf7h8-2BnF3MPW6PgGvO=
+vt3YrjTd6JJtS8wQlTKdyd7mE7mxShl4QEOvFoBrhu5AbTnsa97833-2FDwZHzr-2BP2Za-2B2p=
+m30aI-3D ) from this type
+of email. Manage your settings=20
+( http://clicks.meetup.com/ls/click?upn=3D8Y2vsX5dSU9BIj3r0FDX3hKPTxoZ-2F4C=
+oTjtrmZj9WRKKQ1pB0tDVZoJ57HL7uQTU2lFpStzBX-2B6qbgjjpecwQ0VSRss9lilkD4u0puru=
+m4zOwHD1Hji3CvePVrHHy4L5zUWl56piiYfB1-2FInI70aFjCqlKOQv1vIiu-2BZ5hMzKJRNuPC=
+Xfc5OieKpYmgbPs46VYJS-2Fxa-2Fu843zPPgtWMapnnja-2FLp2-2BM2jO-2B98FtB5FNSro-2=
+BuQqrZm1LNg-2BeeCCnc_yxk_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYRe=
+N8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2=
+FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2u=
+Fcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VV=
+Jgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv=
+8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJ=
+HHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-=
+2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV=
+8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7syXCnVim3amr=
+YF3XoAaVMi97WtioBy0fBMrBzjNKbD6dTjFHdwwIfBNcEojAe0kk-2B60Vx8Y6ya1ZuHzQfC5Yn=
+2Lxz8cwJYI8qJnUHSZLn8uiOuu0ftVx82TKUBojDdxfzxNFkyOtTAFsUIfF-2FshsL18-3D )
+ for all types of email updates.
+Visit a your account page=20
+( http://clicks.meetup.com/ls/click?upn=3D8Y2vsX5dSU9BIj3r0FDX3hKPTxoZ-2F4C=
+oTjtrmZj9WRLwKZRAorXPNMZVwCIVN5rVR5S-2FriZ5VfraAjoH5-2FdTE-2Fcg-2Fd1VKL6k0P=
+LPOHWrN7aN9RtHy-2FRWWuBpoT-2BpQP4GZpR4-2BOLVmsIsnEM0Tv7bqTillRSOqIEgWdLHr30=
+gZhmweCXKoY9XjAWdcpn8868tphnp14gM63WZA3jFPdStcqUPVWZ2yIiwIdHjdR0MCrlXVLji6W=
+vGDciqB24tjjjDJzgm_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl=
+2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e7=
+2bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3=
+R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-=
+2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5=
+ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTu=
+edYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKy=
+Lom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f=
+3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s5RnxEqEMRNjCsGo2X=
+AGBXQfqUXz8V3MLePAjUpY2MRbnRYqCXke4or658vgbByr0bBOeqfWapE6cUszy-2FKO-2B7fgW=
+4mu-2FAtv4EZOm4GWNbkWjr83CQaM-2BiuC9-2FjvgXU1V0WT3EEzmWCcZxRNmw6EAZw-3D )
+ to change your contact details, privacy settings, and other
+settings.
+Meetup LLC=20
+( http://clicks.meetup.com/ls/click?upn=3D8Y2vsX5dSU9BIj3r0FDX3lSPClZdoQRTM=
+87Zc9pGBVv4IaI0DdWeyx54S6KDP8i-2BOSVZC175vkMReJkNBj5X8Prg7vFYRNWc70lXLMDjiw=
+5v9Q5UaGw28FxozMcn5tEC8OBY1beVHbAlN92HnoWtn5eTGjrX52FLcPLX8ew5T30e71jI4D9uk=
+QcwZiBHMFlvo3TaohkBnZ7jftYX8cq9hfOOXHP6xDX32wncMdAOvkA-3DTCWF_Yg5CIIEwjernw=
+bxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh=
+1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMh=
+VyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iA=
+IqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJ=
+MCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC=
+0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsSc=
+oIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW=
+8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-=
+2Fl5v98zrnaeM7tVCdgQ9rUP7s8JhawPD9gSTL5rfT4J8OCScXUR9ZlFOuUbm-2FgC5SQOgwWRx=
+2mjFe1kwxQbercpJHcGMm4-2FjHdJvU-2FHPCmptezQucG7gO5SH5dd7d3cKtpm1Ez9L5tblc1U=
+YuuS-2BDaRdqeCuigqG7k3kAHoYw3LwKx4-3D )
+, POB 4668 #37895 NY NY USA 10163
+Read our Privacy Policy=20
+( http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4=
+CzodbRR1Rd1lhUUqAoqop-2FiYO7Df4o2hT-2FcFCBR08Iq5f5UuOkTBHBmKbla2vsR6PMPp2js=
+-2BBaNaeISosCb-2Byhg1iLdCQ2dtHaGqqH-2BDPlcIei5dUxTbRF4zJeF65frfD8VgjuRdrzOC=
+h9GG-2BxI3cgcE8ZJHTZedURGN5i1Q-2BSBkTPV0DGRAbpV4X5bM509Wz-2BQWnmzqIKMBlltmR=
+M5bQQYoUa-2FyBRrxCJ3BI_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8=
+W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA=
+85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFc=
+g6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJg=
+s3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8b=
+INb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHH=
+eTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F=
+1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8q=
+i28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s15Ny1EeU-2Bdt=
+hosbuXBFJ2ySEY3zaD2pU7hZyZeL9ggUeVolhyRDrbu6L7e-2BTiHgNhnZWZiPDyl6f0wUuedp6=
+fcifP3OSIsfuoTHjSoW-2FqY9jRIpqWT7JpZj5LEhLEL2n7oh4kvmAkE521TqBnT1mNU-3D )
+.
+
+
+
+
+--37a5888358a93d4e55435853e4486cd3a7b238afe78a174e080a4860c3f5
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Global Distributed Cloud Group invites you to keep conn=
+ecting</div>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+
+<!-- email/includes/event_reminder.html -->
+
+
+
+
+
+
+
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</p>
+		<title>Meetup</title>
+		<style type=3D"text/css">
+      @media only screen and (max-device-width: 480px) {
+        .other-meetups-tearsheet {
+          display:none;
+        }
+        *[class=3Dpeople],*[class=3DnoFloat] {
+          width: 100%!important;
+          float:none!important
+        }
+        .showMobile {
+          color:#222!important;
+          line-height: 16px!important;
+          max-height:20px!important;
+          height:20px!important;
+        }
+        .hideMobile {
+          color:#fff!important;
+          line-height:0px!important;
+          display:none!important;
+        }
+        .mu-subheader {
+					font-size: 9px !important;
+				}
+      }
+      @media only screen and (max-device-width: 320px) {
+        .event-meta,
+        .event-rsvp-box,
+        .noFloat,
+        .event-rsvp-box-status {
+          float:none!important;
+          width:100%!important;
+        }
+        .showMobile {
+          color:#222!important;
+          line-height: 16px!important;
+          max-height:20px!important;
+          height:20px!important;
+        }
+        .hideMobile {
+          color:#fff!important;
+          line-height:5px!important;
+          display:none!important;
+        }
+        .event-rsvp-box {
+          margin-top:8px;
+        }
+        .other-meetups-rsvp {
+          width:40%!important;
+        }
+        .other-meetups-event-meta {
+          width:60%!important;
+        }
+        .event-rsvp-box-actions {
+          width:100%;
+        }
+        *[class=3Dpeople] {
+          width: 100%!important;
+          float:none!important
+        }
+      }
+      @media only screen and (min-width: 10px) {
+        .meetup-button-gradient {
+          background-image:-webkit-gradient(linear,left top,left bottom,fro=
+m(#e6304c),to(#cb1834));
+          background-image:-moz-linear-gradient(center top,#e6304c,#cb1834)=
+;
+          text-shadow:#b8263c -1px -1px 0;
+          box-shadow:#ed6e81 1px 1px 0 0 inset;
+        }
+        .meetup-button-link {
+          border: none!important;
+          padding: 5px 18px!important;
+        }
+        /* Css button */
+      .button-learn-more {
+        background-color: #ff1154;
+        border-radius: 6px;
+        color: #ffffff;
+        display: inline-block;
+        font-family: helvetica, regular;
+        font-size: 16px;
+        line-height: 25px;
+        width: 80%;
+        text-align: center;
+        text-decoration: none;
+        padding: 2% 10%;
+        -webkit-text-size-adjust: none;
+      }
+      .button-learn-more-2 {
+        background-color: #ffffff;
+        border-radius: 6px;
+        border-style: solid;
+        border-color: #ff1154;
+        color: #ff1154;
+        display: inline-block;
+        font-family: helvetica, regular;
+        font-size: 16px;
+        line-height: 25px;
+        width: 75%;
+        text-align: center;
+        text-decoration: none;
+        padding: 2% 10%;
+        -webkit-text-size-adjust: none;
+      }
+        .group-name {
+          border:2px solid #fff;
+          border-width:2px 0 6px;
+          color:#545454 !important;
+          font-size:18px;
+          font-weight:bold;
+        }
+        .meetup-link, .footer-link, .event-description a {
+          color:#3987cb !important;
+          text-decoration:none;
+        }
+        .footer-univ {
+          background:#eee !important;
+          font-family:arial,sans-serif;
+        }
+      }
+      .footer-text {
+        font-family: Helvetica,Neue,Regular;
+        font-size: 10px;
+        color: #697a80;
+        line-height: 150%;
+      }
+       .footer-below {
+        padding: 7% 0;
+        /*Space content below footer*/
+      }
+      /* Css button */
+      .button-learn-more {
+        background-color: #ff1154;
+        border-radius: 6px;
+        color: #ffffff;
+        display: inline-block;
+        font-family: helvetica, regular;
+        font-size: 16px;
+        line-height: 25px;
+        width: 80%;
+        text-align: center;
+        text-decoration: none;
+        padding: 2% 10%;
+        -webkit-text-size-adjust: none;
+      }
+      .button-learn-more-2 {
+        background-color: #ffffff;
+        border-radius: 6px;
+        border-style: solid;
+        border-color: #ff1154;
+        color: #ff1154;
+        display: inline-block;
+        font-family: helvetica, regular;
+        font-size: 16px;
+        line-height: 25px;
+        width: 75%;
+        text-align: center;
+        text-decoration: none;
+        padding: 2% 10%;
+        -webkit-text-size-adjust: none;
+      }
+      .container {
+        max-width:584px;
+        width:100%
+      }
+     =20
+      .layout-body-content {
+        padding: 0 16px;
+        margin: 0 auto;
+      }
+
+		</style>
+
+=09
+=09
+		<div>
+		 =20
+
+		 =20
+
+
+
+
+
+     =20
+     =20
+		 =20
+      <table cellpadding=3D"10" cellspacing=3D"0" width=3D"100%" style=3D"w=
+idth:100%;min-width:100%;">
+        <tr>
+          <td align=3D"center" style=3D"text-align:center;">
+            <a style=3D"display:block;height:40px;max-height:40px;" href=3D=
+"http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4C=
+zodbRR1Rd1lMbY-2F0BB6sl1-2BGb-2BU4Xb61IYOfzSGDr1WLA6MC9Dyq9-2F8g3ZHmsfIhK4v=
+jh2BPLpy42f3rEU96tlbBf8Yo9-2BSg8w-2B4fUXr6Pi6UkjoTZIkJQ-3D-3DyroA_Yg5CIIEwj=
+ernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2=
+FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4e=
+WSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNC=
+W8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646=
+ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzP=
+nzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OS=
+qsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3O=
+WAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TB=
+p97-2Fl5v98zrnaeM7tVCdgQ9rUP7s7CKrTkUiLQVu51CB1JjpY4olhXO1iysLPhwEKQxsF0VRc=
+qHjZ7tpETyYGU-2FXBBACGoh-2F9uBnHfqzs4807v-2B-2FOBOT4bFoLmke3y-2FVcbacwPnH9O=
+Fh-2FqxmDF0Ul7FwBNarTLW5bx-2F9ZzriXql1WUo13I-3D" title=3D"Meetup">
+              <img src=3D"https://img1.meetupstatic.com/img/email/meetup-lo=
+go-110@2x.png" width=3D"110" height=3D"40" alt=3D"Meetup" style=3D"border:0=
+">
+            </a>
+          </td>
+        </tr>
+      </table>
+     =20
+      <table align=3D"center" cellpadding=3D"10" cellspacing=3D"0" width=3D=
+"100%" style=3D"width:100%; max-width:584px;">
+      <div align=3D"center" style=3D"border-top:0px dotted #ccc;margin-bott=
+om:8px;overflow:hidden;width:100%; max-width:584px;">
+               =20
+       =20
+       =20
+         =20
+         =20
+         =20
+         =20
+                             =20
+                   =20
+                 =20
+                 =20
+                  <table align=3D"center" class=3D"container" width=3D"100%=
+">
+                    <tbody>
+                    <tr>
+                      <td class=3D"layout-body-content layout-body-bellow" =
+style=3D"border-radius: 20px; background:#F6F7F8; padding-top:10px;">
+                        <table width=3D"100%" align=3D"left">
+                         <tbody>
+                            <tr>
+                              <td height=3D"10px">
+                              </td>
+                            </tr>
+                            <tr>
+                             <td align=3D"left" class=3D"space-1">
+                             <a href=3D"http://clicks.meetup.com/ls/click?u=
+pn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1lucdvIwHwxpqyRpUJ2cLgrLcei=
+LidYHikYKFDLUotqnKr1wFOtdTEoK-2Fs3Zb-2F-2BDHTvafxxGt3kp-2F36-2BZ2o1DTGvQXnw=
+ByoFLgruuNfJPW87w-3D-3DpjrD_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcd=
+YReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KS=
+h-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQa=
+R2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ=
+1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kY=
+GJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP=
+9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vU=
+Ne-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXD=
+UwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s5JDeb3mR=
+jYWVvyKH0ZMNML1F-2BQtHEJpUWIip-2BdB57M4YfiWnoqTYcky9oYLAqZNJ1FVOkxMf3D8dnz1=
+9qaw3-2BZyeoqXyBMawrb4e3Xs6KzuyEzzrYG7fCnrFr8TXHi2k9HxMPdiCCWlApWDjS-2BtABg=
+-3D">
+                              <img src=3D"https://braze-images.com/appboy/c=
+ommunication/assets/image_assets/images/63dd3e29d83fb8197348c7c6/original.p=
+ng?1675443753" style=3D"max-width:50px; padding-right:5px; padding-left:5px=
+;"></a>
+                             =20
+                              </td>
+                              <td align=3D"left" class=3D"space-1">
+                                <h2 style=3D"text-align: left; font-size:18=
+px; font-family: helvetica,Neue,Bold;">You are 2 RSVPs away from 5 RSVPs</h=
+2>
+                             =20
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table width=3D"100%" align=3D"left">
+                          <tbody>
+                            <tr>
+                              <td height=3D"5px">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style=3D"padding-left:10px;">
+                                <a href=3D"http://clicks.meetup.com/ls/clic=
+k?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1lucdvIwHwxpqyRpUJ2cLgrL=
+ceiLidYHikYKFDLUotqnKr1wFOtdTEoK-2Fs3Zb-2F-2BDHTvafxxGt3kp-2F36-2BZ2o1DTGvQ=
+XnwByoFLgruuNfJPW87w-3D-3DMn5Y_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2B=
+ZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN=
+4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fX=
+uQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Zz=
+CgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv=
+6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFL=
+UQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK=
+7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3M=
+JXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7sxdFXl=
+ah-2FdI6EPvyhA5L4uphzheKy61Hs40dMB234H9QFU9TQ3-2Fad-2BMDI7eKGazLSNaUShRGYPx=
+QwStF-2FZcjyFEBrswydnJ8lY4cBiLfWk3XboRw6mQp3iFuQS9qAFTnw8SPwjlY4-2FGAs18PNR=
+-2BcA7M-3D">
+                                <img src=3D"https://braze-images.com/appboy=
+/communication/assets/image_assets/images/63ea9ab6c2e1e360e8cbc34c/original=
+.png?16763194147" style=3D"width:100%;"></a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table width=3D"100%" align=3D"left">
+                          <tbody>
+                            <tr>
+                              <td height=3D"5px">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                       =20
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                 =20
+                 =20
+                  <table width=3D"100%" align=3D"left">
+                          <tbody>
+                            <tr>
+                              <td height=3D"15px">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                 =20
+         =20
+
+      </div>
+      </table>
+
+
+
+
+      <!--[if mso]>
+        <center>
+          <table><tr><td width=3D"650">
+      <![endif]-->
+      <div style=3D"width:94%;min-width:220px;max-width:650px;margin:0 auto=
+;padding-top:6px;text-align:left;font-family:arial,sans-serif;font-size:13p=
+x;line-height:18px;color:#545454;">
+       =20
+        <!-- header -->
+        <div class=3D"mu-subheader" style=3D"border-bottom:5px solid #fff;"=
+>
+          <span style=3D"background:#e6304c;color:#fff;border:4px solid #e6=
+304c;text-transform:uppercase;font-size:11px;">tomorrow</span>
+        </div>
+
+        <div style=3D"border-top:5px solid #fff;border-bottom:5px solid #ff=
+f;text-decoration:none;color:#e6304c;font-size:28px;line-height:30px;font-w=
+eight:bold;">
+          <a href=3D"http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2F=
+uV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5=
+qg-2Ftx82jCMUHHjKFxxum9lHxmAgDN-2BK-2F2xmXyUBlYtFIKzrS5_Yg5CIIEwjernwbxgVw3=
+ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn=
+1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPy=
+TtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZ=
+Yx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-=
+2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYI=
+fwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9=
+yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lU=
+Xw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v9=
+8zrnaeM7tVCdgQ9rUP7s0X2SePcWTxiMi0dIPlh9U5c-2FKmBY1FyD4ku9CkPUNdCd-2FLr1D2E=
+ApCD9X7OoFItl1fqpfGtf3y3m9seFWdlB0CGVE-2BZ-2BMCa61zFauZokco-2F4to-2FUN-2Fbt=
+FOIJEGwsuIc920a9GFl5NkQiSIM6cLKuTw-3D" style=3D"color:#e6304c!important;tex=
+t-decoration:none;">
+            <font color=3D"#e6304c">Edge Clouds Where You Need: The Locatio=
+n-based Alternative to the Big Cloud</font>
+          </a>
+        </div>
+
+        <div class=3D"group-name">
+         =20
+            Global Distributed Cloud Group
+         =20
+        </div>
+        <!-- header ends -->
+       =20
+        <!-- date and RSVP -->
+       =20
+       =20
+        =20
+        <div style=3D"border-top:1px dotted #ccc;margin-bottom:8px;overflow=
+:hidden;width:100%;">
+          <!--[if mso]>
+            <table width=3D"100%"><tr><td width=3D"49%">
+          <![endif]-->
+          <div class=3D"event-meta" style=3D"float:left;width:50%;min-width=
+:220px;border-top:8px solid #fff;font-family:arial,sans-serif;">
+            <!-- event date -->
+            <div style=3D"border:10px solid #fff;border-width:0 10px 10px 0=
+">
+             =20
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+
+ =20
+   =20
+   =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+
+              <span style=3D"color:#111;">
+               =20
+                  Tuesday, March 21, 2023
+               =20
+              </span>
+              <br>
+              11:00 AM America/New_York
+            </div>
+            <!-- event date ends -->
+           =20
+            <!-- event location -->
+            <div style=3D"border-right:10px solid #fff;">
+             =20
+               =20
+               =20
+                  <span style=3D"color:#111111;">
+                    Online event
+                  </span><br>
+               =20
+               =20
+               =20
+                 =20
+                    Link visible for attendees
+                 =20
+
+               =20
+             =20
+            </div>       =20
+            <!-- event location ends -->
+           =20
+            <!-- event fee info -->
+           =20
+            <!-- event fee info ends -->
+           =20
+            <!-- add to calendar link -->
+           =20
+           =20
+           =20
+              <div style=3D"border-top:8px solid #fff;">
+                <table class=3D"add-to-calendar" border=3D"0" width=3D"300"=
+ style=3D"border-collapse:collapse;">
+                  <tr>
+                    <td class=3D"add-to-cal-icon" width=3D"28">
+                      <a href=3D"http://clicks.meetup.com/ls/click?upn=3DXb=
+aZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4=
+bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxum9lHyxRwEZgG9Uv5x2DJQ5PMdcjDfDCNtyyw-2BAc3=
+lZ8xR97pT9UH20RKFRy-2BvPUMSF45ya73I-2FnveNnPi6sk4Pjs3RoYQm7ys9ms5QIDpyL-2Bt=
+7qVGyrwUzfWxq6dujf27clY4-3D6k6h_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2=
+BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eE=
+N4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2f=
+XuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905Z=
+zCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAM=
+v6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsF=
+LUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmT=
+K7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3=
+MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s8-2F=
+dkaeyZH8pK-2BH-2FUcM43bOHaAsTUz6MYHmSCB52Kfh-2BBTCj5OQJ1Rp-2Bgvviw9OKKGhxR8=
+u2EO-2BsS6EHjxTrVtlg3ZlKSIQM7G2k5d1aIew1d2Zm53LzA-2F2VF4sszz1-2BaQqAqZ2k27g=
+FQGwDY6PxAQk-3D">
+                        <img src=3D"https://appboy-images.com/appboy/commun=
+ication/assets/image_assets/images/6131205644145f38056fdd69/original.png?16=
+30609494" alt=3D"Add to calendar">
+                      </a>
+                    </td>
+                    <td>
+                      <p style=3D"color:#57646c;font-size:14px;margin:0;fon=
+t-family:arial,sans-serif;">
+                        <a style=3D"color:#57646c;text-decoration:none;" hr=
+ef=3D"http://clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25=
+MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHH=
+jKFxxum9lHyxRwEZgG9Uv5x2DJQ5PMdcjDfDCNtyyw-2BAc3lZ8xR97pT9UH20RKFRy-2BvPUMS=
+F45ya73I-2FnveNnPi6sk4Pjs3RoYQm7ys9ms5QIDpyL-2Bt7qVGyrwUzfWxq6dujf27clY4-3D=
+lOjg_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw=
+2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4J=
+tMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYx=
+jJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZV=
+Z6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-=
+2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs9=
+2QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9X=
+bQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOz=
+PPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s56xydcKsvdPWGJikXpfD-2BkLWSLoO-=
+2FFyj6jN7rVL8vSLslPLujChrWi6vkl5dn-2Bxv78tE-2FF-2FTaTqpMqkYpQASq6rbsg1MiT7d=
+QfDXEMd1EH-2FHhJYTahqlcCpZeoL9K42bHURJIUdJwrcWMU-2FyLuWG8Q-3D">
+                         =20
+                            Add to calendar =20
+                         =20
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+           =20
+            <!-- add to calendar link ends -->
+          </div>
+
+          <!--[if mso]>
+            </td><td width=3D"49%" align=3D"right" valign=3D"top">
+          <![endif]-->=20
+         =20
+       =20
+        <table cellpadding=3D"10" cellspacing=3D"0" width=3D"100%" style=3D=
+"width:100%;min-width:100%;">
+       =20
+        <tr>
+                        <td align=3D"left" class=3D"space-1">
+                        <div><a class=3D"button-learn-more" href=3D"http://=
+clicks.meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1R=
+d1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-2BUur5qg-2Ftx82jCMUHHjKFxxum9lHwvF=
+jufI2pDgmQsxqq4E6fdlK6w-2Bhs0TAKzoj8zPYWAfvGMaLJDAK5m3R9eDhge997rFMNz2oTp2V=
+9i5i3Ko3Xa4UpSa6VdZQrJLr8AQCfiBOSV9PIPeHM7Fw7uKAJghBs-3DgFWM_Yg5CIIEwjernwb=
+xgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1=
+FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhV=
+yfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAI=
+qvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJM=
+Cdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0=
+-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsSco=
+IgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8=
+Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2=
+Fl5v98zrnaeM7tVCdgQ9rUP7s7uTVR5Qw9ZE2oXvxAPCyKWK8hOho2auH7mwvrrP7WJHolJqg4y=
+ZLnZbkE6yQL5-2Be-2BHiRAI9v1tRHzv7rJLS9vwXIpn2apt2ULfaCECZeNu4tlR5q9l1EUOFAs=
+o07-2BnvdANLHKFjh8mAAGYhJuZboS8-3D"><strong>RSVP today</strong></a></div>
+                        </td>
+        </tr>
+       =20
+       =20
+        <tr>
+                        <td align=3D"left" class=3D"space-1">
+                        <div style=3D"padding-top: 20px;"></div>
+                        </td>
+        </tr>
+      </table>
+       =20
+       =20
+        <!-- people to look for -->
+       =20
+       =20
+       =20
+       =20
+       =20
+       =20
+          <div style=3D"border-top:1px dotted #ccc;clear:both;">
+            <div style=3D"border:8px solid #fff;border-width:8px 0;">
+              <div style=3D"font-size:16px;font-weight:bold;">             =
+  =20
+               =20
+                 =20
+                    6 Members going, including:
+                 =20
+               =20
+              </div>
+             =20
+              <div style=3D"clear:both;width:100%;overflow:hidden">
+               =20
+               =20
+                <!--[if mso]>
+                  <table width=3D"100%"><tr>
+                <![endif]-->
+               =20
+                 =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+
+                    <!--[if mso]>
+                      <td width=3D"49%">
+                    <![endif]-->
+                    <div style=3D"float:left;border:5px solid #fff;border-t=
+op:10px solid #fff;border-left:none;border-right:15px solid #fff;width:47%;=
+max-width:47%;min-width:220px;" class=3D"people">
+                      <table style=3D"width:100%;">
+                        <tr>
+                          <td valign=3D"top" style=3D"min-width:50px;paddin=
+g-right:10px;overflow:hidden;min-height:50px;height:50px;max-height:50px;wi=
+dth:50px;">
+                            <div style=3D"min-height:50px;overflow:hidden;m=
+in-width:50px;height:50px;max-height:50px;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYpZ1-2FLXK1Vw42CKZAPCF5DlpBjVTga5kR17s40r6OX7aBpN5_Yg5=
+CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Y=
+iFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2B=
+dGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xc=
+ZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y=
+5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlY=
+YyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F=
+-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2=
+BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbP=
+BCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s7CrR-2BNQdDVBE3YvIBRTVmwhb11-2B7clUlTmD=
+f9ncJoF-2BsKXMJhKtsi4EduVAoIFdyiNY-2B8vgX7RvPTIZ30uNQtPU9jEd7xsLRyAfG3GQEng=
+TYkG-2Ft-2FL1nyw2VX7wugARcS4MffWuZZKv9co-2FgrQSpq0-3D"><img src=3D"https://=
+secure.meetupstatic.com/photos/member/8/e/5/thumb_313982277.jpeg" border=3D=
+"0" width=3D"50" height=3D"auto" style=3D"width:50px;display:block;margin:0=
+;"></a>
+                            </div>
+                          </td>
+                          <td valign=3D"top" align=3D"left">
+                            <div style=3D"border-bottom:5px solid #fff;font=
+-size:14px;line-height:14px;font-family:arial,sans-serif;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYpZ1-2FLXK1Vw42CKZAPCF5DlpBjVTga5kR17s40r6OX7a6I03_Yg5=
+CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Y=
+iFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2B=
+dGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xc=
+ZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y=
+5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlY=
+YyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F=
+-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2=
+BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbP=
+BCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s5zaICB1RsdKRa0Zkdf7EYYdIzGD4i-2FVUJZvf3=
+uFngGD9tR1jXRxx3nrSYqlqC7auAq2hseXmjTG8njNeZvXV6eKkhx6igy8aq1fyqQ7-2BLyl-2B=
+5VC9f1Z-2FqopNU-2FfnDaMCWKDiAzo5Veh1oQqhMex40Q-3D" style=3D"color:#0066CC;t=
+ext-decoration:none;">Rachel Grand</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--[if mso]>
+                      </td>
+                    <![endif]-->
+                 =20
+               =20
+                 =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+
+                    <!--[if mso]>
+                      <td width=3D"49%">
+                    <![endif]-->
+                    <div style=3D"float:left;border:5px solid #fff;border-t=
+op:10px solid #fff;border-left:none;border-right:15px solid #fff;width:47%;=
+max-width:47%;min-width:220px;" class=3D"people">
+                      <table style=3D"width:100%;">
+                        <tr>
+                          <td valign=3D"top" style=3D"min-width:50px;paddin=
+g-right:10px;overflow:hidden;min-height:50px;height:50px;max-height:50px;wi=
+dth:50px;">
+                            <div style=3D"min-height:50px;overflow:hidden;m=
+in-width:50px;height:50px;max-height:50px;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYnb-2B7oQWBFLCNmYFIIjflC7g2aDz1my4dXWb72-2FvZaNpicpU_Y=
+g5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc=
+3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I=
+2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5=
+xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK=
+2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1R=
+lYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm=
+7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL=
+-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqP=
+bPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s-2BI-2B8xWJsqovnIktcL-2Fppn-2BhwCg9oD=
+G6V1eM2TXrvrQ-2F-2BoevRSWMKDVBujuB7oPBsQR1nvMqC3-2BJTZ-2FOpKVUpKTxZ10fBL6A1=
+ONL5elE-2Bh4d1vU5-2Fy2-2BNM8KLTj8zmqHL9hzgd5qakNzcDtZNj8sLfM-3D"><img src=
+=3D"https://secure.meetupstatic.com/photos/member/3/e/e/2/thumb_313696098.j=
+peg" border=3D"0" width=3D"50" height=3D"auto" style=3D"width:50px;display:=
+block;margin:0;"></a>
+                            </div>
+                          </td>
+                          <td valign=3D"top" align=3D"left">
+                            <div style=3D"border-bottom:5px solid #fff;font=
+-size:14px;line-height:14px;font-family:arial,sans-serif;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYnb-2B7oQWBFLCNmYFIIjflC7g2aDz1my4dXWb72-2FvZaNpFzDa_Y=
+g5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc=
+3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I=
+2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5=
+xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK=
+2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1R=
+lYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm=
+7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL=
+-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqP=
+bPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s0xEa2qSJN3FUZ-2BPZBe1YaugYel60dhTOFWb=
+VB0Jl7y-2B-2FewWutPKzjCubsF8dMLqB8gzqFupxMGWhF7lndYgFOSatoCAf9gRVIONw-2Bn1d=
+jQcfs2tCGMBcEHR4nyQJoBItzmIeqo-2FlJZB3KYaJcAr-2FFk-3D" style=3D"color:#0066=
+CC;text-decoration:none;">Ridwane Rahab</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--[if mso]>
+                      </td>
+                    <![endif]-->
+                 =20
+               =20
+                 =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                      <!--[if mso]>
+                       </tr><tr>
+                      <![endif]-->
+                   =20
+
+                    <!--[if mso]>
+                      <td width=3D"49%">
+                    <![endif]-->
+                    <div style=3D"float:left;border:5px solid #fff;border-t=
+op:10px solid #fff;border-left:none;border-right:15px solid #fff;width:47%;=
+max-width:47%;min-width:220px;" class=3D"people">
+                      <table style=3D"width:100%;">
+                        <tr>
+                          <td valign=3D"top" style=3D"min-width:50px;paddin=
+g-right:10px;overflow:hidden;min-height:50px;height:50px;max-height:50px;wi=
+dth:50px;">
+                            <div style=3D"min-height:50px;overflow:hidden;m=
+in-width:50px;height:50px;max-height:50px;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYnaCRXxklZMGtLSZi1Ytwz88YLJ-2Bfyz5VJhYnxARZNyD2oib_Yg5=
+CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Y=
+iFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2B=
+dGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xc=
+ZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y=
+5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlY=
+YyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F=
+-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2=
+BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbP=
+BCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s7s01dIuoXdowhBXxalOm3cIbhHne-2FEnuxUFr6=
+-2FkBS3BXdJFLRy2bTL5JmbWk-2B9K6ZPs1ut4qGdQL-2Bjy-2FgDwUnrf8tpnfmw3rsdeHU2Ca=
+ivRdA3YtMnda59ZybZkBDsUSVZ1GX-2FPhdr9v7rqDT8ib3Q-3D"><img src=3D"https://br=
+aze-images.com/appboy/communication/assets/image_assets/images/592f0c4c1b0e=
+4d2db6c88e4d/original.?1496255564" border=3D"0" width=3D"50" height=3D"auto=
+" style=3D"width:50px;display:block;margin:0;"></a>
+                            </div>
+                          </td>
+                          <td valign=3D"top" align=3D"left">
+                            <div style=3D"border-bottom:5px solid #fff;font=
+-size:14px;line-height:14px;font-family:arial,sans-serif;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYnaCRXxklZMGtLSZi1Ytwz88YLJ-2Bfyz5VJhYnxARZNyDoF75_Yg5=
+CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Y=
+iFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2B=
+dGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xc=
+ZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y=
+5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlY=
+YyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F=
+-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2=
+BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbP=
+BCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7swT5IUgfw-2Fcym9jQd-2BpSI8Bcup-2F9z4jK68=
+IJoTo4iFHuOhiDtUB-2FWnBfeNZ70VjcmEcC-2B70S-2F5dwR8E71kX-2BXYFRli4lUPjp2a2uy=
+5IsbkiMYtnxeZ6Bm4KdFRsJpC8WgwsmUpunPXIMgSDYcvZdTBc-3D" style=3D"color:#0066=
+CC;text-decoration:none;">Olivia Lara Gresty</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--[if mso]>
+                      </td>
+                    <![endif]-->
+                 =20
+               =20
+                 =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+
+                    <!--[if mso]>
+                      <td width=3D"49%">
+                    <![endif]-->
+                    <div style=3D"float:left;border:5px solid #fff;border-t=
+op:10px solid #fff;border-left:none;border-right:15px solid #fff;width:47%;=
+max-width:47%;min-width:220px;" class=3D"people">
+                      <table style=3D"width:100%;">
+                        <tr>
+                          <td valign=3D"top" style=3D"min-width:50px;paddin=
+g-right:10px;overflow:hidden;min-height:50px;height:50px;max-height:50px;wi=
+dth:50px;">
+                            <div style=3D"min-height:50px;overflow:hidden;m=
+in-width:50px;height:50px;max-height:50px;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYo7FhjuAfZsdZ-2F81Uofaw-2B0-3D2eIz_Yg5CIIEwjernwbxgVw3=
+ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn=
+1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPy=
+TtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZ=
+Yx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-=
+2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYI=
+fwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9=
+yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lU=
+Xw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v9=
+8zrnaeM7tVCdgQ9rUP7sxvIa-2Fc6-2FDro9vlzbNG1RJFfUWwSUkPyr0NY3DmqaEI-2Bglwquo=
+1r3oo9lEc-2F669lCeINNZPxeuWOA3orj-2BbKCkgYoOvicc8v8QaO2BcvpOtWOFoRKKW8AKUuy=
+g7Qpm247OHT-2BpefZ1BqBnsKA-2BLVF8w-3D"><img src=3D"https://braze-images.com=
+/appboy/communication/assets/image_assets/images/592f0c4c1b0e4d2db6c88e4d/o=
+riginal.?1496255564" border=3D"0" width=3D"50" height=3D"auto" style=3D"wid=
+th:50px;display:block;margin:0;"></a>
+                            </div>
+                          </td>
+                          <td valign=3D"top" align=3D"left">
+                            <div style=3D"border-bottom:5px solid #fff;font=
+-size:14px;line-height:14px;font-family:arial,sans-serif;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYo7FhjuAfZsdZ-2F81Uofaw-2B0-3DF0E7_Yg5CIIEwjernwbxgVw3=
+ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn=
+1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPy=
+TtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZ=
+Yx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-=
+2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYI=
+fwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9=
+yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lU=
+Xw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v9=
+8zrnaeM7tVCdgQ9rUP7s4J1gKPhEH9ZHgVebnlEQPLHtojwMe0l0CPEWz2Nkw4sxadNEHstq6hs=
+BS8W-2FUe21d2WGpLe6lXfpPCLJicnPhkNQ5mrpDPemr1UPGQoWUX-2BzMGUR-2B4ZIM2aCcfGd=
+mC-2BxMp5ARe8NkzYquwFj8XNgOA-3D" style=3D"color:#0066CC;text-decoration:non=
+e;">Dev </a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--[if mso]>
+                      </td>
+                    <![endif]-->
+                 =20
+               =20
+                 =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                      <!--[if mso]>
+                       </tr><tr>
+                      <![endif]-->
+                   =20
+
+                    <!--[if mso]>
+                      <td width=3D"49%">
+                    <![endif]-->
+                    <div style=3D"float:left;border:5px solid #fff;border-t=
+op:10px solid #fff;border-left:none;border-right:15px solid #fff;width:47%;=
+max-width:47%;min-width:220px;" class=3D"people">
+                      <table style=3D"width:100%;">
+                        <tr>
+                          <td valign=3D"top" style=3D"min-width:50px;paddin=
+g-right:10px;overflow:hidden;min-height:50px;height:50px;max-height:50px;wi=
+dth:50px;">
+                            <div style=3D"min-height:50px;overflow:hidden;m=
+in-width:50px;height:50px;max-height:50px;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYuyHRG7LQl2xL1fyaegupJqRAY1LDmBM2D-2F2sxj6v2VMkBRH_Yg5=
+CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Y=
+iFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2B=
+dGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xc=
+ZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y=
+5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlY=
+YyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F=
+-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2=
+BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbP=
+BCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7sweSZc3C1FzJXgxtYEPsaWUS7YZz1zDT51hB5YCf=
+-2BwogRIpzR0gNoZl2Qyi3UQHF58VJ28JoEPlZPgBSMo-2FeUd-2FI6hTEaLl7jN0Bdi7c75yWH=
+DiLmeHCc5KUtBADYpOf6hcvP88bR99SD0kkMz-2FrcQc-3D"><img src=3D"https://secure=
+.meetupstatic.com/photos/member/a/7/2/7/thumb_266082791.jpeg" border=3D"0" =
+width=3D"50" height=3D"auto" style=3D"width:50px;display:block;margin:0;"><=
+/a>
+                            </div>
+                          </td>
+                          <td valign=3D"top" align=3D"left">
+                            <div style=3D"border-bottom:5px solid #fff;font=
+-size:14px;line-height:14px;font-family:arial,sans-serif;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYuyHRG7LQl2xL1fyaegupJqRAY1LDmBM2D-2F2sxj6v2VMF3cC_Yg5=
+CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3Y=
+iFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2B=
+dGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xc=
+ZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y=
+5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlY=
+YyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F=
+-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2=
+BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbP=
+BCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s2doxUMtYTrTZiHlqgqD5i2JaXCc-2FgOVfZL8HS=
+trn6wlxCFtoCvlaYfk5Qbpby1JaQIK91T19athIXDXhaYFsumn4POyANRA-2B1LhXCAXMhMJ7Ub=
+OTNvSpZuKTcOzp-2F201-2B-2BxCbwZfGje0zF-2FJY6dBI0-3D" style=3D"color:#0066CC=
+;text-decoration:none;">Addy M</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--[if mso]>
+                      </td>
+                    <![endif]-->
+                 =20
+               =20
+                 =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+                   =20
+
+                    <!--[if mso]>
+                      <td width=3D"49%">
+                    <![endif]-->
+                    <div style=3D"float:left;border:5px solid #fff;border-t=
+op:10px solid #fff;border-left:none;border-right:15px solid #fff;width:47%;=
+max-width:47%;min-width:220px;" class=3D"people">
+                      <table style=3D"width:100%;">
+                        <tr>
+                          <td valign=3D"top" style=3D"min-width:50px;paddin=
+g-right:10px;overflow:hidden;min-height:50px;height:50px;max-height:50px;wi=
+dth:50px;">
+                            <div style=3D"min-height:50px;overflow:hidden;m=
+in-width:50px;height:50px;max-height:50px;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYs3C5DwX-2FrpHaULMVIcMllg-3DL1By_Yg5CIIEwjernwbxgVw3ff=
+5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1g=
+q9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTt=
+lEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx=
+9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2F=
+uCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfw=
+CypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJ=
+zfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw=
+2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98z=
+rnaeM7tVCdgQ9rUP7s0f4-2FF29FlN62zRR8VWf9nF7HFAJDzCzv2Hep1rqcgCeGKZoOdhymXvu=
+5FoCKcHWSOP8axwRSTGzDhT1z4LN-2FZstZw4lkCMwL-2FgRWLmGcQ0n101cHY-2BxmCiq6UBCe=
+DCnEeptThl2sis0y-2Bb0a-2Fu5XaE-3D"><img src=3D"https://secure.meetupstatic.=
+com/photos/member/d/c/3/e/thumb_86276382.jpeg" border=3D"0" width=3D"50" he=
+ight=3D"auto" style=3D"width:50px;display:block;margin:0;"></a>
+                            </div>
+                          </td>
+                          <td valign=3D"top" align=3D"left">
+                            <div style=3D"border-bottom:5px solid #fff;font=
+-size:14px;line-height:14px;font-family:arial,sans-serif;">
+                              <a href=3D"http://clicks.meetup.com/ls/click?=
+upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCEX=
+v3jVmng-2FZvvrD6SyerOYs3C5DwX-2FrpHaULMVIcMllg-3DYyzj_Yg5CIIEwjernwbxgVw3ff=
+5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1g=
+q9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTt=
+lEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx=
+9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2F=
+uCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfw=
+CypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJ=
+zfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw=
+2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98z=
+rnaeM7tVCdgQ9rUP7swP6truRSTqJXYctqEjSZzaIGhVRsfqmjdf9zEwK5mJH5QbfoHkZC-2Fh9=
+55Z04cnLtnoWiKTD1Ir0UzL3YhlrhQwuLC-2FAzH0Y2jt39jDE5bkrpu9hCmvOtTTgnzGcknLEK=
+qeTlsfZ4iTM4P9-2F-2BwUgOdo-3D" style=3D"color:#0066CC;text-decoration:none;=
+">Fred Richard</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!--[if mso]>
+                      </td>
+                    <![endif]-->
+                 =20
+               =20
+                <!--[if mso]>
+                  </tr></table>
+                <![endif]-->
+              </div>  =20
+            </div>
+          </div>
+       =20
+        <!-- people to look for ends -->
+       =20
+        <!-- not announced to group message -->
+       =20
+
+       =20
+        <!-- not announced to group message ends -->
+       =20
+        <!-- event description -->
+       =20
+       =20
+       =20
+          <div style=3D"border-top:1px dotted #ccc;clear:both;">
+            <div class=3D"event-description" style=3D"border:8px solid #fff=
+;border-width:8px 0;">
+              <strong>Event description:</strong> Hear from cloud provider =
+Ridge about their distributed cloud solution in this Meetup webinar.
+
+Join to find out:
+* How to improve app performance by deploying in the location of your choic=
+e
+* Using...
+
+             =20
+                <a href=3D"http://clicks.meetup.com/ls/click?upn=3DXbaZ37la=
+rFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1nHcVG4QelEOX-2BCGNhCGtCE8xoAmSxt4bCxYa-=
+2BUur5qg-2Ftx82jCMUHHjKFxxum9lHxmAgDN-2BK-2F2xmXyUBlYtFIKzQNd_Yg5CIIEwjernw=
+bxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh=
+1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMh=
+VyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iA=
+IqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJ=
+MCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC=
+0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsSc=
+oIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW=
+8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-=
+2Fl5v98zrnaeM7tVCdgQ9rUP7sz509-2BwGQVFA5mzkb-2BtJBrLj6fMT7arCF97Tzmzm71-2FE=
+IFnWZ60ev3auKwzXGgJ6DFjbdWHslcQM6MpLDZhAW-2BNj-2FDu6pRVk7j-2FVLZIRlz01uTIpd=
+32uwXrYRdI7WN9xBU-2FSjAmkeYBPbWaVgtekxSA-3D" style=3D"color:#06C;text-decor=
+ation:none;font-size:12px;">
+                 =20
+                    Learn more
+                 =20
+                </a>
+             =20
+            </div>
+          </div>
+       =20
+        <!-- event description ends -->
+
+        <!-- upcoming events -->
+       =20
+       =20
+       =20
+        <!-- upcoming events ends -->
+
+        <!-- group social networks -->
+       =20
+       =20
+       =20
+       =20
+        <!-- group social networks ends -->
+      </div>
+      <!--[if mso]>
+          </td></tr></table>
+        </center>
+      <![endif]-->=20
+    </div>
+   =20
+   =20
+    <div>
+    <table cellpadding=3D"10" cellspacing=3D"0" width=3D"100%" style=3D"wid=
+th:100%;min-width:100%;">
+      <tr>
+            <td align=3D"center" class=3D"bg-mobile">
+            <table class=3D"bg-mobile" width=3D"100%">
+              <tbody>
+               =20
+                <tr>
+                  <td align=3D"center" class=3D"footer-below" style=3D"max-=
+width: 600px;">
+                  <p class=3D"footer-text">You received this message becaus=
+e you are a registered member of Meetup.<br>
+                  <a class=3D"footer-link" href=3D"http://clicks.meetup.com=
+/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1kywzczhjZraOOdC=
+2TGfIeY3aXoeqBVBXLJNt5STaWElGxjEUrhERSQCv-2BgJDCiaeB-2BxSLkfijCUbxw72z0sWcC=
+-2BNqqXGzbI8uSmrGSziaE9a-2Fot1VCvveQcRphk-2BoxFec6-2BaQPsbTS90omk1pidAcVtOH=
+mDCKrtdK-2B2qWoYvSTOtp2KgyteVUFBxdv9AWK3LRwK94xBZn0zSFmGO5hCITw7XUq_Yg5CIIE=
+wjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy=
+-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ=
+4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDgh=
+NCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc6=
+46ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMn=
+zPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2=
+OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC=
+3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7=
+TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s5OhyNKNTJRta0gU8XcQmvorR8DwalGjfvAgsOJCoi3n=
+n5qg3xZskuHuliKEAxmMlUMJmpZ-2B5B4U1rvOJG3lSVV2ftaBbm-2BKhJwBJY-2FvVrE0KR2WE=
+YMmSHq9z-2BeN3gz8UvRkelfHVMQWUTsX1-2BMHv5M-3D">Unsubscribe</a> from this ty=
+pe of email. <a class=3D"footer-link" href=3D"http://clicks.meetup.com/ls/c=
+lick?upn=3D8Y2vsX5dSU9BIj3r0FDX3hKPTxoZ-2F4CoTjtrmZj9WRKKQ1pB0tDVZoJ57HL7uQ=
+TU2lFpStzBX-2B6qbgjjpecwQ0VSRss9lilkD4u0purum4zOwHD1Hji3CvePVrHHy4L5zUWl56p=
+iiYfB1-2FInI70aFjCqlKOQv1vIiu-2BZ5hMzKJRNuPCXfc5OieKpYmgbPs46VYJS-2Fxa-2Fu8=
+43zPPgtWMapnnja-2FLp2-2BM2jO-2B98FtB5FNSro-2BuQqrZm1LNg-2BeeCCncb11W_Yg5CII=
+EwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFT=
+y-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGe=
+J4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDg=
+hNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc=
+646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyM=
+nzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F=
+2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2Btd=
+C3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT=
+7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s0E20OjPOkMmMbXouLDPwSSAbQ2E0VobpQXGbeCTk-2=
+BeFIXOJ5AI51SbEY2saXKvDqPRS9aY36VM9nGOSm-2BS5vNkEQ0YIJgpZ3xyGPLtdnGzD30WgeR=
+9cazJjoM8FArvVNQOiUmq53TILpKBs-2FC8KhB8-3D">Manage your settings </a> for a=
+ll types of email updates.<br>
+                  Visit a <a class=3D"footer-link" href=3D"http://clicks.me=
+etup.com/ls/click?upn=3D8Y2vsX5dSU9BIj3r0FDX3hKPTxoZ-2F4CoTjtrmZj9WRLwKZRAo=
+rXPNMZVwCIVN5rVR5S-2FriZ5VfraAjoH5-2FdTE-2Fcg-2Fd1VKL6k0PLPOHWrN7aN9RtHy-2F=
+RWWuBpoT-2BpQP4GZpR4-2BOLVmsIsnEM0Tv7bqTillRSOqIEgWdLHr30gZhmweCXKoY9XjAWdc=
+pn8868tphnp14gM63WZA3jFPdStcqUPVWZ2yIiwIdHjdR0MCrlXVLji6WvGDciqB24tjjjDEwAZ=
+_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGY=
+Dc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul=
+4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1d=
+Z5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6Ps=
+GK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG=
+1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZ=
+Xm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAx=
+KL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPaw=
+qPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s2hKISyf51vvHtAQ-2BDh2KYWRz6LZ0YzT4-=
+2Fw7ha-2BJ6t6ZXbAcbJ1wFB7rVMSIbQGP35E1-2BhOTe57YH3-2FtwK0tdq2Q0ypzFLHVYbK3e=
+lYemLc6dqzJMABYdiUfiHZ2CMXX5UEIDIKcbpQ4M631jIP4sSw-3D">your account page</a=
+> to change your contact details, privacy settings, and other settings.<br>
+                  <a class=3D"footer-link" href=3D"http://clicks.meetup.com=
+/ls/click?upn=3D8Y2vsX5dSU9BIj3r0FDX3lSPClZdoQRTM87Zc9pGBVv4IaI0DdWeyx54S6K=
+DP8i-2BOSVZC175vkMReJkNBj5X8Prg7vFYRNWc70lXLMDjiw5v9Q5UaGw28FxozMcn5tEC8OBY=
+1beVHbAlN92HnoWtn5eTGjrX52FLcPLX8ew5T30e71jI4D9ukQcwZiBHMFlvo3TaohkBnZ7jftY=
+X8cq9hfOOXHP6xDX32wncMdAOvkA-3D5hsT_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5L=
+rI-2BZcdYReN8W0Nl2fjYZMlG-2FCbw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2=
+B4eEN4KSh-2FA85e72bQnyrCuuK6v4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RY=
+qO2fXuQaR2uFcg6Q3R61JgQOYA0YgYxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz=
+905ZzCgQ1VVJgs3R-2F-2F-2Fu-2FZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDl=
+uRAMv6kYGJv8bINb5ESwxCNrcoLRkv-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY=
+9gsFLUQP9UJHHeTTuedYbnVOtIUqbs92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyD=
+HkmTK7vUNe-2F1zKyLom2yjfT21OJ9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGG=
+QFT3MJXDUwV8qi28f3EPC90Xuk6hvOzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s=
+8xq1z9FQ6VbwNxY2RoMjF7BVcPnVlGuVRJGekN4oMGovmDr3Mq3Dwil7zEeFoRyGpvqXznCAgws=
+d5zOqhtI7PeixMsL4Q0POrWWmUwomzJUlHURumq1pjGczF1T8yp7IEKjODcjM8SUdvmkq6vyr5Y=
+-3D">Meetup LLC</a>, POB 4668 #37895 NY NY USA 10163<br>
+                   Read our <a class=3D"footer-link" href=3D"http://clicks.=
+meetup.com/ls/click?upn=3DXbaZ37larFA-2FuV5MohrYpdrra25MtI4CzodbRR1Rd1lhUUq=
+Aoqop-2FiYO7Df4o2hT-2FcFCBR08Iq5f5UuOkTBHBmKbla2vsR6PMPp2js-2BBaNaeISosCb-2=
+Byhg1iLdCQ2dtHaGqqH-2BDPlcIei5dUxTbRF4zJeF65frfD8VgjuRdrzOCh9GG-2BxI3cgcE8Z=
+JHTZedURGN5i1Q-2BSBkTPV0DGRAbpV4X5bM509Wz-2BQWnmzqIKMBlltmRM5bQQYoUa-2FyBRr=
+xCmadt_Yg5CIIEwjernwbxgVw3ff5tS3NejeY37x0SmE5LrI-2BZcdYReN8W0Nl2fjYZMlG-2FC=
+bw2oGYDc3YiFTy-2FVeh1FT1Sn1gq9KFX8Z-2FTwuzCI-2B4eEN4KSh-2FA85e72bQnyrCuuK6v=
+4JtMul4I2BdGeJ4eWSMhVyfcPyTtlEpvsyVNT1nm2SS7RYqO2fXuQaR2uFcg6Q3R61JgQOYA0Yg=
+YxjJ1dZ5xcZDghNCW8iAIqvwMZYx9tiJUf3O-2BRngs7rz905ZzCgQ1VVJgs3R-2F-2F-2Fu-2F=
+ZVZ6PsGK2Y5Vc646ueaJMCdpr-2FuCQE7Hve-2FEpimxDluRAMv6kYGJv8bINb5ESwxCNrcoLRk=
+v-2BxG1RlYYyMnzPnzAC0-2FYIfwCypeQEyQWhSa7n0xHY9gsFLUQP9UJHHeTTuedYbnVOtIUqb=
+s92QRZXm7F-2F2OSqsScoIgJb9yJzfww4X0sD-2F-2FWyDHkmTK7vUNe-2F1zKyLom2yjfT21OJ=
+9XbQAxKL-2BtdC3OWAFW8Eb3lUXw2DCmtmV6PS7oJPapGGQFT3MJXDUwV8qi28f3EPC90Xuk6hv=
+OzPPawqPbPBCT7TBp97-2Fl5v98zrnaeM7tVCdgQ9rUP7s3HbEUsYIwIGYWbwQ2U8uu8kaxHvMO=
+OH66TX3MaVTW33EccEa2RwrhABgqop5YXKq6-2BpKBxa-2BnyTUaOO-2F2dyo242ZMg5X-2Bslv=
+yqdTKwfKMMrPTpHDVVYQ8IaUeMoq6B7VEX8PVK0dNfWYLcaRwXn1gQ-3D">Privacy Policy</=
+a>.</p>
+                  </td>
+                </tr>
+               =20
+              </tbody>
+            </table>
+            </td>
+          </tr>
+          </table>
+    </div>
+ =20
+
+
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"40" height=
+=3D"6"><tbody><tr>
+<td><img src=3D"https://sli.meetup.com/imp?s=3D126716200&amp;li=3D%7BLIST_I=
+D%7D&amp;e=3Dallen71090@gmail.com&amp;p=3D2023-03-2010:03&amp;stpe=3Dpixel"=
+ width=3D"2" height=3D"6" border=3D"0"></td>
+<td><img src=3D"https://sli.meetup.com/imp?s=3D126716201&amp;li=3D%7BLIST_I=
+D%7D&amp;e=3Dallen71090@gmail.com&amp;p=3D2023-03-2010:03&amp;stpe=3Dpixel"=
+ width=3D"2" height=3D"6" border=3D"0"></td>
+<td><img src=3D"https://sli.meetup.com/imp?s=3D126716202&amp;li=3D%7BLIST_I=
+D%7D&amp;e=3Dallen71090@gmail.com&amp;p=3D2023-03-2010:03&amp;stpe=3Dpixel"=
+ width=3D"2" height=3D"6" border=3D"0"></td>
+<td><img src=3D"https://sli.meetup.com/imp?s=3D126716203&amp;li=3D%7BLIST_I=
+D%7D&amp;e=3Dallen71090@gmail.com&amp;p=3D2023-03-2010:03&amp;stpe=3Dpixel"=
+ width=3D"2" height=3D"6" border=3D"0"></td>
+<td><img src=3D"https://sli.meetup.com/imp?s=3D126716204&amp;li=3D%7BLIST_I=
+D%7D&amp;e=3Dallen71090@gmail.com&amp;p=3D2023-03-2010:03&amp;stpe=3Dpixel"=
+ width=3D"2" height=3D"6" border=3D"0"></td>
+</tr></tbody></table>
+
+
+<!-- email/includes/event_reminder.html ends -->
+
+
+</div>
+<img src=3D"http://clicks.meetup.com/wf/open?upn=3DlDB-2FIotWgiicHSspVBVs43=
+yKyDs84t4-2FLTa9Az-2BbK-2B-2BDvYknmCeiagFlQBGwXlwk4BrXRsQUTim7bHdxO92mjKJ7e=
+6eEmL76yRUNsTAjBtBm57iH2T4T-2BqyBnJVty5DbZdCmNEsM30qLXp98JvJRRrT56OciYvKynN=
+U4WjknApBncrImIsp45BXpOY7vHQ6iq0tM9VcWqhDtXWdLZ17POwHuknWVXYzmZr238maOXhpXQ=
+nsxr8vZPlsQLd2VJz-2FSJuCmbtmH11u-2F14yE6ei3zxptwXWj0s9XBmC0LsAU1eSpZ-2BkG4H=
+oLPuqZwikTARnZXcQwwASeqq7KHvQbEdvfFWsGyeh3Z-2FubszVFg6icUEA8dpDk3vi9iMX-2BH=
+NzAWuSUe7cTzaPPPb8M4APEwewm0BEctiBUtstoorCt5n9I2wQn3c75CRtJ8XJJLGNSzz3jHDZi=
+8n80A3ln3dmsV8t7l0O3xbSh2-2BglXLFYbr3sZUvqj1O-2BmvC21HgTASnSKQAf4Hl2Dxa5VDk=
+a01c4-2FNc-2FvShWo05vnkIDRVqRKNhyV-2BlP5SFr90PtYOzpHkZZf4eXWVPmaZeqoirTwoer=
+N85aG4nohOf-2BuS8C6ps2Fm-2BL-2BdqiGDjljg-2FWhGZSONccYgvx53LOZI18KF2Mg8VsOiA=
+ksBPLffC6EqtLWgAbEMz29SDTe0YY1gdo3ZYJv9sUoONVFgNax9Admr-2BilOyhYGcAYpwTwrom=
+KFVdpxYLoazDJ3KqULXB0WUzY80PyTErcHON" alt=3D"" width=3D"1" height=3D"1" bor=
+der=3D"0" style=3D"height:1px !important;width:1px !important;border-width:=
+0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-righ=
+t:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bo=
+ttom:0 !important;padding-right:0 !important;padding-left:0 !important;"/><=
+/body></html>
+
+--37a5888358a93d4e55435853e4486cd3a7b238afe78a174e080a4860c3f5--

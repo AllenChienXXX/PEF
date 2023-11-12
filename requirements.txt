@@ -1,0 +1,6 @@
+pandas~=2.0.1
+nltk~=3.8.1
+scikit-learn~=1.2.2
+Flask~=2.3.2
+joblib~=1.2.0
+beautifulsoup4~=4.12.2
