@@ -1,7 +1,11 @@
 # Phishing Email Filtering
+## Paper Coming Soon!
+I use Flask as the user interface, and allow users to upload their email as a .eml file and see:
 
-This repository contains a Flask web application that [brief description of the app].
+1.What are the features extracted?
+2.Whether it's a phishing email or not based on model prediction?
 
+Throughout my research, the models I trained are able to achieve more than 80% accuracy. I will continue to work on this and make sure it works perfectly fine.
 ## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine.
